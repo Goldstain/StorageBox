@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Всі товари</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div>
+    <form th:action="@{/articles/new}" method="get">
+        <button type="submit"class="btn btn-primary mb-3">Створити новий товар</button>
+    </form>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Категорія</th>
+            <th>Назва</th>
+            <th>Ціна закупівлі</th>
+            <th>Ціна продажу</th>
+            <th>Витрати</th>
+            <th>Прибуток</th>
+            <th>Кількість</th>
+            <th>Продано</th>
+            <th>Дата створення</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="article : ${articles}">
+            <td th:text="${article.getId()}"></td>
+            <td th:text="${article.getCategory()}"></td>
+            <td th:text="${article.getName()}"></td>
+            <td th:text="${article.getPurchase()}"></td>
+            <td th:text="${article.getSellingPrize()}"></td>
+            <td th:text="${article.getSpentMoney()}"></td>
+            <td th:text="${article.getProfit()}"></td>
+            <td th:text="${article.getQuantity()}"></td>
+            <td th:text="${article.getSoldQuantity()}"></td>
+            <td th:text="${article.getCreatedDate()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

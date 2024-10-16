@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new</title>
+</head>
+<body>
+
+<div>
+    <form th:action="@{/articles}" method="post" th:object="${article}">
+        <div>
+            <label for="category">Категорія</label>
+            <select id="category" th:field="*{category}">
+                <option th:each="category: ${categories}"
+                        th:value="${category}"
+                        th:text="${category}">Category>
+                </option>
+            </select>
+        </div>
+        <div>
+            <label for="name">Назва</label>
+            <input type="text" id="name" th:field="*{name}" placeholder="Ведіть назву">
+        </div>
+        <div>
+            <label for="purchase">Ціна закупівлі</label>
+            <input type="text" id="purchase" th:field="*{purchase}" placeholder="Введіть ціну закупівлі">
+        </div>
+        <div>
+            <label for="quantity">Кількість</label>
+            <input type="text" id="quantity" th:field="*{quantity}" placeholder="Введіть кількість">
+        </div>
+
+        <button type="submit">Створити</button>
+    </form>
+</div>
+
+</body>
+</html>

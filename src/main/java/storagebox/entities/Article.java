@@ -17,7 +17,8 @@ public class Article {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "categoty")
+    @Column(name = "category")
+    @Enumerated(EnumType.STRING)
     @NotNull(message = "Виберіть категорію, або спочатку створіть нову")
     private Category category;
 
@@ -56,6 +57,7 @@ public class Article {
     @Max(value = 1000, message = "Давай вірну кількість, курвисько!")
     private int soldQuantity;
 
+    @Column(name = "created_date", updatable = false)
     private LocalDateTime createdDate;
 
     public Article() {
@@ -71,6 +73,35 @@ public class Article {
         this.quantity = quantity;
         soldQuantity = 0;
         createdDate = LocalDateTime.now();
+    }
+
+    public Article(int id, Category category, String name, double purchase,
+                   double sellingPrize, double spentMoney, double profit,
+                   int quantity, int soldQuantity, LocalDateTime createdDate) {
+        this.id = id;
+        this.category = category;
+        this.name = name;
+        this.purchase = purchase;
+        this.sellingPrize = sellingPrize;
+        this.spentMoney = spentMoney;
+        this.profit = profit;
+        this.quantity = quantity;
+        this.soldQuantity = soldQuantity;
+        this.createdDate = createdDate;
+    }
+
+
+    @PrePersist
+    protected void onCreate() {
+        createdDate = LocalDateTime.now();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Category getCategory() {
@@ -144,5 +175,21 @@ public class Article {
 
     public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", category=" + category +
+                ", name='" + name + '\'' +
+                ", purchase=" + purchase +
+                ", sellingPrize=" + sellingPrize +
+                ", spentMoney=" + spentMoney +
+                ", profit=" + profit +
+                ", quantity=" + quantity +
+                ", soldQuantity=" + soldQuantity +
+                ", createdDate=" + createdDate +
+                '}';
     }
 }

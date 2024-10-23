@@ -18,10 +18,14 @@
 
     <form th:action="@{/articles/filter-by-status}" method="get" class="d-inline-block">
         <label for="status">Статус</label>
-        <select id="status" name="status" class="form-control  d-inline-block w-auto" >
+        <select id="status" name="status" class="form-control  d-inline-block w-auto">
             <option th:each="status:${statuses}" th:value="${status}" th:text="${status.getAlias()}"></option>
         </select>
         <button type="submit" class="btn btn-primary">Фільтрувати</button>
+    </form>
+
+    <form th:action="@{/articles}" method="get" class="d-inline-block">
+        <button type="submit" class="btn btn-primary">Всі товари</button>
     </form>
 </div>
 
@@ -39,6 +43,7 @@
             <th>Кількість</th>
             <th>Продано</th>
             <th>Залишок</th>
+            <th>Статус</th>
             <th>Дата створення</th>
         </tr>
         </thead>
@@ -57,6 +62,7 @@
             <td th:text="${article.quantity}"></td>
             <td th:text="${article.soldQuantity}"></td>
             <td th:text="${article.remainder}"></td>
+            <td th:text="${article.status.getAlias()}"></td>
             <td th:text="${article.createdDate}"></td>
         </tr>
         </tbody>

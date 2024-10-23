@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагування товару</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>.error-message {
+    color: #ff0000
+}</style>
+<body>
+<div class="container">
+    <h2>Картка товару</h2>
+    <form th:action="@{/articles/{id}(id=${article.getId()})}" th:object="${article}" method="post">
+        <input type="hidden" name="_method" value="PUT">
+
+        <label for="name">Назва</label>
+        <input type="text" th:field="*{name}" id="name"/>
+        <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Помилкове ім'я</div>
+        <br/>
+        <label for="purchase">Ціна закупівлі</label>
+        <input type="text" th:field="*{purchase}" id="purchase"/>
+        <div class="error-message" th:if="${#fields.hasErrors('purchase')}" th:errors="*{purchase}">Помилкова ціна
+        </div>
+        <br/>
+        <label for="sellingPrize">Ціна продажу</label>
+        <input type="text" th:field="*{sellingPrize}" id="sellingPrize"/>
+        <div class="error-message" th:if="${#fields.hasErrors('sellingPrize')}" th:errors="*{sellingPrize}">Помилкова
+            ціна продажу
+        </div>
+        <br/>
+        <label for="spentMoney">Витрати</label>
+        <input type="text" th:field="*{spentMoney}" id="spentMoney"/>
+        <div class="error-message" th:if="${#fields.hasErrors('spentMoney')}" th:errors="*{spentMoney}">Помилкові
+            витрати
+        </div>
+        <br/>
+        <label for="quantity">Кількість куплено</label>
+        <input type="text" th:field="*{quantity}" id="quantity"/>
+        <div class="error-message" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}">Помилкова кількість
+        </div>
+        <br/>
+        <label for="soldQuantity">Кількість продано</label>
+        <input type="text" th:field="*{soldQuantity}" id="soldQuantity"/>
+        <div class="error-message" th:if="${#fields.hasErrors('soldQuantity')}" th:errors="*{soldQuantity}">Помилкова
+            кількість
+        </div>
+        <br/>
+
+        <div class="d-flex justify-content-start">
+            <button type="submit" class="btn btn-primary">Зберегти</button>
+            <a href="/articles" class="btn btn-secondary">Назад</a>
+        </div>
+    </form>
+    <form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}" method="post" class="mt-3">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-danger">Видалити</button>
+    </form>
+</div>
+
+</body>
+</html>

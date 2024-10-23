@@ -6,29 +6,30 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "article")
 public class Article {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "article_id")
     private int id;
 
-    @Column(name = "category")
-    @Enumerated(EnumType.STRING)
-    @NotNull(message = "Виберіть категорію, або спочатку створіть нову")
+
+    @ManyToOne()
+    @JoinColumn(name = "category_id")
+//    @NotNull(message = "Виберіть або створіть нову категорію")
     private Category category;
 
-    @Column(name="name")
+    @Column(name = "name")
     @Size(min = 3, max = 30, message = "Назва має бути розміром від 3 до 30 символів")
     @NotNull
     private String name;
 
     @Column(name = "purchase")
-    @Min(value = 0, message = "Ціна не може бути менше 0")
+    @Min(value = 1, message = "Ціна не може бути менше 0")
     @Max(value = 1_000_000, message = "Перевірте чи правильно введена ціна")
     private double purchase;
 
@@ -43,22 +44,23 @@ public class Article {
     private double spentMoney;
 
     @Column(name = "profit")
-    @Min(value = -1_000_000, message = "Перевірте правильність зазначеного прибутку")
-    @Max(value = 1_000_000, message = "Перевірте чи правильно введено прибуток")
     private double profit;
 
     @Column(name = "quantity")
-    @Min(value = 1, message = "Не може бути менше 1")
+    @Min(value = 1, message = "Кількість не може бути менше 1")
     @Max(value = 1000, message = "Скільки, скільки?! А якщо серйозно")
     private int quantity;
 
     @Column(name = "sold_quantity")
-    @Min(value = 0, message = "Кількість проданого не може бути менше 0")
+    @Min(value = 0, message = "Кількість проданого не може бути менше 1")
     @Max(value = 1000, message = "Давай вірну кількість, курвисько!")
     private int soldQuantity;
 
+    @Column(name = "remainder")
+    private int remainder;
+
     @Column(name = "created_date", updatable = false)
-    private LocalDateTime createdDate;
+    private LocalDate createdDate;
 
     public Article() {
     }
@@ -69,15 +71,15 @@ public class Article {
         this.purchase = purchase;
         sellingPrize = 0;
         spentMoney = 0;
-        profit =0;
+        profit = sellingPrize-purchase*soldQuantity-spentMoney;
+        remainder=quantity-soldQuantity;
         this.quantity = quantity;
         soldQuantity = 0;
-        createdDate = LocalDateTime.now();
     }
 
     public Article(int id, Category category, String name, double purchase,
                    double sellingPrize, double spentMoney, double profit,
-                   int quantity, int soldQuantity, LocalDateTime createdDate) {
+                   int quantity, int soldQuantity, LocalDate createdDate) {
         this.id = id;
         this.category = category;
         this.name = name;
@@ -93,7 +95,7 @@ public class Article {
 
     @PrePersist
     protected void onCreate() {
-        createdDate = LocalDateTime.now();
+        createdDate = LocalDate.now();
     }
 
     public int getId() {
@@ -124,7 +126,7 @@ public class Article {
         return purchase;
     }
 
-    public void setPurchase(  double purchase) {
+    public void setPurchase(double purchase) {
         this.purchase = purchase;
     }
 
@@ -169,12 +171,20 @@ public class Article {
         this.soldQuantity = soldQuantity;
     }
 
-    public LocalDateTime getCreatedDate() {
+    public LocalDate getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(LocalDateTime createdDate) {
+    public void setCreatedDate(LocalDate createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public int getRemainder() {
+        return remainder;
+    }
+
+    public void setRemainder(int remainder) {
+        this.remainder = remainder;
     }
 
     @Override
@@ -189,6 +199,7 @@ public class Article {
                 ", profit=" + profit +
                 ", quantity=" + quantity +
                 ", soldQuantity=" + soldQuantity +
+                ", remainder=" + remainder +
                 ", createdDate=" + createdDate +
                 '}';
     }

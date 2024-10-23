@@ -11,4 +11,6 @@ import java.util.List;
 @Repository
 public abstract interface ArticleRepository extends JpaRepository<Article, Integer> {
 
+    List<Article> findAllByOrderByIdAsc();
+
 }

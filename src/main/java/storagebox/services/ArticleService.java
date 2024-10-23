@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import storagebox.entities.Article;
+import storagebox.entities.ArticleStatus;
 import storagebox.exceptions.ArticleNotFoundException;
 import storagebox.repositories.ArticleRepository;
 
@@ -23,7 +24,14 @@ public class ArticleService {
         return articleRepository.findAllByOrderByIdAsc();
     }
 
+    public List<Article> findAll(ArticleStatus status) {
+        return articleRepository.findAllByOrderByIdAsc().stream()
+                .filter((article -> article.getStatus().equals(status))).toList();
+    }
+
+
     public Article save(Article article) {
+        article.setStatus(ArticleStatus.ON_THE_WAY);
         return articleRepository.save(article);
     }
 
@@ -45,7 +53,11 @@ public class ArticleService {
         articleFromDB.setSoldQuantity(articleForEdit.getSoldQuantity());
         articleFromDB.setProfit(articleForEdit.getProfit());
         articleFromDB.setRemainder(articleForEdit.getRemainder());
-
+        if (articleForEdit.getQuantity() - articleForEdit.getSoldQuantity() == 0) {
+            articleFromDB.setStatus(ArticleStatus.OUT_OF_STOCK);
+        } else {
+            articleFromDB.setStatus(articleForEdit.getStatus());
+        }
         articleRepository.save(articleFromDB);
     }
 

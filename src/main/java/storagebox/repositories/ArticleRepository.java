@@ -1,10 +1,9 @@
 package storagebox.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.RepositoryDefinition;
 import org.springframework.stereotype.Repository;
 import storagebox.entities.Article;
+import storagebox.entities.ArticleStatus;
 
 import java.util.List;
 
@@ -12,5 +11,6 @@ import java.util.List;
 public abstract interface ArticleRepository extends JpaRepository<Article, Integer> {
 
     List<Article> findAllByOrderByIdAsc();
+
 
 }

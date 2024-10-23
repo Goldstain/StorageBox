@@ -7,12 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import storagebox.entities.Article;
+import storagebox.entities.ArticleStatus;
 import storagebox.entities.Category;
 import storagebox.exceptions.ArticleNotFoundException;
 import storagebox.exceptions.CategoryNotFoundException;
 import storagebox.services.ArticleService;
 import storagebox.services.CategoryService;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -35,11 +37,26 @@ public class ArticleController {
         return categoryService.findAll();
     }
 
+    @ModelAttribute(name = "statuses")
+    public List<ArticleStatus> getStatuses() {
+        return Arrays.asList(ArticleStatus.values());
+    }
+
     @GetMapping
     public String getArticles(Model model) {
         model.addAttribute("articles", articleService.findAll());
         return "articles";
     }
+
+    @GetMapping("/filter-by-status")
+    public String filterByStatus(@RequestParam("status") ArticleStatus status, Model model) {
+        System.out.println("Status!!!! " + status);
+        List<Article> articles = articleService.findAll(status);
+        System.out.println("List!!!! "+articles);
+        model.addAttribute("articles", articles);
+        return "articles";
+    }
+
 
     @GetMapping("/new-article")
     public String newArticle(@ModelAttribute("article") Article article) {
@@ -89,7 +106,7 @@ public class ArticleController {
             article.setProfit(article.getSellingPrize() - article.getSpentMoney()
                     - article.getPurchase() * article.getSoldQuantity());
             article.setRemainder(article.getQuantity() - article.getSoldQuantity());
-
+            article.setStatus(article.getStatus());
         } catch (ArticleNotFoundException e) {
             e.printStackTrace();
             return "redirect:/articles";

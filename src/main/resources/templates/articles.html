@@ -11,8 +11,17 @@
     <form th:action="@{/articles/new-article}" method="get" class="d-inline-block">
         <button type="submit" class="btn btn-primary">Додати новий товар</button>
     </form>
+
     <form th:action="@{/categories/new-category}" method="get" class="d-inline-block ms-2">
         <button type="submit" class="btn btn-primary">Додати нову категорію</button>
+    </form>
+
+    <form th:action="@{/articles/filter-by-status}" method="get" class="d-inline-block">
+        <label for="status">Статус</label>
+        <select id="status" name="status" class="form-control  d-inline-block w-auto" >
+            <option th:each="status:${statuses}" th:value="${status}" th:text="${status.getAlias()}"></option>
+        </select>
+        <button type="submit" class="btn btn-primary">Фільтрувати</button>
     </form>
 </div>
 

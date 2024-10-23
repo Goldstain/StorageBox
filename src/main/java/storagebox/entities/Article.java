@@ -1,13 +1,11 @@
 package storagebox.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "article")
@@ -62,6 +60,10 @@ public class Article {
     @Column(name = "created_date", updatable = false)
     private LocalDate createdDate;
 
+    @Enumerated(EnumType.STRING)
+    private ArticleStatus status;
+
+
     public Article() {
     }
 
@@ -71,15 +73,16 @@ public class Article {
         this.purchase = purchase;
         sellingPrize = 0;
         spentMoney = 0;
-        profit = sellingPrize-purchase*soldQuantity-spentMoney;
-        remainder=quantity-soldQuantity;
+        profit = sellingPrize - purchase * soldQuantity - spentMoney;
+        remainder = quantity - soldQuantity;
         this.quantity = quantity;
         soldQuantity = 0;
+        status = ArticleStatus.ON_THE_WAY;
     }
 
     public Article(int id, Category category, String name, double purchase,
                    double sellingPrize, double spentMoney, double profit,
-                   int quantity, int soldQuantity, LocalDate createdDate) {
+                   int quantity, int soldQuantity, LocalDate createdDate, ArticleStatus status) {
         this.id = id;
         this.category = category;
         this.name = name;
@@ -90,6 +93,7 @@ public class Article {
         this.quantity = quantity;
         this.soldQuantity = soldQuantity;
         this.createdDate = createdDate;
+        this.status = status;
     }
 
 
@@ -187,6 +191,14 @@ public class Article {
         this.remainder = remainder;
     }
 
+    public ArticleStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ArticleStatus status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -201,6 +213,31 @@ public class Article {
                 ", soldQuantity=" + soldQuantity +
                 ", remainder=" + remainder +
                 ", createdDate=" + createdDate +
+                ", status=" + status +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Article article = (Article) o;
+        return id == article.id && Double.compare(purchase, article.purchase) == 0
+                && Double.compare(sellingPrize, article.sellingPrize) == 0
+                && Double.compare(spentMoney, article.spentMoney) == 0
+                && Double.compare(profit, article.profit) == 0
+                && quantity == article.quantity
+                && soldQuantity == article.soldQuantity
+                && remainder == article.remainder
+                && Objects.equals(category, article.category)
+                && Objects.equals(name, article.name)
+                && Objects.equals(createdDate, article.createdDate)
+                && status == article.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, category, name, purchase, sellingPrize, spentMoney
+                , profit, quantity, soldQuantity, remainder, createdDate, status);
     }
 }

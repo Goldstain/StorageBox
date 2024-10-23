@@ -40,6 +40,8 @@
             <input type="text" id="quantity" th:field="*{quantity}" placeholder="Введіть кількість">
             <div class="error-message" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></div>
         </div>
+
+        <input type="hidden" th:field="*{status}" id="status" value="ON_THE_WAY">
         <div class="d-flex justify-content-start">
             <button type="submit" class="btn btn-primary">Створити</button>
             <a href="/articles" class="btn btn-secondary">Назад</a>

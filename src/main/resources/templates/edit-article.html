@@ -50,6 +50,9 @@
         <div class="error-message" th:if="${#fields.hasErrors('soldQuantity')}" th:errors="*{soldQuantity}">Помилкова
             кількість
         </div>
+        <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+            <span th:text="${errorMessage}"></span>
+        </div>
         <br/>
 
         <label for="status">Статус</label>

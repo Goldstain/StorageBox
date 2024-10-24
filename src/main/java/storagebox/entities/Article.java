@@ -18,7 +18,7 @@ public class Article {
 
     @ManyToOne()
     @JoinColumn(name = "category_id")
-//    @NotNull(message = "Виберіть або створіть нову категорію")
+    @NotNull(message = "Виберіть або створіть нову категорію")
     private Category category;
 
     @Column(name = "name")

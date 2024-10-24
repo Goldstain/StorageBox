@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import storagebox.entities.Article;
 import storagebox.entities.ArticleStatus;
 import storagebox.exceptions.ArticleNotFoundException;
+import storagebox.exceptions.WrongValueException;
 import storagebox.repositories.ArticleRepository;
 
 import java.util.List;
@@ -41,22 +42,29 @@ public class ArticleService {
     }
 
     @Transactional
-    public void update(int id, Article articleForEdit) throws ArticleNotFoundException {
+    public void update(int id, Article articleFromView) throws ArticleNotFoundException, WrongValueException {
         Article articleFromDB = articleRepository.findById(id).orElseThrow(() -> new ArticleNotFoundException(
-                "Товар не знайдено"));
-
-        articleFromDB.setName(articleForEdit.getName());
-        articleFromDB.setPurchase(articleForEdit.getPurchase());
-        articleFromDB.setSellingPrize(articleForEdit.getSellingPrize());
-        articleFromDB.setSpentMoney(articleForEdit.getSpentMoney());
-        articleFromDB.setQuantity(articleForEdit.getQuantity());
-        articleFromDB.setSoldQuantity(articleForEdit.getSoldQuantity());
-        articleFromDB.setProfit(articleForEdit.getProfit());
-        articleFromDB.setRemainder(articleForEdit.getRemainder());
-        if (articleForEdit.getQuantity() - articleForEdit.getSoldQuantity() == 0) {
+                "Article has not been found"));
+        if (articleFromView.getSpentMoney() < 0
+                || articleFromView.getQuantity() < articleFromView.getSoldQuantity()
+                || articleFromView.getSoldQuantity() < 0) {
+            throw new WrongValueException("Wrong value in field");
+        }
+        articleFromDB.setName(articleFromView.getName());
+        articleFromDB.setPurchase(articleFromView.getPurchase());
+        articleFromDB.setSellingPrize(articleFromView.getSellingPrize());
+        articleFromDB.setSpentMoney(articleFromView.getSpentMoney());
+        articleFromDB.setQuantity(articleFromView.getQuantity());
+        articleFromDB.setSoldQuantity(articleFromView.getSoldQuantity());
+        articleFromDB.setProfit(articleFromView.getSellingPrize() - articleFromView.getSpentMoney()
+                - articleFromView.getPurchase() * articleFromView.getSoldQuantity());
+        articleFromDB.setRemainder(articleFromView.getQuantity() - articleFromView.getSoldQuantity());
+        if (articleFromView.getQuantity() - articleFromView.getSoldQuantity() == 0) {
             articleFromDB.setStatus(ArticleStatus.OUT_OF_STOCK);
+        } else if (articleFromView.getSoldQuantity() > 0) {
+            articleFromDB.setStatus(ArticleStatus.IN_STOCK);
         } else {
-            articleFromDB.setStatus(articleForEdit.getStatus());
+            articleFromDB.setStatus(articleFromView.getStatus());
         }
         articleRepository.save(articleFromDB);
     }
@@ -68,3 +76,6 @@ public class ArticleService {
         articleRepository.delete(articleForDelete);
     }
 }
+
+
+

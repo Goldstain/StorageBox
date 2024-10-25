@@ -11,3 +11,6 @@ spring:
   sql:
     init:
       platform: postgres
+  web:
+    resources:
+      static-locations: classpath:/static/

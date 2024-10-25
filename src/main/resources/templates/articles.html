@@ -1,73 +1,85 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Всі товари</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 </head>
+
 <body>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="btn-group mb-3" role="group" aria-label="Actions">
+                <form th:action="@{/articles/new-article}" method="get" class="d-inline-block">
+                    <button type="submit" class="btn btn-primary">Додати новий товар</button>
+                </form>
 
-<div class="btn-group mb-3" role="group" aria-label="Actions">
-    <form th:action="@{/articles/new-article}" method="get" class="d-inline-block">
-        <button type="submit" class="btn btn-primary">Додати новий товар</button>
-    </form>
+                <form th:action="@{/categories/new-category}" method="get" class="d-inline-block ms-2">
+                    <button type="submit" class="btn btn-primary">Додати нову категорію</button>
+                </form>
 
-    <form th:action="@{/categories/new-category}" method="get" class="d-inline-block ms-2">
-        <button type="submit" class="btn btn-primary">Додати нову категорію</button>
-    </form>
+                <form th:action="@{/articles/filter-by-status}" method="get" class="d-inline-block">
+                    <label for="status">Статус</label>
+                    <select id="status" name="status" class="form-control  d-inline-block w-auto">
+                        <option th:each="status:${statuses}" th:value="${status}" th:text="${status.getAlias()}">
+                        </option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Фільтрувати</button>
+                </form>
 
-    <form th:action="@{/articles/filter-by-status}" method="get" class="d-inline-block">
-        <label for="status">Статус</label>
-        <select id="status" name="status" class="form-control  d-inline-block w-auto">
-            <option th:each="status:${statuses}" th:value="${status}" th:text="${status.getAlias()}"></option>
-        </select>
-        <button type="submit" class="btn btn-primary">Фільтрувати</button>
-    </form>
+                <form th:action="@{/articles}" method="get" class="d-inline-block">
+                    <button type="submit" class="btn btn-primary">Всі товари</button>
+                </form>
+            </div>
 
-    <form th:action="@{/articles}" method="get" class="d-inline-block">
-        <button type="submit" class="btn btn-primary">Всі товари</button>
-    </form>
-</div>
-
-<div>
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Категорія</th>
-            <th>Назва</th>
-            <th>Ціна закупівлі</th>
-            <th>Ціна продажу</th>
-            <th>Витрати</th>
-            <th>Прибуток</th>
-            <th>Кількість</th>
-            <th>Продано</th>
-            <th>Залишок</th>
-            <th>Статус</th>
-            <th>Дата створення</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="article : ${articles}">
-            <td th:text="${article.id}"></td>
-            <td th:text="${article.category.name}"></td>
-            <td>
-                <a th:href="@{/articles/{id}(id=${article.id})}"
-                   th:text="${article.name}"></a>
-            </td>
-            <td th:text="${article.purchase}"></td>
-            <td th:text="${article.sellingPrize}"></td>
-            <td th:text="${article.spentMoney}"></td>
-            <td th:text="${article.profit}"></td>
-            <td th:text="${article.quantity}"></td>
-            <td th:text="${article.soldQuantity}"></td>
-            <td th:text="${article.remainder}"></td>
-            <td th:text="${article.status.getAlias()}"></td>
-            <td th:text="${article.createdDate}"></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
+            <div class="tableted">
+                <table class="table table-striped">
+                    <thead class="sticky-header">
+                        <tr>
+                            <th>ID</th>
+                            <th>Категорія</th>
+                            <th>Назва</th>
+                            <th>Ціна закупівлі</th>
+                            <th>Ціна продажу</th>
+                            <th>Витрати</th>
+                            <th>Прибуток</th>
+                            <th>Кількість</th>
+                            <th>Продано</th>
+                            <th>Залишок</th>
+                            <th>Статус</th>
+                            <th>Дата створення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="article : ${articles}">
+                            <td th:text="${article.id}"></td>
+                            <td th:text="${article.category.name}"></td>
+                            <td>
+                                <a th:href="@{/articles/{id}(id=${article.id})}" th:text="${article.name}"></a>
+                            </td>
+                            <td th:text="${article.purchase}"></td>
+                            <td th:text="${article.sellingPrize}"></td>
+                            <td th:text="${article.spentMoney}"></td>
+                            <td th:text="${article.profit}"></td>
+                            <td th:text="${article.quantity}"></td>
+                            <td th:text="${article.soldQuantity}"></td>
+                            <td th:text="${article.remainder}"></td>
+                            <td th:text="${article.status.getAlias()}"></td>
+                            <td th:text="${article.createdDate}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

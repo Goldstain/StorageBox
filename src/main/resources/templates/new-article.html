@@ -26,7 +26,7 @@
         </div>
         <div>
             <label for="name">Назва</label>
-            <input type="text" id="name" th:field="*{name}" placeholder="Ведіть назву">
+            <input type="text" id="name" th:field="*{name}" placeholder="Введіть назву">
             <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
             <div></div>
         </div>

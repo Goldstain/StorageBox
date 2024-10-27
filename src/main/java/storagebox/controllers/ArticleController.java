@@ -5,12 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import storagebox.entities.Article;
 import storagebox.entities.ArticleStatus;
 import storagebox.entities.Category;
 import storagebox.exceptions.ArticleNotFoundException;
 import storagebox.exceptions.CategoryNotFoundException;
+import storagebox.exceptions.WrongValueException;
 import storagebox.services.ArticleService;
 import storagebox.services.CategoryService;
 
@@ -50,9 +52,7 @@ public class ArticleController {
 
     @GetMapping("/filter-by-status")
     public String filterByStatus(@RequestParam("status") ArticleStatus status, Model model) {
-        System.out.println("Status!!!! " + status);
         List<Article> articles = articleService.findAll(status);
-        System.out.println("List!!!! "+articles);
         model.addAttribute("articles", articles);
         return "articles";
     }
@@ -95,33 +95,28 @@ public class ArticleController {
         return "edit-article";
     }
 
-    @PutMapping("/{id}")
-    public String editArticle(@PathVariable int id, @Valid @ModelAttribute("article") Article article
-            , BindingResult bindingResult, Model model) {
-        Article articleFromDB;
-        try {
-            articleFromDB = articleService.findById(id);
-            article.setCategory(articleFromDB.getCategory());
-            article.setCreatedDate(articleFromDB.getCreatedDate());
-            article.setProfit(article.getSellingPrize() - article.getSpentMoney()
-                    - article.getPurchase() * article.getSoldQuantity());
-            article.setRemainder(article.getQuantity() - article.getSoldQuantity());
-            article.setStatus(article.getStatus());
-        } catch (ArticleNotFoundException e) {
-            e.printStackTrace();
-            return "redirect:/articles";
-        }
 
-        if (bindingResult.hasErrors()) {
+    @PutMapping("/{id}")
+    public String editArticle(@PathVariable int id, @Valid @ModelAttribute("article") Article article,
+                              BindingResult bindingResult, Model model) {
+
+        if (bindingResult.hasErrors() && !
+                bindingResult.getFieldError("category").getField().equals("category")) {
             model.addAttribute("article", article);
             return "edit-article";
         }
-
         try {
             articleService.update(id, article);
         } catch (ArticleNotFoundException e) {
             e.printStackTrace();
-            return "redirect:/articles";
+            model.addAttribute("article", article);
+            model.addAttribute("error-message", "Товар не знайдено");
+            return "edit-article";
+        } catch (WrongValueException e) {
+            e.printStackTrace();
+            model.addAttribute("article", article);
+            model.addAttribute("error-message", "Значення не може бути більше за куплене");
+            return "edit-article";
         }
 
         return "redirect:/articles";
@@ -138,3 +133,4 @@ public class ArticleController {
         return "redirect:/articles";
     }
 }
+

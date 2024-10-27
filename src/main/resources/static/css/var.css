@@ -2,30 +2,3 @@
   font-family: "BookmanOldStyle";
   src: url("../fonts/BookmanOldStyle.ttf");
 }/*# sourceMappingURL=var.css.map */
-
-@font-face {
-  .philosopher-regular {
-    font-family: "Philosopher", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .philosopher-bold {
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .philosopher-regular-italic {
-    font-family: "Philosopher", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-  
-  .philosopher-bold-italic {
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-  }
-  
-}

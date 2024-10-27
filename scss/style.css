@@ -9,8 +9,13 @@
 }
 
 .wrr {
+<<<<<<< HEAD:src/main/resources/static/css/style.css
   background-color: #cd5858;
   background-image: url(../css/icon/4.jpg);
+=======
+  background-color: #ccc;
+  background-image: url(../icon/4.jpg);
+>>>>>>> 753eac4e681b4b08235ab99baabf60582d828393:scss/style.css
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -159,7 +164,11 @@ th {
 }
 
 .wr {
+<<<<<<< HEAD:src/main/resources/static/css/style.css
   background-image: url(../css/icon/2.jpg);
+=======
+  background-image: url(../icon/2.jpg);
+>>>>>>> 753eac4e681b4b08235ab99baabf60582d828393:scss/style.css
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -261,6 +270,7 @@ input::placeholder {
 .btn-back:hover {
   background-color: #eae7e7;
   border: none;
+<<<<<<< HEAD:src/main/resources/static/css/style.css
 }
 
 .wrrr {
@@ -337,4 +347,6 @@ input::placeholder {
 .btn-primary,
 .btn-danger {
   cursor: pointer;
+=======
+>>>>>>> 753eac4e681b4b08235ab99baabf60582d828393:scss/style.css
 }/*# sourceMappingURL=style.css.map */

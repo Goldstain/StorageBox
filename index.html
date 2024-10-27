@@ -6,6 +6,7 @@
     <title>Всі товари</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
+    <link rel="stylesheet" href="scss/style.css">
 
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link
@@ -15,7 +16,8 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper wrr">
+        <div class="background-image"></div>
         <div class="wrapper__container">
             <div class="btn-group " role="group" aria-label="Actions">
                 <form th:action="@{/articles/new-article}" method="get" class="d-inline-block">

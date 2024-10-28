@@ -1,102 +1,28 @@
 @charset "UTF-8";
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-:focus, :active {
-  outline: none;
-}
-
-a:focus, a:active {
-  outline: none;
-}
-
-nav, footer, header, aside {
-  display: block;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  line-height: 1;
-  font-size: 16px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-input, button, textarea {
-  font-family: inherit;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-a, a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-img {
-  vertical-align: top;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-
-@font-face {
-  font-family: "BookmanOldStyle";
-  src: url("../fonts/BookmanOldStyle.ttf");
-}
-:root {
-  --main-color: white;
-  --submain-color: black;
-  --bg-color: black;
-  --font-sizeh1: 34px;
-  --font-sizeh2: 24px;
-  --font-sizeh3: 18px;
-  --font-sizep: 16px;
-  --font-sizespan: 14px;
-}
-
+@import "src/resources/static/css/null.css";
+@import "src/resources/static/css/var.css";
+@import "src/resources/static/css/basestyle.css";
 [class*=__container] {
   max-width: 101.25rem;
   padding: 3.125rem 0.9375rem;
   margin: 0 auto;
 }
 
-p {
-  color: rgba(255, 255, 255, 0.174);
+.wrr {
+  background-color: #cd5858;
+  background-image: url(../css/icon/4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.wrapper {
-  background-color: rgb(13, 13, 13);
+.background-image {
+  position: fixed; /* Фиксированное позиционирование */
+  top: 0; /* Прикрепить к верхней части */
+  left: 0; /* Прикрепить к левой части */
+  width: 100%; /* Задает ширину 100% */
+  height: 100vh; /* Задает высоту 100% */
+  background-color: rgba(247, 244, 244, 0.8823529412);
 }
 
 .wrapper__container {
@@ -196,14 +122,21 @@ p {
 .table {
   width: 100%; /* Ширина таблицы 100% */
   border: 1px solid black;
-  width: 87.5rem;
   margin: 0 auto;
   font-size: 1.125rem;
-  width: 100%; /* Ширина таблицы 100% */
+  table-layout: fixed; /* Фиксированное расположение таблицы */
 }
 
 thead {
   background-color: rgb(233, 226, 226);
+  display: block; /* Это позволит использовать фиксированные ширины */
+}
+
+th, td {
+  width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
+  overflow: hidden; /* Скрыть переполненные данные */
+  text-overflow: ellipsis; /* Добавить многоточие для переполненного текста */
+  white-space: nowrap; /* Запретить перенос строк */
 }
 
 th {
@@ -227,4 +160,189 @@ th {
   font-weight: 400;
   font-style: normal;
   padding: 0.625rem;
+}
+
+.error-message {
+  color: #ff0000;
+}
+
+.wr {
+  background-image: url(../css/icon/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 12.5rem;
+}
+
+.wrapper {
+  height: 100vh;
+}
+.wrapper__container {
+  border-radius: 10px;
+  background-color: rgba(172, 255, 47, 0);
+}
+
+.new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new h2 {
+  font-family: "Philosopher", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
+.form-block {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
+input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
+}
+
+.form-control {
+  background-color: #f0f0f0; /* Цвет фона */
+  border: 1px solid #131313; /* Цвет рамки */
+  padding: 10px; /* Отступы */
+  border-radius: 5px; /* Скругление углов */
+  font-size: 16px; /* Размер шрифта */
+}
+
+/* Стили для выбранного элемента */
+.form-control option {
+  color: #0c0b0b; /* Цвет текста для опций */
+}
+
+.input-field {
+  width: 200px; /* Ширина поля ввода */
+  height: 20px; /* Высота поля ввода */
+  padding: 10px; /* Отступы внутри поля */
+  font-size: 16px; /* Размер шрифта */
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 5px; /* Скругление углов */
+  background-color: #f0f0f0; /* Цвет фона */
+  font-weight: 700;
+}
+
+.d-flex {
+  display: flex;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  margin-top: 6.25rem;
+}
+
+@media (max-width: 87.5625rem) {
+  .adaptiv-class {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.625rem;
+    align-items: center;
+  }
+}
+
+.btn-back {
+  background-color: #ccc;
+}
+.btn-back:hover {
+  background-color: #eae7e7;
+  border: none;
+}
+
+.wrrr {
+  background-image: url(../css/icon/5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.pr {
+  background-color: rgba(0, 0, 0, 0.716);
+}
+
+.product {
+  text-align: center;
+}
+.product h2 {
+  font-size: 3.125rem;
+  color: black;
+  text-shadow: 2px -2px 5px white;
+}
+
+.form__block {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 3.125rem;
+}
+
+.form__block--block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+.form__block--block input {
+  width: 18.75rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.form__block label {
+  padding: 0.625rem; /* Отступы внутри поля */
+  font-size: 1.625rem; /* Размер шрифта */
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 5px; /* Скругление углов */
+  background-color: #f0f0f0; /* Цвет фона */
+  font-weight: 700;
+}
+
+.product__status {
+  font-size: 1.25rem;
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 10px; /* Скругление углов */
+  background-color: #ef2c2c; /* Цвет фона */
+  padding: 0.625rem; /* Отступы внутри поля */
+  color: white;
+}
+
+.button__block--button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.btn-danger {
+  background-color: #faf7f7;
+}
+.btn-danger:hover {
+  background-color: #cb0b0b;
+  color: #eae7e7;
+}
+
+.btn-primary,
+.btn-danger {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

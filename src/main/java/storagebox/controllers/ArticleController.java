@@ -54,6 +54,8 @@ public class ArticleController {
     public String filterByStatus(@RequestParam("status") ArticleStatus status, Model model) {
         List<Article> articles = articleService.findAll(status);
         model.addAttribute("articles", articles);
+        model.addAttribute("statuses", ArticleStatus.values());
+        model.addAttribute("selectedStatus", status);
         return "articles";
     }
 

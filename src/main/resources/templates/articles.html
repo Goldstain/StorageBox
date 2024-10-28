@@ -6,59 +6,69 @@
     <title>Всі товари</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
+   
+    <link rel="stylesheet" href="src\main/resources/static/css/style.css">
 
+ 
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper wrr">
+        <div class="background-image"></div>
         <div class="wrapper__container">
-            <div class="btn-group mb-3" role="group" aria-label="Actions">
+            <div class="btn-group " role="group" aria-label="Actions">
                 <form th:action="@{/articles/new-article}" method="get" class="d-inline-block">
                     <button type="submit" class="btn btn-primary">Додати новий товар</button>
                 </form>
 
-                <form th:action="@{/categories/new-category}" method="get" class="d-inline-block ms-2">
+                <form th:action="@{/categories/new-category}" method="get" class="d-inline-block ">
                     <button type="submit" class="btn btn-primary">Додати нову категорію</button>
                 </form>
 
                 <form th:action="@{/articles/filter-by-status}" method="get" class="d-inline-block">
                     <label for="status">Статус</label>
-                    <select id="status" name="status" class="form-control  d-inline-block w-auto">
-                        <option th:each="status:${statuses}" th:value="${status}" th:text="${status.getAlias()}">
+                    <select id="status" name="status" class=" d-inline-block">
+                        <option value="" disabled
+                        th:selected="${selectedStatus == null}">Оберіть статус</option>
+                        <option th:each="status : ${statuses}"
+                                th:value="${status}"
+                                th:text="${status.getAlias()}"
+                                th:selected="${status == selectedStatus}">
                         </option>
                     </select>
-                    <button type="submit" class="btn btn-primary">Фільтрувати</button>
+                    <button type="submit" class="btn filter">Фільтрувати</button>
                 </form>
 
                 <form th:action="@{/articles}" method="get" class="d-inline-block">
-                    <button type="submit" class="btn btn-primary">Всі товари</button>
+                    <button type="submit" class="btn tovar">Всі товари</button>
                 </form>
             </div>
+
 
             <div class="tableted">
                 <table class="table table-striped">
                     <thead class="sticky-header">
                         <tr>
-                            <th>ID</th>
-                            <th>Категорія</th>
-                            <th>Назва</th>
-                            <th>Ціна закупівлі</th>
-                            <th>Ціна продажу</th>
-                            <th>Витрати</th>
-                            <th>Прибуток</th>
-                            <th>Кількість</th>
-                            <th>Продано</th>
-                            <th>Залишок</th>
-                            <th>Статус</th>
-                            <th>Дата створення</th>
+                            <th style="width: 8%;">ID</th>
+                            <th style="width: 8%;">Категорія</th>
+                            <th style="width: 8%;">Назва</th>
+                            <th style="width: 8%;">Ціна закупівлі</th>
+                            <th style="width: 8%;">Ціна продажу</th>
+                            <th style="width: 8%;">Витрати</th>
+                            <th style="width: 8%;">Прибуток</th>
+                            <th style="width: 8%;">Кількість</th>
+                            <th style="width: 8%;">Продано</th>
+                            <th style="width: 8%;">Залишок</th>
+                            <th style="width: 8%;">Статус</th>
+                            <th style="width: 8%;">Дата створення</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tbody">
                         <tr th:each="article : ${articles}">
                             <td th:text="${article.id}"></td>
                             <td th:text="${article.category.name}"></td>
@@ -78,8 +88,13 @@
                     </tbody>
                 </table>
             </div>
+
+
+
         </div>
+
     </div>
+
 </body>
 
 </html>

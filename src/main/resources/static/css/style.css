@@ -100,12 +100,6 @@
   border: 2px solid black;
 }
 
-.tbody {
-  display: block; /* Позволяет применять прокрутку к tbody */
-  max-height: 1200px; /* Ограничиваем высоту для прокрутки */
-  overflow-y: auto; /* Включаем вертикальную прокрутку */
-}
-
 .tableted {
   margin-top: 3.125rem;
   max-height: 93.75rem; /* Ограничение высоты блока */
@@ -120,11 +114,13 @@
 }
 
 .table {
-  width: 100%; /* Ширина таблицы 100% */
   border: 1px solid black;
+  width: 87.5rem;
+  width: 100%;
+  border-collapse: separate; /* Включаем раздельное отображение границ */
+  border-spacing: 0 10px; /* Горизонтальные отступы между строками */
   margin: 0 auto;
   font-size: 1.125rem;
-  table-layout: fixed; /* Фиксированное расположение таблицы */
 }
 
 thead {
@@ -132,11 +128,26 @@ thead {
   display: block; /* Это позволит использовать фиксированные ширины */
 }
 
-th, td {
+.tbody {
+  display: block; /* Позволяет применять прокрутку к tbody */
+  max-height: 1200px; /* Ограничиваем высоту для прокрутки */
+  overflow-y: auto; /* Включаем вертикальную прокрутку */
+}
+
+tbody tr {
+  background-color: rgba(5, 5, 5, 0.482); /* Легкий фон для строк */
+  font-size: 1.25rem;
+  color: white;
+}
+
+th,
+td {
   width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
-  overflow: hidden; /* Скрыть переполненные данные */
-  text-overflow: ellipsis; /* Добавить многоточие для переполненного текста */
-  white-space: nowrap; /* Запретить перенос строк */
+  text-align: center; /* Центрируем текст */
+  vertical-align: middle; /* Выравниваем по вертикали */
+  overflow-wrap: break-word; /* Разрешаем перенос слов */
+  word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
+  white-space: normal; /* Позволяем перенос строк */
 }
 
 th {
@@ -147,19 +158,14 @@ th {
   padding: 0.625rem;
 }
 
-.tbodyses tr {
-  background-color: rgba(233, 226, 226, 0.347);
-  border-radius: 0.3125rem;
-  margin: 0.3125rem 0;
-  box-shadow: 1px 1px 5px black;
-}
-
-.tbodyses td {
-  font-size: 1.125rem;
-  font-family: "Philosopher", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  padding: 0.625rem;
+td {
+  padding: 10px; /* Отступы внутри ячеек */
+  white-space: normal; /* Позволяет перенос строк */
+  overflow-wrap: break-word; /* Позволяет перенос слов */
+  word-wrap: break-word; /* Для совместимости */
+  text-align: center; /* Центрируем текст по горизонтали */
+  vertical-align: middle; /* Центрируем текст по вертикали */
+  width: 8%; /* Убедитесь, что ширина ячейки установлена */
 }
 
 .error-message {

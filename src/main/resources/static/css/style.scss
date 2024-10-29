@@ -132,12 +132,6 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	}
 }
 
-.tbody {
-	display: block; /* Позволяет применять прокрутку к tbody */
-	max-height: 1200px; /* Ограничиваем высоту для прокрутки */
-	overflow-y: auto; /* Включаем вертикальную прокрутку */
-}
-
 .tableted {
 	margin-top: toRem(50);
 	max-height: toRem(1500); /* Ограничение высоты блока */
@@ -152,12 +146,17 @@ $maxWidth: 1620; // Ширина полотна (макета)
 }
 
 .table {
-	width: 100%; /* Ширина таблицы 100% */
+	// width: 100%; /* Ширина таблицы 100% */
 	border: 1px solid black;
-	// width: toRem(1400);
+	width: toRem(1400);
+	// margin: 0 auto;
+	// font-size: toRem(18);
+	// table-layout: fixed; /* Фиксированное расположение таблицы */
+	width: 100%;
+	border-collapse: separate; /* Включаем раздельное отображение границ */
+	border-spacing: 0 10px; /* Горизонтальные отступы между строками */
 	margin: 0 auto;
 	font-size: toRem(18);
-	table-layout: fixed; /* Фиксированное расположение таблицы */
 }
 
 thead {
@@ -165,12 +164,28 @@ thead {
 	display: block; /* Это позволит использовать фиксированные ширины */
 }
 
+.tbody {
+	display: block; /* Позволяет применять прокрутку к tbody */
+	max-height: 1200px; /* Ограничиваем высоту для прокрутки */
+	overflow-y: auto; /* Включаем вертикальную прокрутку */
+}
 
-th, td {
-    width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
-    overflow: hidden; /* Скрыть переполненные данные */
-    text-overflow: ellipsis; /* Добавить многоточие для переполненного текста */
-    white-space: nowrap; /* Запретить перенос строк */
+tbody tr {
+	background-color: rgba(5, 5, 5, 0.482); /* Легкий фон для строк */
+	font-size: toRem(20);
+	color: white;
+	
+}
+
+th,
+td {
+	width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
+	text-align: center; /* Центрируем текст */
+	vertical-align: middle; /* Выравниваем по вертикали */
+	overflow-wrap: break-word; /* Разрешаем перенос слов */
+	word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
+	white-space: normal; /* Позволяем перенос строк */
+	
 }
 
 th {
@@ -181,20 +196,16 @@ th {
 	padding: toRem(10);
 }
 
-.tbodyses tr {
-	background-color: rgba(233, 226, 226, 0.347);
-	border-radius: toRem(5);
-	margin: toRem(5) 0;
-	box-shadow: 1px 1px 5px black;
+td {
+	padding: 10px; /* Отступы внутри ячеек */
+	white-space: normal; /* Позволяет перенос строк */
+	overflow-wrap: break-word; /* Позволяет перенос слов */
+	word-wrap: break-word; /* Для совместимости */
+	text-align: center; /* Центрируем текст по горизонтали */
+	vertical-align: middle; /* Центрируем текст по вертикали */
+	width: 8%; /* Убедитесь, что ширина ячейки установлена */
 }
 
-.tbodyses td {
-	font-size: toRem(18);
-	font-family: "Philosopher", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	padding: toRem(10);
-}
 // ======================================================
 
 .error-message {

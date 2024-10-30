@@ -12,5 +12,7 @@ public abstract interface ArticleRepository extends JpaRepository<Article, Integ
 
     List<Article> findAllByOrderByIdAsc();
 
+    List<Article> findAllByNameContainingIgnoreCaseOrderByIdAsc(String name);
+
 
 }

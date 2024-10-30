@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import storagebox.entities.Article;
 import storagebox.entities.ArticleStatus;
@@ -44,6 +43,11 @@ public class ArticleController {
         return Arrays.asList(ArticleStatus.values());
     }
 
+    @ModelAttribute(name = "searchName")
+    public String getSearchName() {
+        return new String("");
+    }
+
     @GetMapping
     public String getArticles(Model model) {
         model.addAttribute("articles", articleService.findAll());
@@ -52,10 +56,20 @@ public class ArticleController {
 
     @GetMapping("/filter-by-status")
     public String filterByStatus(@RequestParam("status") ArticleStatus status, Model model) {
-        List<Article> articles = articleService.findAll(status);
+        if (status == null) {
+            model.addAttribute("status", status);
+            return "redirect:/articles";
+        }
+        List<Article> articles = articleService.findAllByStatus(status);
         model.addAttribute("articles", articles);
         model.addAttribute("statuses", ArticleStatus.values());
         model.addAttribute("selectedStatus", status);
+        return "articles";
+    }
+
+    @GetMapping("/search-by-name")
+    public String searchByName(@RequestParam("searchName") String searchName, Model model) {
+        model.addAttribute("articles", articleService.findAllByName(searchName));
         return "articles";
     }
 

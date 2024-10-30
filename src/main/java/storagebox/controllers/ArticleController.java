@@ -49,7 +49,13 @@ public class ArticleController {
     }
 
     @GetMapping
-    public String getArticles(Model model) {
+    public String getArticlesINSTOCK(Model model) {
+        model.addAttribute("articles", articleService.findAllByStatus(ArticleStatus.IN_STOCK));
+        return "articles";
+    }
+
+    @GetMapping("/all-articles")
+    public String getAllArticles(Model model) {
         model.addAttribute("articles", articleService.findAll());
         return "articles";
     }

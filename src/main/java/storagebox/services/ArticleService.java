@@ -12,7 +12,6 @@ public interface ArticleService {
 
     public List<Article> findAll();
 
-
     public List<Article> findAllByStatus(ArticleStatus status);
 
     public List<Article> findAllByName(String name);
@@ -22,7 +21,6 @@ public interface ArticleService {
     public Article findById(int id) throws ArticleNotFoundException ;
 
     public void update(int id, Article articleFromView) throws ArticleNotFoundException, WrongValueException ;
-
 
     public void delete(int id) throws ArticleNotFoundException ;
 

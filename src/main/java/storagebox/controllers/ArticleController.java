@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import storagebox.entities.Article;
 import storagebox.entities.ArticleStatus;
@@ -67,6 +68,7 @@ public class ArticleController {
             return "redirect:/articles";
         }
         List<Article> articles = articleService.findAllByStatus(status);
+
         model.addAttribute("articles", articles);
         model.addAttribute("statuses", ArticleStatus.values());
         model.addAttribute("selectedStatus", status);

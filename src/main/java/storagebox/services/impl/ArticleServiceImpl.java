@@ -26,9 +26,13 @@ public class ArticleServiceImpl implements ArticleService {
         return articleRepository.findAllByOrderByIdAsc();
     }
 
-    public List<Article> findAll(ArticleStatus status) {
+    public List<Article> findAllByStatus(ArticleStatus status) {
         return articleRepository.findAllByOrderByIdAsc().stream()
                 .filter((article -> article.getStatus().equals(status))).toList();
+    }
+
+    public List<Article> findAllByName(String searchName) {
+        return articleRepository.findAllByNameContainingIgnoreCaseOrderByIdAsc(searchName);
     }
 
 

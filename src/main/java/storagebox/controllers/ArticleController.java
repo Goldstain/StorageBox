@@ -44,18 +44,40 @@ public class ArticleController {
         return Arrays.asList(ArticleStatus.values());
     }
 
+    @ModelAttribute(name = "searchName")
+    public String getSearchName() {
+        return new String("");
+    }
+
     @GetMapping
-    public String getArticles(Model model) {
+    public String getArticlesINSTOCK(Model model) {
+        model.addAttribute("articles", articleService.findAllByStatus(ArticleStatus.IN_STOCK));
+        return "articles";
+    }
+
+    @GetMapping("/all-articles")
+    public String getAllArticles(Model model) {
         model.addAttribute("articles", articleService.findAll());
         return "articles";
     }
 
     @GetMapping("/filter-by-status")
     public String filterByStatus(@RequestParam("status") ArticleStatus status, Model model) {
-        List<Article> articles = articleService.findAll(status);
+        if (status == null) {
+            model.addAttribute("status", status);
+            return "redirect:/articles";
+        }
+        List<Article> articles = articleService.findAllByStatus(status);
+
         model.addAttribute("articles", articles);
         model.addAttribute("statuses", ArticleStatus.values());
         model.addAttribute("selectedStatus", status);
+        return "articles";
+    }
+
+    @GetMapping("/search-by-name")
+    public String searchByName(@RequestParam("searchName") String searchName, Model model) {
+        model.addAttribute("articles", articleService.findAllByName(searchName));
         return "articles";
     }
 

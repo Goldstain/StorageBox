@@ -6,16 +6,18 @@
     <title>Новий товар</title>
 
     <link
-
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             rel="stylesheet">
 
     <link rel="stylesheet" href="src\main/resources/static/css/style.css">
+<<<<<<< HEAD
     <link rel="stylesheet" th:href="@{/css/styles.css}">
 
+=======
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+>>>>>>> 482710f35e3438ccd7ab772ce40d1de9cbff8b3a
 
 </head>
-
 
 <body>
 
@@ -39,7 +41,6 @@
                     <label for="name">Назва</label>
                     <input class="input-field" type="text" id="name" th:field="*{name}" placeholder="Введіть назву">
                     <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
-                    <div></div>
                 </div>
                 <div class="adaptiv-class">
                     <label for="purchase">Ціна закупівлі</label>

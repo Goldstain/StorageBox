@@ -9,10 +9,9 @@
 }
 
 .wrr {
-  background-color: #cd5858;
   background-image: url(../css/icon/4.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 }
 
@@ -22,21 +21,16 @@
   left: 0; /* Прикрепить к левой части */
   width: 100%; /* Задает ширину 100% */
   height: 100vh; /* Задает высоту 100% */
-  background-color: rgba(247, 244, 244, 0.8823529412);
+  background-color: rgba(0, 0, 255, 0.205);
 }
 
 .wrapper__container {
   position: relative;
-  background-color: white;
 }
 
 .btn-group {
   display: flex;
   justify-content: space-around;
-}
-
-.btn-group select {
-  padding-right: 30px; /* Добавляем отступ для иконки */
 }
 
 .d-inline-block select {
@@ -45,9 +39,9 @@
 }
 
 .d-inline-block label {
-  border: 1px solid rgb(227, 39, 39);
-  background-color: rgb(227, 39, 39);
-  color: white;
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  background-color: rgb(251, 163, 163);
+  color: rgb(6, 6, 6);
   font-size: 1.125rem;
   border-radius: 0.625rem;
   font-family: "Philosopher", sans-serif;
@@ -57,13 +51,13 @@
 }
 
 .btn {
-  padding: 0.9375rem;
+  padding: 0.625rem 0.9375rem;
   font-size: 1.25rem;
   border-radius: 0.625rem;
   font-family: "Philosopher", sans-serif;
   font-weight: 700;
   font-style: italic;
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
 }
 .btn:hover {
   background-color: rgb(128, 128, 241);
@@ -71,50 +65,58 @@
 }
 
 .btn-primary {
-  background-color: rgb(38, 186, 15);
+  background-color: rgba(38, 186, 15, 0.687);
   border: 2px solid rgb(38, 186, 15);
-  color: rgb(16, 16, 16);
+  color: white;
 }
 .btn-primary:hover {
-  background-color: rgb(143, 241, 128);
+  background-color: rgba(143, 241, 128, 0.682);
   border: 2px solid black;
+  color: rgb(10, 10, 10);
 }
 
 .filter {
-  background-color: rgb(251, 163, 163);
+  background-color: rgba(251, 163, 163, 0.881);
   border: 2px solid rgb(251, 163, 163);
   color: rgb(16, 16, 16);
+  cursor: pointer;
 }
 .filter:hover {
-  background-color: rgb(243, 93, 93);
+  background-color: rgba(243, 93, 93, 0.662);
   border: 2px solid black;
+  color: rgb(249, 248, 248);
 }
 
 .tovar {
   background-color: rgb(117, 10, 225);
   border: 2px solid rgb(117, 10, 225);
   color: rgb(247, 245, 245);
+  cursor: pointer;
 }
 .tovar:hover {
-  background-color: rgb(165, 90, 240);
+  background-color: rgba(0, 0, 255, 0.199);
   border: 2px solid black;
 }
 
 .tableted {
+  position: relative; /* для липкости шапки */
   margin-top: 3.125rem;
-  max-height: 93.75rem; /* Ограничение высоты блока */
   overflow: hidden; /* Скрываем все, что выходит за пределы блока */
 }
 
 .sticky-header th {
+  background-color: rgba(0, 0, 255, 0.199);
+}
+
+.sticky-header {
+  border-radius: 5px;
   position: sticky; /* Делаем заголовок липким */
-  top: 0; /* Приклеиваем к верхней части блока */
-  background-color: rgb(233, 226, 226);
-  z-index: 1; /* Устанавливаем порядок наложения */
+  top: 0; /* Устанавливаем отступ сверху */
+  background-color: white; /* Задайте цвет фона, чтобы скрыть содержимое под ним */
+  z-index: 10; /* Убедитесь, что заголовок выше других элементов */
 }
 
 .table {
-  border: 1px solid black;
   width: 87.5rem;
   width: 100%;
   border-collapse: separate; /* Включаем раздельное отображение границ */
@@ -124,18 +126,21 @@
 }
 
 thead {
-  background-color: rgb(233, 226, 226);
+  background-color: rgba(0, 0, 255, 0.199);
   display: block; /* Это позволит использовать фиксированные ширины */
 }
 
 .tbody {
   display: block; /* Позволяет применять прокрутку к tbody */
-  max-height: 1200px; /* Ограничиваем высоту для прокрутки */
   overflow-y: auto; /* Включаем вертикальную прокрутку */
 }
 
+.tbody a {
+  color: white;
+}
+
 tbody tr {
-  background-color: rgba(5, 5, 5, 0.482); /* Легкий фон для строк */
+  background-color: rgba(0, 0, 255, 0.199); /* Легкий фон для строк */
   font-size: 1.25rem;
   color: white;
 }
@@ -148,6 +153,7 @@ td {
   overflow-wrap: break-word; /* Разрешаем перенос слов */
   word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
   white-space: normal; /* Позволяем перенос строк */
+  border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
 }
 
 th {
@@ -156,6 +162,7 @@ th {
   font-weight: 700;
   font-style: normal;
   padding: 0.625rem;
+  color: rgb(17, 17, 17);
 }
 
 td {
@@ -181,11 +188,10 @@ td {
 }
 
 .wrapper {
-  height: 100vh;
+  height: 75vh;
 }
 .wrapper__container {
   border-radius: 10px;
-  background-color: rgba(172, 255, 47, 0);
 }
 
 .new {
@@ -235,11 +241,20 @@ input::placeholder {
   padding: 10px; /* Отступы */
   border-radius: 5px; /* Скругление углов */
   font-size: 16px; /* Размер шрифта */
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
 }
 
 /* Стили для выбранного элемента */
 .form-control option {
   color: #0c0b0b; /* Цвет текста для опций */
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  background-color: rgb(251, 163, 163);
+  font-size: 1.125rem;
+  border-radius: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: 0.625rem;
 }
 
 .input-field {
@@ -254,12 +269,18 @@ input::placeholder {
 }
 
 .d-flex {
+  position: absolute;
+  top: 9.375rem;
+  margin-left: 50%;
   display: flex;
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
   margin-top: 6.25rem;
 }
 
+.adaptiv-class {
+  position: relative;
+}
 @media (max-width: 87.5625rem) {
   .adaptiv-class {
     display: flex;
@@ -269,12 +290,26 @@ input::placeholder {
   }
 }
 
+.adaptiv-class .error-message {
+  position: absolute;
+  top: 70px;
+  background-color: white;
+  z-index: 10;
+}
+
 .btn-back {
-  background-color: #ccc;
+  background-color: rgba(0, 0, 255, 0.199);
 }
 .btn-back:hover {
   background-color: #eae7e7;
   border: none;
+}
+
+.d-flex a {
+  color: white;
+}
+.d-flex a:hover {
+  color: rgb(13, 13, 13);
 }
 
 .wrrr {
@@ -282,10 +317,11 @@ input::placeholder {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 97vh;
 }
 
 .pr {
-  background-color: rgba(0, 0, 0, 0.716);
+  background-color: rgba(0, 0, 255, 0.182);
 }
 
 .product {
@@ -334,60 +370,100 @@ input::placeholder {
   color: white;
 }
 
-.button__block--button {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.button__block--status label {
+  color: #0c0b0b; /* Цвет текста для опций */
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  background-color: rgb(251, 163, 163);
+  font-size: 1.125rem;
+  border-radius: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: 0.625rem;
 }
 
-.btn-danger {
-  background-color: #faf7f7;
+.button__block--button form {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
 }
-.btn-danger:hover {
-  background-color: #cb0b0b;
-  color: #eae7e7;
+
+.d-flex2 {
+  display: flex;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  margin-top: 6.25rem;
+}
+.d-flex2 a {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+.d-flex2 a:hover {
+  color: rgb(8, 8, 8);
+}
+
+.button-danger {
+  margin-top: 6.25rem;
+  background-color: rgba(251, 163, 163, 0.881);
+  border: 2px solid rgb(251, 163, 163);
+  color: rgb(16, 16, 16);
+  height: 3.125rem;
+  cursor: pointer;
+}
+.button-danger:hover {
+  background-color: rgba(243, 93, 93, 0.662);
+  border: 2px solid black;
+  color: rgb(249, 248, 248);
 }
 
 .btn-primary,
-.btn-danger {
+.btn-danger,
+.button-danger {
   cursor: pointer;
 }
 
-.new--wr {
-  position: relative;
-  background-color: white;
-  background-image: url(../css/icon/10.jpg);
-  background-size: 10%; /* Заполняет весь блок */
-  background-position: bottom -50px right 0; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Не повторять изображение */
-}
-.new--wr img {
+.wrapper.new--wr::before {
+  content: "";
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
+  height: 100%; /* Увеличиваем высоту, чтобы изображение поместилось */
+  background-image: url(../css/icon/11.jpg); /* Укажите путь к вашему изображению */
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform-origin: center; /* Центр вращения */
+  z-index: 0; /* Помещаем позади содержимого */
+}
+
+.wrapper.new--wr .new__container {
+  position: relative;
+  z-index: 10; /* Помещаем содержимое поверх фона */
+}
+
+.wrapper.new--wr::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
+  background-color: rgba(0, 0, 255, 0.187); /* Затемнение фона, настройте уровень затемнения */
+  z-index: 1; /* Помещаем поверх фона */
 }
 
 .new__container {
-  width: 43.75rem;
-  height: 43.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  background-image: url(../css/icon/e7.jpg);
-  background-size: cover; /* Заполняет весь блок */
-  background-position: center; /* Центрирует изображение */
-  background-repeat: no-repeat; /* Не повторять изображение */
 }
 .new__container h2 {
   font-family: "Philosopher", sans-serif;
   font-size: 3.125rem;
   font-weight: 700;
   font-style: normal;
-  color: black;
+  color: rgba(0, 0, 255, 0.333);
   text-shadow: 2px -2px 5px rgb(85, 82, 82);
 }
 .new__container label {
@@ -395,23 +471,17 @@ input::placeholder {
   font-size: 1.5rem;
   font-weight: 700;
   font-style: normal;
-  color: black;
+  color: rgba(0, 0, 255, 0.333);
   text-shadow: 1px -1px 5px rgb(85, 82, 82);
 }
 
-.new__container::before {
-  content: ""; /* Псевдоэлемент должен иметь содержимое */
-  position: absolute; /* Позиционируем относительно родителя */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.867);
-  z-index: 1; /* Находится выше фона, но ниже содержимого */
+.d-flex3 {
+  margin-top: 3.125rem;
+  display: flex;
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
 }
-
-.new__container h2,
-.new__container form {
-  position: relative; /* Содержимое должно быть выше наложения */
-  z-index: 2; /* Выше псевдоэлемента */
+.d-flex3 a {
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }/*# sourceMappingURL=style.css.map */

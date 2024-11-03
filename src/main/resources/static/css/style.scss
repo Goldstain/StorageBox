@@ -174,7 +174,7 @@ thead {
 	color: white;
 }
 tbody tr {
-	background-color: rgba(0, 0, 255, 0.199); /* Легкий фон для строк */
+	background-color: rgba(0, 0, 255, 0.345); /* Легкий фон для строк */
 	font-size: toRem(20);
 	color: white;
 }
@@ -213,6 +213,7 @@ td {
 
 .error-message {
 	color: #ff0000;
+	text-shadow: none;
 }
 .wr {
 	background-image: url(../css/icon/2.jpg);
@@ -297,8 +298,8 @@ input::placeholder {
 
 .d-flex {
 	position: absolute;
-	top: toRem(150);
-	margin-left: 50%;
+	top: toRem(250);
+	margin-left: 40%;
 	display: flex;
 	column-gap: toRem(20);
 	margin-top: toRem(100);
@@ -306,6 +307,7 @@ input::placeholder {
 
 .adaptiv-class {
 	// border: 1px solid black;
+	min-height: toRem(130);
 	position: relative;
 	@media (max-width: toRem(1401)) {
 		display: flex;
@@ -318,7 +320,9 @@ input::placeholder {
 .adaptiv-class .error-message {
 	position: absolute;
 	top: 70px;
-	background-color: white;
+	padding: toRem(10);
+	text-align: center;
+	// background-color: rgba(255, 255, 255, 0.096);
 	z-index: 10;
 }
 
@@ -424,7 +428,11 @@ input::placeholder {
 		}
 	}
 }
-
+.d-flex4 {
+	position: absolute;
+	bottom: toRem(50);
+	left: toRem(550);
+}
 .button-danger {
 	margin-top: toRem(100);
 	background-color: rgba(251, 163, 163, 0.881);

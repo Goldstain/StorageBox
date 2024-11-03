@@ -140,7 +140,7 @@ thead {
 }
 
 tbody tr {
-  background-color: rgba(0, 0, 255, 0.199); /* Легкий фон для строк */
+  background-color: rgba(0, 0, 255, 0.345); /* Легкий фон для строк */
   font-size: 1.25rem;
   color: white;
 }
@@ -177,6 +177,7 @@ td {
 
 .error-message {
   color: #ff0000;
+  text-shadow: none;
 }
 
 .wr {
@@ -270,8 +271,8 @@ input::placeholder {
 
 .d-flex {
   position: absolute;
-  top: 9.375rem;
-  margin-left: 50%;
+  top: 15.625rem;
+  margin-left: 40%;
   display: flex;
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
@@ -279,6 +280,7 @@ input::placeholder {
 }
 
 .adaptiv-class {
+  min-height: 8.125rem;
   position: relative;
 }
 @media (max-width: 87.5625rem) {
@@ -293,7 +295,8 @@ input::placeholder {
 .adaptiv-class .error-message {
   position: absolute;
   top: 70px;
-  background-color: white;
+  padding: 0.625rem;
+  text-align: center;
   z-index: 10;
 }
 
@@ -401,6 +404,12 @@ input::placeholder {
 }
 .d-flex2 a:hover {
   color: rgb(8, 8, 8);
+}
+
+.d-flex4 {
+  position: absolute;
+  bottom: 3.125rem;
+  left: 34.375rem;
 }
 
 .button-danger {

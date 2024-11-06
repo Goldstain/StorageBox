@@ -130,7 +130,14 @@ public class ArticleController {
             return "edit-article";
         }
         try {
+            Category category = categoryService.findById(article.getCategory().getId());
+            article.setCategory(category);
             articleService.update(id, article);
+        } catch (CategoryNotFoundException e) {
+            e.printStackTrace();
+            model.addAttribute("article", article);
+            model.addAttribute("error-message", "Категорію не знайдено");
+            return "edit-article";
         } catch (ArticleNotFoundException e) {
             e.printStackTrace();
             model.addAttribute("article", article);

@@ -56,6 +56,7 @@ public class ArticleServiceImpl implements ArticleService {
             throw new WrongValueException("Wrong value in field");
         }
         articleFromDB.setName(articleFromView.getName());
+        articleFromDB.setCategory(articleFromView.getCategory());
         articleFromDB.setPurchase(articleFromView.getPurchase());
         articleFromDB.setSellingPrize(articleFromView.getSellingPrize());
         articleFromDB.setSpentMoney(articleFromView.getSpentMoney());

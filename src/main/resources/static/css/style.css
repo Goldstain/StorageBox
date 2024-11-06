@@ -23,7 +23,11 @@
   left: 0; /* Прикрепить к левой части */
   width: 100%; /* Задает ширину 100% */
   height: 100vh; /* Задает высоту 100% */
+<<<<<<< HEAD
   background-color: rgba(0, 0, 255, 0.39);
+=======
+  background-color: rgba(0, 0, 255, 0.205);
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 }
 
 .wrapper__container {
@@ -100,6 +104,56 @@
   border: 2px solid black;
 }
 
+<<<<<<< HEAD
+=======
+.tableted {
+  position: relative; /* для липкости шапки */
+  margin-top: 3.125rem;
+  overflow: hidden; /* Скрываем все, что выходит за пределы блока */
+}
+
+.sticky-header th {
+  background-color: rgba(0, 0, 255, 0.199);
+}
+
+.sticky-header {
+  border-radius: 5px;
+  position: sticky; /* Делаем заголовок липким */
+  top: 0; /* Устанавливаем отступ сверху */
+  background-color: white; /* Задайте цвет фона, чтобы скрыть содержимое под ним */
+  z-index: 10; /* Убедитесь, что заголовок выше других элементов */
+}
+
+.table {
+  width: 87.5rem;
+  width: 100%;
+  border-collapse: separate; /* Включаем раздельное отображение границ */
+  border-spacing: 0 10px; /* Горизонтальные отступы между строками */
+  margin: 0 auto;
+  font-size: 1.125rem;
+}
+
+thead {
+  background-color: rgba(0, 0, 255, 0.199);
+  display: block; /* Это позволит использовать фиксированные ширины */
+}
+
+.tbody {
+  display: block; /* Позволяет применять прокрутку к tbody */
+  overflow-y: auto; /* Включаем вертикальную прокрутку */
+}
+
+.tbody a {
+  color: white;
+}
+
+tbody tr {
+  background-color: rgba(0, 0, 255, 0.345); /* Легкий фон для строк */
+  font-size: 1.25rem;
+  color: white;
+}
+
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 th,
 td {
   width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
@@ -109,10 +163,21 @@ td {
   word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
   white-space: normal; /* Позволяем перенос строк */
   border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
+<<<<<<< HEAD
+=======
+}
+
+th {
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   font-size: 1.25rem;
   font-family: "Philosopher", sans-serif;
   font-weight: 700;
   font-style: normal;
+<<<<<<< HEAD
+=======
+  padding: 0.625rem;
+  color: rgb(17, 17, 17);
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 }
 
 .sticky-header th {
@@ -166,6 +231,7 @@ tbody tr:hover {
 
 .error-message {
   color: #ff0000;
+  text-shadow: none;
 }
 
 .wr {
@@ -259,8 +325,13 @@ input::placeholder {
 
 .d-flex {
   position: absolute;
+<<<<<<< HEAD
   top: 9.375rem;
   margin-left: 50%;
+=======
+  top: 15.625rem;
+  margin-left: 40%;
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   display: flex;
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
@@ -268,6 +339,10 @@ input::placeholder {
 }
 
 .adaptiv-class {
+<<<<<<< HEAD
+=======
+  min-height: 8.125rem;
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   position: relative;
 }
 @media (max-width: 87.5625rem) {
@@ -282,7 +357,12 @@ input::placeholder {
 .adaptiv-class .error-message {
   position: absolute;
   top: 70px;
+<<<<<<< HEAD
   background-color: white;
+=======
+  padding: 0.625rem;
+  text-align: center;
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   z-index: 10;
 }
 
@@ -392,6 +472,15 @@ input::placeholder {
   color: rgb(8, 8, 8);
 }
 
+<<<<<<< HEAD
+=======
+.d-flex4 {
+  position: absolute;
+  bottom: 3.125rem;
+  left: 34.375rem;
+}
+
+>>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 .button-danger {
   margin-top: 6.25rem;
   background-color: rgba(251, 163, 163, 0.881);

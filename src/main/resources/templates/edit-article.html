@@ -103,21 +103,21 @@
 
 
 
-<!--            <div class="button__block&#45;&#45;status">-->
+
                 <label class="product__status" for="status">Статус</label>
                 <select id="status" class="form-control" th:field="*{status}">
                     <option value="" disabled selected>Оберіть статус</option>
                     <option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}"></option>
 
                 </select>
-                <div class="d-flex ">
-                <button type="submit" class="btn btn-primary">Зберегти</button>
+                <div class="d-flex4 ">
+                    <button type="submit" class="btn btn-primary">Зберегти</button>
                 </div>
 
             </form>
-                <div class="button__block">
-                    <div class="button__block--button">
-                        <form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}" method="post">
+            <div class="button__block">
+                <div class="button__block--button">
+                    <form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="btn button-danger">Видалити</button>
 
@@ -125,13 +125,13 @@
                             <a href="/articles" class="btn  btn-back">Назад</a>
                         </div>
 
-                        </form>
+                    </form>
 
-                    </div>
                 </div>
+            </div>
 
 
-<!--            </div>-->
+
         </div>
 
 

@@ -467,10 +467,10 @@ input::placeholder {
   left: 0;
   width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
   height: 100%; /* Увеличиваем высоту, чтобы изображение поместилось */
-  background-image: url(../css/icon/11.jpg); /* Укажите путь к вашему изображению */
+  background-image: url(../css/icon/555.jpg); /* Укажите путь к вашему изображению */
   background-repeat: no-repeat;
-  background-size: contain;
-  transform-origin: center; /* Центр вращения */
+  background-size: 100%;
+  background-position: center;
   z-index: 0; /* Помещаем позади содержимого */
 }
 
@@ -500,7 +500,7 @@ input::placeholder {
   font-size: 3.125rem;
   font-weight: 700;
   font-style: normal;
-  color: rgba(0, 0, 255, 0.333);
+  color: white;
   text-shadow: 2px -2px 1px rgb(18, 17, 17), 3px -3px 1px rgb(252, 251, 251), 4px -4px 1px rgb(7, 7, 7);
 }
 .new__container label {
@@ -508,8 +508,8 @@ input::placeholder {
   font-size: 1.5rem;
   font-weight: 700;
   font-style: normal;
-  color: rgba(0, 0, 255, 0.333);
-  text-shadow: 1px -1px 5px rgb(85, 82, 82);
+  color: white;
+  text-shadow: 1px -1px 5px rgb(87, 6, 174);
 }
 
 .d-flex3 {

@@ -57,12 +57,11 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	left: 0; /* Прикрепить к левой части */
 	width: 100%; /* Задает ширину 100% */
 	height: 100vh; /* Задает высоту 100% */
-<<<<<<< HEAD
+
 	background-color: rgba(0, 0, 255, 0.39);
-=======
+
 	// background-color: #f7f4f4e1;
 	background-color: rgba(0, 0, 255, 0.205);
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 }
 
 .wrapper__container {
@@ -88,7 +87,6 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	font-weight: 700;
 	font-style: italic;
 	padding: toRem(10);
-	// margin-right: toRem(20);
 }
 .btn {
 	padding: toRem(10) toRem(15);
@@ -132,55 +130,44 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	color: rgb(247, 245, 245);
 	cursor: pointer;
 	&:hover {
-		// background-color: rgb(165, 90, 240);
 		background-color: rgba(0, 0, 255, 0.199);
 		border: 2px solid black;
 	}
 }
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-<<<<<<< HEAD
-// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-=======
 .tableted {
 	position: relative; /* для липкости шапки */
-	margin-top: toRem(50);
-	// max-height: toRem(1500); /* Ограничение высоты блока */
-	overflow: hidden; /* Скрываем все, что выходит за пределы блока */
+	margin-top: toRem(70);
+	z-index: 50;
+	background-color: rgba(0, 0, 255, 0.409);
+	max-height: 65vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+	overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+	overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+	box-shadow:
+		9px 9px 16px rgb(234, 235, 237),
+		-9px -9px 16px rgb(255, 255, 255);
 }
 
 .sticky-header th {
-	background-color: rgba(0, 0, 255, 0.199);
+	padding: toRem(20);
 }
+
 .sticky-header {
-	border-radius: 5px;
-	position: sticky; /* Делаем заголовок липким */
-	top: 0; /* Устанавливаем отступ сверху */
-	background-color: white; /* Задайте цвет фона, чтобы скрыть содержимое под ним */
-	// background-color: rgba(0, 0, 255, 0.199);
-	z-index: 10; /* Убедитесь, что заголовок выше других элементов */
-}
+	position: sticky; /* Делаем шапку фиксированной */
+	top: 0; /* Прилипание к верхней части контейнера */
+	background-color: rgba(0, 0, 255, 0.874);
+	color: white;
+	z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения 
+	
 .table {
-	// border: 1px solid black;
-	width: toRem(1400);
-	width: 100%;
-	border-collapse: separate; /* Включаем раздельное отображение границ */
+				// /* Включаем раздельное отображение границ */
 	border-spacing: 0 10px; /* Горизонтальные отступы между строками */
 	margin: 0 auto;
 	font-size: toRem(18);
-	// border-collapse: collapse; /* Убираем двойные границы между ячейками */
 }
 
-thead {
-	background-color: rgba(0, 0, 255, 0.199);
-	display: block; /* Это позволит использовать фиксированные ширины */
-}
-
-.tbody {
-	display: block; /* Позволяет применять прокрутку к tbody */
-	// max-height: ; /* Ограничиваем высоту для прокрутки */
-	overflow-y: auto; /* Включаем вертикальную прокрутку */
-}
 .tbody a {
 	color: white;
 }
@@ -189,7 +176,6 @@ tbody tr {
 	font-size: toRem(20);
 	color: white;
 }
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 
 // .................................................................................
 th,
@@ -201,24 +187,15 @@ td {
 	word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
 	white-space: normal; /* Позволяем перенос строк */
 	border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
-<<<<<<< HEAD
-=======
-}
-
-th {
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 	font-size: toRem(20);
 	font-family: "Philosopher", sans-serif;
 	font-weight: 700;
 	font-style: normal;
-<<<<<<< HEAD
+	color: rgb(242, 238, 238);
 }
+
 .sticky-header th {
-	padding: toRem(20);
-=======
 	padding: toRem(10);
-	color: rgb(17, 17, 17);
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 }
 
 .tableted {
@@ -253,9 +230,7 @@ th {
 	position: relative;
 	cursor: pointer;
 }
-tbody tr {
-	color: white;
-}
+
 tbody tr:hover {
 	box-shadow:
 		1px 15px 5px rgba(58, 58, 240, 0.582),
@@ -277,21 +252,19 @@ tbody tr:hover {
 
 .error-message {
 	color: #ff0000;
-	text-shadow: none;
+	text-shadow: 1px 1px 2px white;
 }
 .wr {
 	background-image: url(../css/icon/2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	// height: 100vh;
 	padding-top: toRem(200);
 }
 .wrapper {
 	height: 75vh;
 	&__container {
 		border-radius: 10px;
-		// background-color: rgba(172, 255, 47, 0);
 	}
 }
 .new {
@@ -336,7 +309,6 @@ input::placeholder {
 	box-shadow: 1px 1px 5px rgb(251, 250, 250);
 }
 
-/* Стили для выбранного элемента */
 .form-control option {
 	color: #0c0b0b; /* Цвет текста для опций */
 	box-shadow: 1px 1px 5px rgb(251, 250, 250);
@@ -362,24 +334,17 @@ input::placeholder {
 
 .d-flex {
 	position: absolute;
-<<<<<<< HEAD
 	top: toRem(150);
 	margin-left: 50%;
-=======
 	top: toRem(250);
 	margin-left: 40%;
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 	display: flex;
 	column-gap: toRem(20);
 	margin-top: toRem(100);
 }
 
 .adaptiv-class {
-	// border: 1px solid black;
-<<<<<<< HEAD
-=======
 	min-height: toRem(130);
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 	position: relative;
 	@media (max-width: toRem(1401)) {
 		display: flex;
@@ -392,13 +357,8 @@ input::placeholder {
 .adaptiv-class .error-message {
 	position: absolute;
 	top: 70px;
-<<<<<<< HEAD
-	background-color: white;
-=======
 	padding: toRem(10);
 	text-align: center;
-	// background-color: rgba(255, 255, 255, 0.096);
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 	z-index: 10;
 }
 
@@ -423,14 +383,12 @@ input::placeholder {
 	background-size: cover;
 	background-position: center;
 	height: 97vh;
-	// padding-top: toRem(200);
 }
 .pr {
 	background-color: rgba(0, 0, 255, 0.182);
 }
 .product {
 	text-align: center;
-	// border: 1px solid black;
 	& h2 {
 		font-size: toRem(50);
 		color: black;
@@ -441,8 +399,6 @@ input::placeholder {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
-	// border: 1px solid black;
-	// padding: toRem(30) 0;
 	margin-bottom: toRem(50);
 }
 .form__block--block {
@@ -504,15 +460,13 @@ input::placeholder {
 		}
 	}
 }
-<<<<<<< HEAD
 
-=======
 .d-flex4 {
 	position: absolute;
 	bottom: toRem(50);
 	left: toRem(550);
 }
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
+
 .button-danger {
 	margin-top: toRem(100);
 	background-color: rgba(251, 163, 163, 0.881);
@@ -533,9 +487,6 @@ input::placeholder {
 }
 // ==================================================================
 
-.wrapper {
-}
-
 .wrapper.new--wr::before {
 	content: "";
 	position: absolute;
@@ -543,10 +494,10 @@ input::placeholder {
 	left: 0;
 	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
 	height: 100%; /* Увеличиваем высоту, чтобы изображение поместилось */
-	background-image: url(../css/icon/11.jpg); /* Укажите путь к вашему изображению */
+	background-image: url(../css/icon/555.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
-	background-size: contain;
-	transform-origin: center; /* Центр вращения */
+	background-size: 100%;
+	background-position: center;
 	z-index: 0; /* Помещаем позади содержимого */
 }
 .wrapper.new--wr .new__container {
@@ -576,9 +527,11 @@ input::placeholder {
 			font-size: toRem(50);
 			font-weight: 700;
 			font-style: normal;
-			// color: rgb(248, 243, 243);
-			color: rgba(0, 0, 255, 0.333);
-			text-shadow: 2px -2px 5px rgb(85, 82, 82);
+			color: white;
+			text-shadow:
+				2px -2px 1px rgb(18, 17, 17),
+				3px -3px 1px rgb(252, 251, 251),
+				4px -4px 1px rgb(7, 7, 7);
 		}
 
 		& label {
@@ -586,8 +539,8 @@ input::placeholder {
 			font-size: toRem(24);
 			font-weight: 700;
 			font-style: normal;
-			color: rgba(0, 0, 255, 0.333);
-			text-shadow: 1px -1px 5px rgb(85, 82, 82);
+			color: white;
+			text-shadow: 1px -1px 5px rgb(87, 6, 174);
 		}
 	}
 }
@@ -598,5 +551,9 @@ input::placeholder {
 	& a {
 		color: white;
 		text-shadow: 1px 1px 2px black;
+		box-shadow:2px 2px 2px rgba(0, 0, 255, 0.333);
 	}
+}
+.d-flex3 button {
+	box-shadow:2px 2px 2px rgba(55, 255, 0, 0.936);
 }

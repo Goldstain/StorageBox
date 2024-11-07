@@ -23,11 +23,8 @@
   left: 0; /* Прикрепить к левой части */
   width: 100%; /* Задает ширину 100% */
   height: 100vh; /* Задает высоту 100% */
-<<<<<<< HEAD
   background-color: rgba(0, 0, 255, 0.39);
-=======
   background-color: rgba(0, 0, 255, 0.205);
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 }
 
 .wrapper__container {
@@ -104,43 +101,34 @@
   border: 2px solid black;
 }
 
-<<<<<<< HEAD
-=======
 .tableted {
   position: relative; /* для липкости шапки */
-  margin-top: 3.125rem;
-  overflow: hidden; /* Скрываем все, что выходит за пределы блока */
+  margin-top: 4.375rem;
+  z-index: 50;
+  background-color: rgba(0, 0, 255, 0.409);
+  max-height: 65vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
 }
 
 .sticky-header th {
-  background-color: rgba(0, 0, 255, 0.199);
+  padding: 1.25rem;
 }
 
 .sticky-header {
-  border-radius: 5px;
-  position: sticky; /* Делаем заголовок липким */
-  top: 0; /* Устанавливаем отступ сверху */
-  background-color: white; /* Задайте цвет фона, чтобы скрыть содержимое под ним */
-  z-index: 10; /* Убедитесь, что заголовок выше других элементов */
-}
+  position: sticky; /* Делаем шапку фиксированной */
+  top: 0; /* Прилипание к верхней части контейнера */
+  background-color: rgba(0, 0, 255, 0.874);
+  color: white;
+  z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения 
 
 .table {
-  width: 87.5rem;
-  width: 100%;
-  border-collapse: separate; /* Включаем раздельное отображение границ */
+				// /* Включаем раздельное отображение границ */
   border-spacing: 0 10px; /* Горизонтальные отступы между строками */
   margin: 0 auto;
   font-size: 1.125rem;
-}
-
-thead {
-  background-color: rgba(0, 0, 255, 0.199);
-  display: block; /* Это позволит использовать фиксированные ширины */
-}
-
-.tbody {
-  display: block; /* Позволяет применять прокрутку к tbody */
-  overflow-y: auto; /* Включаем вертикальную прокрутку */
 }
 
 .tbody a {
@@ -153,7 +141,6 @@ tbody tr {
   color: white;
 }
 
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 th,
 td {
   width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
@@ -163,25 +150,15 @@ td {
   word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
   white-space: normal; /* Позволяем перенос строк */
   border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
-<<<<<<< HEAD
-=======
-}
-
-th {
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   font-size: 1.25rem;
   font-family: "Philosopher", sans-serif;
   font-weight: 700;
   font-style: normal;
-<<<<<<< HEAD
-=======
-  padding: 0.625rem;
-  color: rgb(17, 17, 17);
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
+  color: rgb(242, 238, 238);
 }
 
 .sticky-header th {
-  padding: 1.25rem;
+  padding: 0.625rem;
 }
 
 .tableted {
@@ -215,10 +192,6 @@ th {
   cursor: pointer;
 }
 
-tbody tr {
-  color: white;
-}
-
 tbody tr:hover {
   box-shadow: 1px 15px 5px rgba(58, 58, 240, 0.582), -1px -15px 5px rgba(51, 51, 252, 0.519);
   background-color: blue;
@@ -231,7 +204,7 @@ tbody tr:hover {
 
 .error-message {
   color: #ff0000;
-  text-shadow: none;
+  text-shadow: 1px 1px 2px white;
 }
 
 .wr {
@@ -299,7 +272,6 @@ input::placeholder {
   box-shadow: 1px 1px 5px rgb(251, 250, 250);
 }
 
-/* Стили для выбранного элемента */
 .form-control option {
   color: #0c0b0b; /* Цвет текста для опций */
   box-shadow: 1px 1px 5px rgb(251, 250, 250);
@@ -325,13 +297,10 @@ input::placeholder {
 
 .d-flex {
   position: absolute;
-<<<<<<< HEAD
   top: 9.375rem;
   margin-left: 50%;
-=======
   top: 15.625rem;
   margin-left: 40%;
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   display: flex;
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
@@ -339,10 +308,7 @@ input::placeholder {
 }
 
 .adaptiv-class {
-<<<<<<< HEAD
-=======
   min-height: 8.125rem;
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   position: relative;
 }
 @media (max-width: 87.5625rem) {
@@ -357,12 +323,8 @@ input::placeholder {
 .adaptiv-class .error-message {
   position: absolute;
   top: 70px;
-<<<<<<< HEAD
-  background-color: white;
-=======
   padding: 0.625rem;
   text-align: center;
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
   z-index: 10;
 }
 
@@ -472,15 +434,12 @@ input::placeholder {
   color: rgb(8, 8, 8);
 }
 
-<<<<<<< HEAD
-=======
 .d-flex4 {
   position: absolute;
   bottom: 3.125rem;
   left: 34.375rem;
 }
 
->>>>>>> 65da825125d1f95d52477f736abfe07a0dd2c860
 .button-danger {
   margin-top: 6.25rem;
   background-color: rgba(251, 163, 163, 0.881);
@@ -508,10 +467,10 @@ input::placeholder {
   left: 0;
   width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
   height: 100%; /* Увеличиваем высоту, чтобы изображение поместилось */
-  background-image: url(../css/icon/11.jpg); /* Укажите путь к вашему изображению */
+  background-image: url(../css/icon/555.jpg); /* Укажите путь к вашему изображению */
   background-repeat: no-repeat;
-  background-size: contain;
-  transform-origin: center; /* Центр вращения */
+  background-size: 100%;
+  background-position: center;
   z-index: 0; /* Помещаем позади содержимого */
 }
 
@@ -541,16 +500,16 @@ input::placeholder {
   font-size: 3.125rem;
   font-weight: 700;
   font-style: normal;
-  color: rgba(0, 0, 255, 0.333);
-  text-shadow: 2px -2px 5px rgb(85, 82, 82);
+  color: white;
+  text-shadow: 2px -2px 1px rgb(18, 17, 17), 3px -3px 1px rgb(252, 251, 251), 4px -4px 1px rgb(7, 7, 7);
 }
 .new__container label {
   font-family: "Philosopher", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   font-style: normal;
-  color: rgba(0, 0, 255, 0.333);
-  text-shadow: 1px -1px 5px rgb(85, 82, 82);
+  color: white;
+  text-shadow: 1px -1px 5px rgb(87, 6, 174);
 }
 
 .d-flex3 {
@@ -562,4 +521,9 @@ input::placeholder {
 .d-flex3 a {
   color: white;
   text-shadow: 1px 1px 2px black;
+  box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.333);
+}
+
+.d-flex3 button {
+  box-shadow: 2px 2px 2px rgba(55, 255, 0, 0.936);
 }/*# sourceMappingURL=style.css.map */

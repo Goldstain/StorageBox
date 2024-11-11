@@ -1,9 +1,6 @@
 "use strict";
 
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Получаем все ячейки в теле таблицы
     const tableCells = document.querySelectorAll('.tbody td');

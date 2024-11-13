@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/storagebox.jar
+web: java -Dserver.port=$PORT -jar target/StorageBox.jar

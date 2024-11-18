@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import storagebox.entities.security.User;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @NoArgsConstructor
 @Data
 public class RegistrationForm {
@@ -25,8 +28,10 @@ public class RegistrationForm {
     private String password;
 
     public User toUser(PasswordEncoder passwordEncoder) {
+        Set<String> roles = Set.of(User.Role.ROLE_MANAGER.toString());
         return new User(
-                firstName, lastName, email, passwordEncoder.encode(password));
+                firstName, lastName, email, passwordEncoder.encode(password)
+                ,roles);
     }
 
 }

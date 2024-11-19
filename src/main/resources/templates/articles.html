@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -34,7 +35,8 @@
                 <label for="status">Статус</label>
                 <select id="status" name="status" class=" d-inline-block" required>
                     <option value="" disabled
-                            th:selected="${selectedStatus == null}">Оберіть статус</option>
+                            th:selected="${selectedStatus == null}">Оберіть статус
+                    </option>
                     <option th:each="status : ${statuses}"
                             th:value="${status}"
                             th:text="${status.getAlias()}"
@@ -45,7 +47,8 @@
             </form>
 
             <form th:action="@{/articles/search-by-name}" method="get" class="d-inline-block">
-                <input class="input-field" type="text" id="searchName" name="searchName" required placeholder="Введіть назву">
+                <input class="input-field" type="text" id="searchName" name="searchName" required
+                       placeholder="Введіть назву">
                 <button type="submit" class="btn filter">Пошук</button>
             </form>
 
@@ -54,9 +57,16 @@
             </form>
         </div>
 
-        <form method="POST" th:action="@{/logout}">
-            <input type="submit" value="Вихід"/>
-        </form>
+        <div>
+            <form class="d-inline-block" method="POST" th:action="@{/logout}">
+                <input type="submit" value="Вихід" role="button"/>
+            </form>
+
+            <div>
+                <a href="/articles/statistics" class="btn btn-secondary"
+                   role="button" sec:authorize="hasRole('ROLE_ADMIN')" >Статистика</a>
+            </div>
+        </div>
 
         <div class="tableted">
             <table class="table table-striped">
@@ -100,12 +110,11 @@
         </div>
 
 
-
     </div>
 
 </div>
 
-<script src="./src\main/resources/static/js/script.js" defer> </script>
+<script src="./src\main/resources/static/js/script.js" defer></script>
 <script th:src="@{/js/script.js}" defer></script>
 
 </body>

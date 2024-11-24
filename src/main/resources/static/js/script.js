@@ -1,19 +1,16 @@
 "use strict";
 
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Получаем все ячейки в теле таблицы
     const tableCells = document.querySelectorAll('.tbody td');
-    
+
     // Обработчик для наведения на ячейку
     tableCells.forEach(cell => {
         cell.addEventListener('mouseenter', function() {
             // Находим индекс столбца
             const columnIndex = Array.from(cell.parentNode.children).indexOf(cell);
-            
+
             // Подсвечиваем все ячейки в этом столбце
             document.querySelectorAll('.tbody tr').forEach(row => {
                 row.children[columnIndex].classList.add('highlight');

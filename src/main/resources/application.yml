@@ -14,3 +14,8 @@ spring:
   web:
     resources:
       static-locations: classpath:/static/
+
+
+admin:
+  login: admin@example.com
+  password: admin

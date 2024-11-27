@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+
 <head>
-    <title>StorageBox Login</title>
+
+
+	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
+	<title>StorageBox Login</title>
 </head>
+
 <body>
-<h1>Please Log In</h1>
+	<h1>Please Log In</h1>
 
-<div>
-    <div th:if="${param.error}" class="alert alert-danger">Check your username and password
-    </div>
+	<div class="wrapper new--wr">
+		<div th:if="${param.error}" class="alert alert-danger">Check your username and password
+		</div>
 
-    <div>
-        <p>New here? Click <a th:href="@{/register}">here</a> to register
-        </p>
-    </div>
+		<div>
+			<p>New here? Click <a th:href="@{/register}">here</a> to register
+			</p>
+		</div>
 
-    <div>
-        <form th:action="@{/login}" method="post" id="loginForm" th:object="${user}">
-            <fieldset>
-                <legend>Login</legend>
+		<div>
+			<form th:action="@{/login}" method="post" id="loginForm" th:object="${user}">
+				<fieldset>
+					<legend>Login</legend>
 
-                <div>
-                    <label for="email">Username</label>
-                    <input type="text" id="email" name="email" th:field="*{email}" required="required"
-                           placeholder="example@exam.com"/>
+					<div>
+						<label for="email">Username</label>
+						<input type="text" id="email" name="email" th:field="*{email}" required="required"
+							placeholder="example@exam.com" />
 
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" th:field="*{password}"/>
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" th:field="*{password}" />
 
-                    <input type="submit" value="Login"/>
-                </div>
-            </fieldset>
-        </form>
-    </div>
+						<input type="submit" value="Login" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
 
-    <div>
-        <form method="POST" th:action="@{/logout}">
-            <input type="submit" value="Logout"/>
-        </form>
-    </div>
+		<div>
+			<form method="POST" th:action="@{/logout}">
+				<input type="submit" value="Logout" />
+			</form>
+		</div>
 
-</div>
+	</div>
 
 </body>
+
 </html>

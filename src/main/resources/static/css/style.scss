@@ -58,7 +58,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	width: 100%; /* Задает ширину 100% */
 	height: 100vh; /* Задает высоту 100% */
 
-	background-color: rgba(0, 0, 255, 0.39);
+	// background-color: rgba(0, 0, 255, 0.39);
 
 	// background-color: #f7f4f4e1;
 	background-color: rgba(0, 0, 255, 0.205);
@@ -255,7 +255,7 @@ tbody tr:hover {
 	text-shadow: 1px 1px 2px white;
 }
 .wr {
-	background-image: url(../css/icon/2.jpg);
+	background-image: url(../css/icon/333.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -378,11 +378,11 @@ input::placeholder {
 // ============================   product  =======================================================
 
 .wrrr {
-	background-image: url(../css/icon/5.jpg);
+	background-image: url(../css/icon/44.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	height: 97vh;
+	height:100vh;
 }
 .pr {
 	background-color: rgba(0, 0, 255, 0.182);
@@ -487,16 +487,11 @@ input::placeholder {
 }
 // ==================================================================
 
-.wrapper.new--wr::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
-	height: 100%; /* Увеличиваем высоту, чтобы изображение поместилось */
-	background-image: url(../css/icon/555.jpg); /* Укажите путь к вашему изображению */
+.new--wr {
+	background-image: url(../css/icon/6.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
+	height: 100vh;
 	background-position: center;
 	z-index: 0; /* Помещаем позади содержимого */
 }
@@ -505,16 +500,16 @@ input::placeholder {
 	z-index: 10; /* Помещаем содержимое поверх фона */
 }
 
-.wrapper.new--wr::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 255, 0.187); /* Затемнение фона, настройте уровень затемнения */
-	z-index: 1; /* Помещаем поверх фона */
-}
+// .wrapper.new--wr::after {
+// 	content: "";
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	background-color: rgba(0, 0, 255, 0.187); /* Затемнение фона, настройте уровень затемнения */
+// 	z-index: 1; /* Помещаем поверх фона */
+// }
 
 .new {
 	&__container {
@@ -556,4 +551,129 @@ input::placeholder {
 }
 .d-flex3 button {
 	box-shadow: 2px 2px 2px rgba(55, 255, 0, 0.936);
+}
+// ====================================   log   ====================================================================
+
+.wrapper {
+}
+
+.new--log {
+	top: 0;
+	left: 0;
+	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
+	height: 100vh; /* Увеличиваем высоту, чтобы изображение поместилось */
+	background-image: url(../css/icon/11111.jpg); /* Укажите путь к вашему изображению */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	z-index: 0; /* Помещаем позади содержимого */
+}
+
+.log__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	z-index: 10; /* Помещаем содержимое поверх фона */
+	& h2 {
+		font-family: "Philosopher", sans-serif;
+		font-size: toRem(50);
+		font-weight: 700;
+		font-style: normal;
+		color: rgb(87, 82, 82);
+		text-shadow:
+			2px -2px 1px rgb(18, 17, 17),
+			3px -3px 1px rgb(252, 251, 251),
+			4px -4px 1px rgb(7, 7, 7);
+	}
+	& p {
+		font-family: "Philosopher", sans-serif;
+		font-size: toRem(30);
+		font-weight: 700;
+		font-style: normal;
+		color: rgb(19, 18, 18);
+		& a {
+			color: rgb(127, 26, 243);
+			cursor: pointer;
+			text-decoration: dotted;
+		}
+	}
+	& label {
+		font-family: "Philosopher", sans-serif;
+		font-size: toRem(20);
+		font-weight: 700;
+		font-style: normal;
+		color: rgb(19, 18, 18);
+
+		margin-bottom: toRem(10);
+	}
+}
+
+//
+
+.alert {
+	font-family: "Philosopher", sans-serif;
+	font-size: toRem(20);
+	font-weight: 700;
+	font-style: normal;
+	color: rgb(19, 18, 18);
+	font-style: italic;
+}
+
+fieldset {
+	margin-top: toRem(70);
+	width: toRem(300);
+	display: flex;
+	flex-direction: column;
+	padding: toRem(20);
+	margin-bottom: toRem(30);
+	border-radius: 15px;
+}
+legend {
+	font-family: "Philosopher", sans-serif;
+	font-size: toRem(20);
+	font-weight: 700;
+	font-style: normal;
+	color: rgb(19, 18, 18);
+	// font-style: italic;
+}
+.np {
+	display: flex;
+	flex-direction: column;
+}
+
+.np input[type="text"],
+.np input[type="password"] {
+	height: 30px; /* или любой другой размер */
+	font-size: 16px; /* для увеличения текста */
+	border-radius: 7px;
+}
+.np input[type="submit"] {
+	height: toRem(30);
+	background-color: #43ea4bf6;
+	font-family: "Philosopher", sans-serif;
+	font-size: toRem(20);
+	font-weight: 500;
+	font-style: normal;
+	color: rgb(19, 18, 18);
+	border-radius: 7px;
+}
+
+.logout input[type="submit"] {
+	// height: toRem(30);
+	background-color: #f4f7f4f6;
+	font-family: "Philosopher", sans-serif;
+	font-size: toRem(20);
+	font-weight: 500;
+	font-style: normal;
+	padding: toRem(10);
+	color: rgb(19, 18, 18);
+	cursor: pointer;
+	border-radius: 7px;
+}
+input.email::placeholder {
+	text-align: center;
+}
+#password {
+	text-align: center;
 }

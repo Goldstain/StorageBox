@@ -23,7 +23,6 @@
   left: 0; /* Прикрепить к левой части */
   width: 100%; /* Задает ширину 100% */
   height: 100vh; /* Задает высоту 100% */
-  background-color: rgba(0, 0, 255, 0.39);
   background-color: rgba(0, 0, 255, 0.205);
 }
 
@@ -125,7 +124,7 @@
 .sticky-header {
   position: sticky; /* Делаем шапку фиксированной */
   top: 0; /* Прилипание к верхней части контейнера */
-  background-color: rgba(0, 0, 255, 0.38);
+  background-color: rgba(0, 0, 255, 0.874);
   color: white;
   z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -171,7 +170,7 @@ td {
 .tableted {
   margin-top: 4.375rem;
   z-index: 50;
-  background-color: rgba(0, 0, 255, 0.28);
+  background-color: rgba(0, 0, 255, 0.409);
   max-height: 65vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
   overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
   overflow-x: hidden; /* Убирает горизонтальную прокрутку */
@@ -219,7 +218,7 @@ tbody tr:hover {
 }
 
 .wr {
-  background-image: url(../css/icon/2.jpg);
+  background-image: url(../css/icon/333.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -401,11 +400,11 @@ input::placeholder {
 }
 
 .wrrr {
-  background-image: url(../css/icon/5.jpg);
+  background-image: url(../css/icon/44.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 97vh;
+  height: 100vh;
 }
 
 .pr {
@@ -537,16 +536,11 @@ input::placeholder {
   cursor: pointer;
 }
 
-.wrapper.new--wr::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
-  height: 100%; /* Увеличиваем высоту, чтобы изображение поместилось */
-  background-image: url(../css/icon/555.jpg); /* Укажите путь к вашему изображению */
+.new--wr {
+  background-image: url(../css/icon/6.jpg); /* Укажите путь к вашему изображению */
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  height: 100vh;
   background-position: center;
   z-index: 0; /* Помещаем позади содержимого */
 }
@@ -554,17 +548,6 @@ input::placeholder {
 .wrapper.new--wr .new__container {
   position: relative;
   z-index: 10; /* Помещаем содержимое поверх фона */
-}
-
-.wrapper.new--wr::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 255, 0.187); /* Затемнение фона, настройте уровень затемнения */
-  z-index: 1; /* Помещаем поверх фона */
 }
 
 .new__container {
@@ -615,4 +598,156 @@ input::placeholder {
 .d-flex3 button {
   -webkit-box-shadow: 2px 2px 2px rgba(55, 255, 0, 0.936);
           box-shadow: 2px 2px 2px rgba(55, 255, 0, 0.936);
+}
+
+.new--log {
+  top: 0;
+  left: 0;
+  width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
+  height: 100vh; /* Увеличиваем высоту, чтобы изображение поместилось */
+  background-image: url(../css/icon/11111.jpg); /* Укажите путь к вашему изображению */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 0; /* Помещаем позади содержимого */
+}
+
+.log__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  z-index: 10; /* Помещаем содержимое поверх фона */
+}
+.log__container h2 {
+  font-family: "Philosopher", sans-serif;
+  font-size: 3.125rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(87, 82, 82);
+  text-shadow: 2px -2px 1px rgb(18, 17, 17), 3px -3px 1px rgb(252, 251, 251), 4px -4px 1px rgb(7, 7, 7);
+}
+.log__container p {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(19, 18, 18);
+}
+.log__container p a {
+  color: rgb(127, 26, 243);
+  cursor: pointer;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+}
+.log__container label {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(19, 18, 18);
+  margin-bottom: 0.625rem;
+}
+
+.alert {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(19, 18, 18);
+  font-style: italic;
+}
+
+fieldset {
+  margin-top: 4.375rem;
+  width: 18.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.25rem;
+  margin-bottom: 1.875rem;
+  border-radius: 15px;
+}
+
+legend {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(19, 18, 18);
+}
+
+.np {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.np input[type=text],
+.np input[type=password] {
+  height: 30px; /* или любой другой размер */
+  font-size: 16px; /* для увеличения текста */
+  border-radius: 7px;
+}
+
+.np input[type=submit] {
+  height: 1.875rem;
+  background-color: rgba(67, 234, 75, 0.9647058824);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-style: normal;
+  color: rgb(19, 18, 18);
+  border-radius: 7px;
+}
+
+.logout input[type=submit] {
+  background-color: rgba(244, 247, 244, 0.9647058824);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-style: normal;
+  padding: 0.625rem;
+  color: rgb(19, 18, 18);
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+input.email::-webkit-input-placeholder {
+  text-align: center;
+}
+
+input.email::-moz-placeholder {
+  text-align: center;
+}
+
+input.email:-ms-input-placeholder {
+  text-align: center;
+}
+
+input.email::-ms-input-placeholder {
+  text-align: center;
+}
+
+input.email::placeholder {
+  text-align: center;
+}
+
+#password {
+  text-align: center;
 }

@@ -3,15 +3,15 @@
 
 <head>
 
-
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
 	<title>StorageBox Login</title>
 </head>
 
 <body>
-	<h1>Please Log In</h1>
 
 	<div class="wrapper new--wr">
+		<h1>Please Log In</h1>
 		<div th:if="${param.error}" class="alert alert-danger">Check your username and password
 		</div>
 

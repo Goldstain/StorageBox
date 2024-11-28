@@ -4,16 +4,15 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
 
-
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
 	<title>StorageBox Login</title>
 </head>
 
 <body>
 
-
-	<div class=" new--log">
-		<div class="background-image"></div>
+<div class=" new--log">
+	<div class="background-image">
 		<div class="log__container">
 			<h2>Please Log In</h2>
 
@@ -24,7 +23,6 @@
 			<div th:if="${param.error}" class="alert alert-danger">Check your username and password
 			</div>
 
-
 			<div>
 				<form th:action="@{/login}" method="post" id="loginForm" th:object="${user}">
 					<fieldset>
@@ -33,12 +31,12 @@
 						<div class="np">
 							<label for="email">Username</label>
 							<input type="text" id="email" name="email" th:field="*{email}" required="required"
-								class="email" placeholder="example@exam.com" /><br>
+								   class="email" placeholder="example@exam.com"/><br>
 
 							<label for="password">Password</label>
-							<input type="password" id="password" name="password" th:field="*{password}" />
+							<input type="password" id="password" name="password" th:field="*{password}"/>
 							<br>
-							<input type="submit" value="Login" />
+							<input type="submit" value="Login"/>
 						</div>
 					</fieldset>
 				</form>
@@ -46,11 +44,12 @@
 
 			<div class="logout">
 				<form method="POST" th:action="@{/logout}">
-					<input type="submit" value="Logout" />
+					<input type="submit" value="Logout"/>
 				</form>
 			</div>
 		</div>
 	</div>
+</div>
 
 </body>
 

@@ -6,22 +6,19 @@
     <title>Новий товар</title>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet">
 
     <link rel="stylesheet" href="src\main/resources/static/css/style.css">
-
-
     <link rel="stylesheet" th:href="@{/css/style.css}">
-
 
 
 </head>
 
 <body>
 
-    <div class="wrapper wr">
-				<div class="background-image"></div>
+<div class="wrapper wr">
+    <div class="background-image">
         <div class="wrapper__container">
             <div class="new">
                 <h2>Додати новий товар</h2>
@@ -31,7 +28,7 @@
                         <select id="category" class="form-control" th:field="*{category}">
                             <option value="">Оберіть категорію</option>
                             <option th:each="category: ${categories}" th:value="${category.id}"
-                                th:text="${category.name}">
+                                    th:text="${category.name}">
                             </option>
                         </select>
                         <div class="error-message" th:if="${#fields.hasErrors('category')}" th:errors="*{category}">
@@ -45,14 +42,14 @@
                     <div class="adaptiv-class">
                         <label for="purchase">Ціна закупівлі</label>
                         <input class="input-field" type="text" id="purchase" th:field="*{purchase}"
-                            placeholder="Введіть ціну закупівлі">
+                               placeholder="Введіть ціну закупівлі">
                         <div class="error-message" th:if="${#fields.hasErrors('purchase')}" th:errors="*{purchase}">
                         </div>
                     </div>
                     <div class="adaptiv-class">
                         <label for="quantity">Кількість</label>
                         <input class="input-field" type="text" id="quantity" th:field="*{quantity}"
-                            placeholder="Введіть кількість">
+                               placeholder="Введіть кількість">
                         <div class="error-message" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}">
                         </div>
                     </div>
@@ -69,6 +66,7 @@
 
         </div>
     </div>
+</div>
 
 
 </body>

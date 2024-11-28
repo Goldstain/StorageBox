@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="wrapper wrr">
+    <div class=" wrr">
         <div class="background-image"></div>
         <div class="wrapper__container">
             <div class="btn-group " role="group" aria-label="Actions">
@@ -50,7 +50,19 @@
                 </form>
             </div>
 
+<!-- ............................................................................. -->
 
+	<div class="out">
+		<form  method="POST" th:action="@{/logout}">
+			<input class="out--button" type="submit" value="Вихід" role="button" />
+		</form>
+	
+		<div>
+			<a href="/articles/statistics" class="btn btn-secondary" role="button"
+				sec:authorize="hasRole('ROLE_ADMIN')">Статистика</a>
+		</div>
+	</div>
+<!-- ................................................................................... -->
             <div class="tableted">
                 <table class="table ">
                     <thead class="sticky-header">

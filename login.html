@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
 
 
 	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
@@ -30,13 +31,13 @@
 					<fieldset>
 						<legend>Login</legend>
 
-						<div  class="np">
+						<div class="np">
 							<label for="email">Username</label>
 							<input type="text" id="email" name="email" th:field="*{email}" required="required"
-								  class="email" placeholder="example@exam.com" /><br>
+								class="email" placeholder="example@exam.com" /><br>
 
 							<label for="password">Password</label>
-							<input  type="password" id="password" name="password" th:field="*{password}" />
+							<input type="password" id="password" name="password" th:field="*{password}" />
 							<br>
 							<input type="submit" value="Login" />
 						</div>
@@ -44,7 +45,7 @@
 				</form>
 			</div>
 
-			<div  class="logout" >
+			<div class="logout">
 				<form method="POST" th:action="@{/logout}">
 					<input type="submit" value="Logout" />
 				</form>

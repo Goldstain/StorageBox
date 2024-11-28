@@ -9,12 +9,10 @@
 }
 
 .wrr {
-  background-image: url(../css/icon/4.jpg);
+  background-image: url(../css/icon/1.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 150%;
   background-position: center;
-  position: relative;
-  padding-top: 60px; /* Отступ сверху, чтобы шапка не перекрывала элементы */
 }
 
 .background-image {
@@ -210,6 +208,27 @@ tbody tr:hover {
   background-color: rgba(7, 7, 247, 0.582);
   -webkit-box-shadow: 15px 1px 5px rgba(60, 60, 247, 0.582), -15px -1px 5px rgba(59, 59, 247, 0.519);
           box-shadow: 15px 1px 5px rgba(60, 60, 247, 0.582), -15px -1px 5px rgba(59, 59, 247, 0.519);
+}
+
+.out {
+  margin-top: 3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
+}
+
+.out--button {
+  padding: 0.625rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .error-message {
@@ -537,7 +556,7 @@ input::placeholder {
 }
 
 .new--wr {
-  background-image: url(../css/icon/6.jpg); /* Укажите путь к вашему изображению */
+  background-image: url(../css/icon/66.jpg); /* Укажите путь к вашему изображению */
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -605,7 +624,7 @@ input::placeholder {
   left: 0;
   width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
   height: 100vh; /* Увеличиваем высоту, чтобы изображение поместилось */
-  background-image: url(../css/icon/11111.jpg); /* Укажите путь к вашему изображению */
+  background-image: url(../css/icon/9.jpg); /* Укажите путь к вашему изображению */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -678,6 +697,7 @@ fieldset {
   padding: 1.25rem;
   margin-bottom: 1.875rem;
   border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.609);
 }
 
 legend {
@@ -750,4 +770,93 @@ input.email::placeholder {
 
 #password {
   text-align: center;
+}
+
+.register {
+  background-image: url(../css/icon/10.jpg); /* Укажите путь к вашему изображению */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  z-index: 0; /* Помещаем позади содержимого */
+}
+.register__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  z-index: 10; /* Помещаем содержимое поверх фона */
+}
+.register h2 {
+  font-family: "Philosopher", sans-serif;
+  font-size: 3.125rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(87, 82, 82);
+  text-shadow: 2px -2px 1px rgb(18, 17, 17), 3px -3px 1px rgb(252, 251, 251), 4px -4px 1px rgb(7, 7, 7);
+}
+.register label {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+}
+.register a {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.rowe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.875rem;
+     -moz-column-gap: 1.875rem;
+          column-gap: 1.875rem;
+}
+.rowe input {
+  padding: 0.625rem;
+  border-radius: 5px;
+}
+
+.register__container fieldset {
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1.25rem;
+}
+
+.reg,
+.res {
+  cursor: pointer;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0.625rem;
+  border-radius: 10px;
+}
+
+.reg {
+  background-color: rgba(0, 255, 4, 0.473);
+}
+
+.res {
+  background-color: rgba(247, 62, 62, 0.473);
 }

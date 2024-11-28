@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
 
     <link rel="stylesheet" href="src\main/resources/static/css/style.css">
-
-
     <link rel="stylesheet" th:href="@{/css/style.css}">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
@@ -18,7 +16,7 @@
 </head>
 
 <body>
-    <div class="wrapper wrr">
+    <div class=" wrr">
         <div class="background-image"></div>
         <div class="wrapper__container">
             <div class="btn-group " role="group" aria-label="Actions">
@@ -52,7 +50,19 @@
                 </form>
             </div>
 
+<!-- ............................................................................. -->
 
+	<div class="out">
+		<form  method="POST" th:action="@{/logout}">
+			<input class="out--button" type="submit" value="Вихід" role="button" />
+		</form>
+	
+		<div>
+			<a href="/articles/statistics" class="btn btn-secondary" role="button"
+				sec:authorize="hasRole('ROLE_ADMIN')">Статистика</a>
+		</div>
+	</div>
+<!-- ................................................................................... -->
             <div class="tableted">
                 <table class="table ">
                     <thead class="sticky-header">

@@ -5,9 +5,9 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://dpg-ct3fpr8gph6c73bu617g-a.frankfurt-postgres.render.com:5432/storageboxdb
-    username: storageboxdb_user
-    password: DM3W6rWywXCt2Zfxiz2vnzq07Y5eQC1Y
+    url: jdbc:postgresql://dpg-ctg75gbgbbvc73au8r00-a.oregon-postgres.render.com/storagebox
+    username: storagebox_user
+    password: vrSanpxy7Z1aUfKWfygaQ9hsojDT3m5i
     driver-class-name: org.postgresql.Driver
   sql:
     init:
@@ -16,10 +16,13 @@ spring:
     resources:
       static-locations: classpath:/static/
 
+server:
+  port: 8080
 
 admin:
   login: admin@example.com
   password: admin
+
 
 #    url: jdbc:postgresql://localhost:5432/storagebox
 #    username: postgres

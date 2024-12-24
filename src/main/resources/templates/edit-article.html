@@ -118,7 +118,9 @@
                         <form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}"
                               method="post">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn button-danger">Видалити</button>
+                            <button type="submit" class="btn button-danger"
+                                    onclick="return confirm('Ви впевнені, що хочете видалити цей товар?')">Видалити
+                            </button>
 
                             <div class="d-flex2 ">
                                 <a href="/articles" class="btn  btn-back">Назад</a>

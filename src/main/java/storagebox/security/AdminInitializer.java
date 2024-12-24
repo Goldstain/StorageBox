@@ -1,12 +1,11 @@
 package storagebox.security;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import storagebox.entities.security.Role;
 import storagebox.entities.security.User;
 import storagebox.repositories.security.UserRepository;
 
@@ -38,7 +37,7 @@ public class AdminInitializer implements CommandLineRunner {
                     "admin",
                     adminLogin,
                     passwordEncoder.encode(adminPassword),
-                    Set.of(User.Role.ROLE_ADMIN.toString())
+                    Set.of(Role.ROLE_ADMIN.toString())
             );
             userRepository.save(admin);
             System.out.println("Admin created with login: " + adminLogin

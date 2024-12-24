@@ -42,7 +42,7 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(authorizeRequest ->
                         authorizeRequest
-                                .requestMatchers("/articles/statistic", "/admin").hasRole("ADMIN")
+                                .requestMatchers("/admin/**").hasRole("ADMIN")
                                 .requestMatchers("/articles/**", "/categories/**").hasAnyRole("MANAGER", "ADMIN")
                                 .requestMatchers("/", "/login", "/register").permitAll()
                                 .requestMatchers("/css/**", "/js/**", "/images").permitAll()
@@ -55,6 +55,4 @@ public class SecurityConfig {
                                 .permitAll())
                 .build();
     }
-
-
 }

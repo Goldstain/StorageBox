@@ -1,0 +1,28 @@
+version: '3.1'
+
+volumes:
+  storagebox_app:
+
+services:
+  storagebox_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=storagebox_db
+    volumes:
+      - storagebox_app:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5433:5432"
+
+  app:
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - storagebox_db
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://storagebox_db:5432/storagebox_db'
+      JAVA_OPTS: '-Xmx5112m'

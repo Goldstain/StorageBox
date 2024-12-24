@@ -2,25 +2,29 @@ package storagebox.controllers;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import storagebox.dto.UserDTO;
 import storagebox.entities.Article;
 import storagebox.entities.ArticleStatus;
 import storagebox.entities.Category;
+import storagebox.entities.security.User;
 import storagebox.exceptions.ArticleNotFoundException;
 import storagebox.exceptions.CategoryNotFoundException;
 import storagebox.exceptions.WrongValueException;
 import storagebox.services.ArticleService;
 import storagebox.services.CategoryService;
 
+import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
 
 @Controller
 @RequestMapping("/articles")
+@SessionAttributes("loggedUser")
 public class ArticleController {
 
     private final ArticleService articleService;
@@ -31,6 +35,19 @@ public class ArticleController {
             ArticleService articleService, CategoryService categoryService) {
         this.articleService = articleService;
         this.categoryService = categoryService;
+    }
+
+
+    @ModelAttribute("loggedUser")
+    public UserDTO getLoggedUser(Principal principal) {
+        if (principal != null) {
+            User user = (User) ((Authentication) principal).getPrincipal();
+            UserDTO userDTO = new UserDTO();
+            userDTO.setFirstName(user.getFirstName());
+            userDTO.setLastName(user.getLastName());
+            return userDTO;
+        }
+        return null;
     }
 
 

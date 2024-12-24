@@ -1,17 +1,12 @@
 package storagebox.entities.security;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -83,7 +78,5 @@ public class User implements UserDetails {
         return true;
     }
 
-    public enum Role {
-        ROLE_MANAGER, ROLE_ADMIN, ROLE_USER
-    }
+
 }

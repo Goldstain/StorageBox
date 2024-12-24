@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Адмін Панель | Користувачи </title>
+
+    <link rel="stylesheet" href="src\main/resources/static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+<div>
+
+    <div class="logger-user">
+        <span th:text="${loggedUser.firstName+' '}"></span>
+        <span th:text="${loggedUser.lastName}"></span>
+    </div>
+
+    <div>
+        <h3>Панель адміністратора - Керування користувачами</h3>
+    </div>
+
+    <nav>
+        <a href="/admin/statistics">Статистика</a>
+        <a href="/admin/users">Користувачи</a>
+    </nav>
+
+    <div>
+        <a href="/articles">Вихід</a>
+    </div>
+
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ім'я</th>
+                <th>Прізвище</th>
+                <th>Email</th>
+                <th>Ролі</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="userDTO : ${usersDTO}">
+                <form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+
+                    <td th:text="${userDTO.id}"></td>
+                    <td th:text="${userDTO.firstName}"></td>
+                    <td th:text="${userDTO.lastName}"></td>
+                    <td>
+                        <a th:href="@{/admin/users/{id}(id=${userDTO.id})}"
+                           th:text="${userDTO.email}"> </a>
+                    </td>
+
+
+                    <td>
+                        <ul>
+                            <li th:each="role : ${userDTO.roles}">
+                                <span th:text="${role}"></span>
+                            </li>
+                        </ul>
+                    </td>
+
+                    <td>
+                        <button type="submit"
+                                th:if="${userDTO.email!='admin@example.com'}"
+                                onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">Видалити
+                        </button>
+                    </td>
+                </form>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

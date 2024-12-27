@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Адмін Панель | Статистика</title>
+
+	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+
+	<div class="stt">
+
+		<div class="stt__color"></div>
+
+
+		<div class="statistic__container">
+
+
+			<div class="logger-user">
+				<span th:text="${loggedUser.firstName+' '}"></span>
+				<span th:text="${loggedUser.lastName}"></span>
+			</div>
+
+			<div class="statistic__title">
+				<h3>Панель адміністратора - Статистика</h3>
+			</div>
+			<div class="statistic__button">
+			<nav class="statistic__nav">
+				<a href="/admin/statistics">Статистика</a>
+				<a href="/admin/users">Користувачи</a>
+			</nav>
+
+			<div class="statistic__exit">
+				<a href="/articles">Вихід</a>
+			</div>
+		</div>
+
+
+
+
+		<div class="statistic__table">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							<a
+								th:href="@{/admin/statistics(sortField='name', sortDirection=${sortField == 'name' and sortDirection == 'asc' ? 'desc' : 'asc'})}">
+								Назва
+								<span
+									th:text="${sortField == 'name' ? (sortDirection == 'asc' ? ' ↑' : ' ↓') : ''}"></span>
+							</a>
+						</th>
+						<th>
+							<a
+								th:href="@{/admin/statistics(sortField='marginality', sortDirection=${sortField == 'marginality' and sortDirection == 'asc' ? 'desc' : 'asc'})}">
+								Маржинальність
+								<span
+									th:text="${sortField == 'marginality' ? (sortDirection == 'asc' ? ' ↑' : ' ↓') : ''}"></span>
+							</a>
+						</th>
+						<th>
+							<a
+								th:href="@{/admin/statistics(sortField='profit', sortDirection=${sortField == 'profit' and sortDirection == 'asc' ? 'desc' : 'asc'})}">
+								Прибуток
+								<span
+									th:text="${sortField == 'profit' ? (sortDirection == 'asc' ? ' ↑' : ' ↓') : ''}"></span>
+							</a>
+						</th>
+						<th>
+							<a
+								th:href="@{/admin/statistics(sortField='quantity', sortDirection=${sortField == 'quantity' and sortDirection == 'asc' ? 'desc' : 'asc'})}">
+								Кількість
+								<span
+									th:text="${sortField == 'quantity' ? (sortDirection == 'asc' ? ' ↑' : ' ↓') : ''}"></span>
+							</a>
+						</th>
+						<th>
+							<a
+								th:href="@{/admin/statistics(sortField='soldQuantity', sortDirection=${sortField == 'soldQuantity' and sortDirection == 'asc' ? 'desc' : 'asc'})}">
+								Продано
+								<span
+									th:text="${sortField == 'soldQuantity' ? (sortDirection == 'asc' ? ' ↑' : ' ↓') : ''}"></span>
+							</a>
+						</th>
+						<th>
+							<a
+								th:href="@{/admin/statistics(sortField='remainder', sortDirection=${sortField == 'remainder' and sortDirection == 'asc' ? 'desc' : 'asc'})}">
+								Залишок
+								<span
+									th:text="${sortField == 'remainder' ? (sortDirection == 'asc' ? ' ↑' : ' ↓') : ''}"></span>
+							</a>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="article : ${articles}">
+						<td th:text="${article.name}"></td>
+						<td th:text="${article.marginality} + ' %'"></td>
+						<td th:text="${article.profit}"></td>
+						<td th:text="${article.quantity}"></td>
+						<td th:text="${article.soldQuantity}"></td>
+						<td th:text="${article.remainder}"></td>
+					</tr>
+				</tbody>
+
+				<tfoot>
+					<tr th:object="${total}">
+						<td><strong>Підсумок:</strong></td>
+						<td th:text="${total.marginality} + ' %'"></td>
+						<td th:text="${total.profit}"></td>
+						<td th:text="${total.quantity}"></td>
+						<td th:text="${total.soldQuantity}"></td>
+						<td th:text="${total.remainder}"></td>
+					</tr>
+				</tfoot>
+
+			</table>
+
+		</div>
+	</div>
+
+
+
+
+
+
+	</div>
+
+</body>
+
+</html>

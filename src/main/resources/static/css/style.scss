@@ -44,7 +44,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 // ......................................................................................
 
 .wrr {
-	background-image: url(../css/icon/66.jpg);
+	background-image: url(../css/icon/3.3.3.jpg);
 	background-repeat: no-repeat;
 	background-size: 150%;
 	background-position: center;
@@ -272,10 +272,13 @@ tbody tr:hover {
 
 .error-message {
 	color: #ff0000;
-	text-shadow: 1px 1px 2px white;
+	text-shadow:
+		2px 2px 2px rgb(11, 11, 11),
+		-2px -2px 2px rgb(11, 11, 11);
+	// background-color: rgba(255, 255, 255, 0.311);
 }
 .wr {
-	background-image: url(../css/icon/22.webp);
+	background-image: url(../css/icon/0.0.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -398,21 +401,23 @@ input::placeholder {
 // ============================   product  =======================================================
 
 .wrrr {
-	background-image: url(../css/icon/22.webp);
+	background-image: url(../css/icon/9.9.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	height: 100vh;
 }
 .pr {
-	background-color: rgba(0, 0, 255, 0.182);
+	background-color: rgba(0, 0, 255, 0.324);
 }
 .product {
 	text-align: center;
 	& h2 {
 		font-size: toRem(50);
-		color: black;
-		text-shadow: 2px -2px 5px white;
+		color: rgb(248, 246, 246);
+		text-shadow:
+			2px -2px 5px rgb(6, 6, 6),
+			-2px 2px 5px rgb(9, 9, 9);
 	}
 }
 .form__block {
@@ -508,7 +513,7 @@ input::placeholder {
 // ==================================================================
 
 .new--wr {
-	background-image: url(../css/icon/66.jpg); /* Укажите путь к вашему изображению */
+	background-image: url(../css/icon/7.7.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
@@ -518,6 +523,9 @@ input::placeholder {
 .wrapper.new--wr .new__container {
 	position: relative;
 	z-index: 10; /* Помещаем содержимое поверх фона */
+	background-color: rgba(89, 16, 235, 0.406);
+	width: toRem(700);
+	margin-top: toRem(200);
 }
 
 // .wrapper.new--wr::after {
@@ -542,7 +550,7 @@ input::placeholder {
 			font-size: toRem(50);
 			font-weight: 700;
 			font-style: normal;
-			color: white;
+			color: rgb(249, 249, 252);
 			text-shadow:
 				2px -2px 1px rgb(18, 17, 17),
 				3px -3px 1px rgb(252, 251, 251),
@@ -583,7 +591,7 @@ input::placeholder {
 	left: 0;
 	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
 	height: 100vh; /* Увеличиваем высоту, чтобы изображение поместилось */
-	background-image: url(../css/icon/9.jpg); /* Укажите путь к вашему изображению */
+	background-image: url(../css/icon/5.5.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -592,17 +600,20 @@ input::placeholder {
 
 .log__container {
 	/*position: relative;*/
+	width: toRem(400);
+	margin-top: toRem(20);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 	z-index: 10; /* Помещаем содержимое поверх фона */
+	background-color: rgba(255, 255, 255, 0.578);
 	& h2 {
 		font-family: "Philosopher", sans-serif;
 		font-size: toRem(50);
 		font-weight: 700;
 		font-style: normal;
-		color: rgb(87, 82, 82);
+		color: rgb(100, 10, 227);
 		text-shadow:
 			2px -2px 1px rgb(18, 17, 17),
 			3px -3px 1px rgb(252, 251, 251),
@@ -617,7 +628,7 @@ input::placeholder {
 		& a {
 			color: rgb(127, 26, 243);
 			cursor: pointer;
-			text-decoration: dotted;
+			text-decoration: dashed;
 		}
 	}
 	& label {
@@ -650,14 +661,14 @@ fieldset {
 	padding: toRem(20);
 	margin-bottom: toRem(30);
 	border-radius: 15px;
-	background-color: rgba(255, 255, 255, 0.609);
+	background-color: rgba(90, 16, 194, 0.365);
 }
 legend {
 	font-family: "Philosopher", sans-serif;
 	font-size: toRem(20);
 	font-weight: 700;
 	font-style: normal;
-	color: rgb(19, 18, 18);
+	color: rgb(249, 244, 244);
 	// font-style: italic;
 }
 .np {
@@ -680,6 +691,7 @@ legend {
 	font-style: normal;
 	color: rgb(19, 18, 18);
 	border-radius: 7px;
+	cursor: pointer;
 }
 
 .logout input[type="submit"] {
@@ -702,7 +714,7 @@ input.email::placeholder {
 }
 // ==============================================================
 .register {
-	background-image: url(../css/icon/10.jpg); /* Укажите путь к вашему изображению */
+	background-image: url(../css/icon/8.8.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
@@ -721,7 +733,7 @@ input.email::placeholder {
 		font-size: toRem(50);
 		font-weight: 700;
 		font-style: normal;
-		color: rgb(87, 82, 82);
+		color: rgb(250, 249, 249);
 		text-shadow:
 			2px -2px 1px rgb(18, 17, 17),
 			3px -3px 1px rgb(252, 251, 251),
@@ -732,6 +744,7 @@ input.email::placeholder {
 		font-size: toRem(20);
 		font-weight: 700;
 		font-style: normal;
+		color: white;
 		// background-color: rgba(255, 255, 255, 0.392);
 		// padding: toRem(10);
 	}
@@ -779,4 +792,136 @@ input.email::placeholder {
 .res {
 	background-color: rgba(247, 62, 62, 0.473);
 }
+.registration-cancel {
+	color: #faf7f7;
+}
 
+// ====================================  statistic    ===========================================================================
+.stt {
+	background-image: url(../css/icon/7.7.7.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	padding-top: toRem(50);
+}
+
+.statistic {
+	&__container {
+		background-color: rgba(76, 76, 242, 0.406);
+		z-index: 10;
+	}
+	&__button {
+		display: flex;
+		justify-content: space-around;
+		margin: toRem(50) 0;
+		& a {
+			font-family: "Philosopher", sans-serif;
+			font-size: toRem(20);
+			font-weight: 700;
+			color: #eae7e7;
+			font-style: normal;
+			margin-left: toRem(20);
+			text-decoration: none;
+			&:hover {
+				text-shadow:
+					3px 3px 3px rgb(242, 242, 244),
+					-3px -3px 3px rgb(243, 243, 245);
+				color: #0e0e0e;
+			}
+		}
+	}
+	&__title {
+		text-align: center;
+		& h3 {
+			font-family: "Philosopher", sans-serif;
+			font-size: toRem(50);
+			font-weight: 700;
+			font-style: normal;
+			color: rgb(252, 251, 252);
+			text-shadow:
+				2px -2px 1px rgb(18, 17, 17),
+				3px -3px 5px rgb(252, 251, 251),
+				4px -4px 1px rgb(7, 7, 7);
+		}
+	}
+	&__nav {
+	}
+	&__exit {
+	}
+	&__table {
+	}
+}
+.logger-user {
+}
+.table {
+}
+
+// ==============================  .user   =====================================================================
+
+.use {
+	background-image: url(../css/icon/0.1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	padding-top: toRem(50);
+}
+
+.user {
+	&__container {
+		background-color: rgba(76, 76, 242, 0.406);
+		z-index: 10;
+	}
+	&__title {
+		text-align: center;
+		& h3 {
+			font-family: "Philosopher", sans-serif;
+			font-size: toRem(50);
+			font-weight: 700;
+			font-style: normal;
+			color: rgb(252, 251, 252);
+			text-shadow:
+				2px -2px 1px rgb(18, 17, 17),
+				3px -3px 5px rgb(252, 251, 251),
+				4px -4px 1px rgb(7, 7, 7);
+		}
+	}
+	&__button {
+		display: flex;
+		justify-content: space-around;
+		margin: toRem(50) 0;
+		& a {
+			font-family: "Philosopher", sans-serif;
+			font-size: toRem(20);
+			font-weight: 700;
+			color: #eae7e7;
+			font-style: normal;
+			margin-left: toRem(20);
+			text-decoration: none;
+			&:hover {
+				text-shadow:
+					3px 3px 3px rgb(242, 242, 244),
+					-3px -3px 3px rgb(243, 243, 245);
+				color: #0e0e0e;
+			}
+		}
+	}
+	&__nav {
+	}
+	&__exit {
+	}
+	&__table button {
+		background-color: #ef2c2c;
+		color: white;
+		cursor: pointer;
+		padding: toRem(5);
+		text-transform: uppercase;
+		&:hover {
+			background-color: #f7f3f3;
+			color: #ef0808;
+		}
+	}
+}
+.logger-user {
+}

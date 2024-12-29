@@ -109,7 +109,7 @@
 
                     </select>
                     <div class="d-flex4 ">
-                        <button type="submit" class="btn btn-primary">Зберегти</button>
+                        <button type="submit" class="btn btn-primary save"><p>Зберегти</p><img class="bb" src="src/main/resources/static/css/icon/accept.svg"></button>
                     </div>
 
                 </form>
@@ -118,10 +118,10 @@
                         <form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}"
                               method="post">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn button-danger">Видалити</button>
+                            <button type="submit" class="btn button-danger done"><p>Видалити</p><img class="bb" src="src/main/resources/static/css/icon/delete.svg"></button>
 
                             <div class="d-flex2 ">
-                                <a href="/articles" class="btn  btn-back">Назад</a>
+                                <a href="/articles" class="btn  btn-back refresh">Назад<img class="bb" src="src/main/resources/static/css/icon/refresh.svg"></a>
                             </div>
 
                         </form>
@@ -135,6 +135,9 @@
 
         </div>
     </div>
+	<div class="creted">
+		<p>Created by :<img class="sh" src="src/main/resources/static/css/icon/SH.jpeg"><span>Studio</span> </p>
+	</div>
 </div>
 
 

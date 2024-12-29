@@ -13,61 +13,68 @@
 
 <body>
 
-<div class="register">
-	<div class="background-image">
-		<div class="register__container">
+	<div class="register">
+		<div class="register--fone"></div>
+		<div class="background-image">
+			<div class="register__container">
 
-			<h2>Register</h2>
+				<h2>Register</h2>
 
-			<div>
-				<form th:action="@{/register}" method="post" id="registerForm" th:object="${registrationForm}">
-					<fieldset>
-						<legend>New account</legend>
+				<div>
+					<form th:action="@{/register}" method="post" id="registerForm" th:object="${registrationForm}">
+						<fieldset>
+							<legend>New account</legend>
 
-						<div th:if="${error}" style="color: red;">
-							<p th:text="${error}"></p>
-						</div>
-						<div class="rowe">
-							<label for="firstName">First name: </label>
-							<input type="text" name="firstName" id="firstName" th:field="*{firstName}"
-								   placeholder=" enter your first name" required="required"/>
-							<div class="error-message" th:if="${#fields.hasErrors('firstName')}"
-								 th:errors="*{firstName}">
+							<div th:if="${error}" style="color: red;">
+								<p th:text="${error}"></p>
+							</div>
+							<div class="rowe">
+								<label for="firstName">First name: </label>
+								<input type="text" name="firstName" id="firstName" th:field="*{firstName}"
+									placeholder=" enter your first name" required="required" />
+								<div class="error-message" th:if="${#fields.hasErrors('firstName')}"
+									th:errors="*{firstName}">
+								</div>
+
+
+								<label for="lastName">Last name: </label>
+								<input type="text" name="lastName" id="lastName" th:field="*{lastName}"
+									placeholder=" enter your last name" required="required" />
+								<div class="error-message" th:if="${#fields.hasErrors()}" th:errors="*{lastName}"></div>
+
+							</div>
+
+							<div class="rowe">
+								<label for="email">Email: </label>
+								<input type="text" name="email" id="email" th:field="*{email}" placeholder=" your email"
+									required="required" />
+								<div class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+								</div>
+
+
+								<label for="password">Password: </label>
+								<input type="password" name="password" id="password" th:field="*{password}"
+									placeholder=" your password" required="required" />
+
 							</div>
 
 
-							<label for="lastName">Last name: </label>
-							<input type="text" name="lastName" id="lastName" th:field="*{lastName}"
-								   placeholder=" enter your last name" required="required"/>
-							<div class="error-message" th:if="${#fields.hasErrors()}" th:errors="*{lastName}"></div>
+							<div class="addus"><input class="reg" type="submit" value="Register"><img class="bb"
+									src="src/main/resources/static/css/icon/add_user.svg"></div>
 
-						</div>
+							<div class="delus"><input class="res" type="reset" value="Reset"><img class="bb"
+									src="src/main/resources/static/css/icon/delete_user.svg"> </div>
 
-						<div class="rowe">
-							<label for="email">Email: </label>
-							<input type="text" name="email" id="email" th:field="*{email}" placeholder=" your email"
-								   required="required"/>
-							<div class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
-
-
-							<label for="password">Password: </label>
-							<input type="password" name="password" id="password" th:field="*{password}"
-								   placeholder=" your password" required="required"/>
-
-						</div>
-
-
-						<input class="reg" type="submit" value="Register">
-
-						<input class="res" type="reset" value="Reset"/>
-
-					</fieldset>
-					<a href="/login" class="registration-cancel">Cancel</a>
-				</form>
+						</fieldset>
+						<a id="cans" href="/login" class="registration-cancel">Cancel</a>
+					</form>
+				</div>
 			</div>
 		</div>
+		<div class="creted">
+			<p>Created by :<img class="sh" src="src/main/resources/static/css/icon/SH.jpeg"><span>Studio</span> </p>
+		</div>
 	</div>
-</div>
 
 
 </body>

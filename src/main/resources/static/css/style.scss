@@ -40,10 +40,62 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	padding: toRem(50) toRem(15);
 	margin: 0 auto;
 }
+.creted {
+	position: absolute;
+	bottom: 0;
+	right: toRem(10);
+	display: flex;
+	justify-content: end;
+	padding: 0;
+	cursor: pointer;
+	& p {
+		display: flex;
+		align-items: center;
+		color: white;
+		font-size: toRem(6);
+	}
+	&:hover {
+		// background-color: rgb(255, 215, 0);
+		background: -webkit-linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+		background: -moz-linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+		background: linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+		border-radius: 10px;
+		padding: toRem(10);
+		z-index: 999;
+		bottom: toRem(10);
+		.sh {
+			width: toRem(50);
+		}
+		& p {
+			font-size: toRem(16);
+			color: rgb(1, 106, 53);
+		}
+		& span {
+			color: rgb(255, 215, 0);
+		}
+	}
+}
+.sh {
+	margin: 0 toRem(5);
+	width: toRem(10);
+	border-radius: 50%;
+}
+
+.refresh {
+	display: flex;
+	align-items: center;
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.105);
+	}
+}
+.rf:hover {
+	background-color: rgba(255, 255, 255, 0.105);
+}
 
 // ......................................................................................
 
 .wrr {
+	position: relative;
 	background-image: url(../css/icon/3.3.3.jpg);
 	background-repeat: no-repeat;
 	background-size: 150%;
@@ -51,6 +103,14 @@ $maxWidth: 1620; // Ширина полотна (макета)
 
 	// position: relative;
 	// padding-top: 60px; /* Отступ сверху, чтобы шапка не перекрывала элементы */
+}
+.article--gone {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.523);
 }
 .background-image {
 	position: fixed; /* Фиксированное позиционирование */
@@ -75,15 +135,28 @@ $maxWidth: 1620; // Ширина полотна (макета)
 }
 
 .d-inline-block label {
-	box-shadow: 1px 1px 5px rgb(251, 250, 250);
-	background-color: rgb(251, 163, 163);
-	color: rgb(6, 6, 6);
 	font-size: toRem(18);
 	border-radius: toRem(10);
 	font-family: "Philosopher", sans-serif;
 	font-weight: 700;
 	font-style: italic;
 	padding: toRem(10);
+	-moz-box-shadow: #6e7849 0px 0px 10px;
+	-webkit-box-shadow: #6e7849 0 0 10px;
+	background-color: #534978;
+	background-image: -moz-linear-gradient(134deg, #b9c788, #534978);
+	background-image: -ms-linear-gradient(134deg, #b9c788, #534978);
+	background-image: -o-linear-gradient(134deg, #b9c788, #534978);
+	background-image: -webkit-linear-gradient(134deg, #b9c788, #534978);
+	background-image: linear-gradient(134deg, #b9c788, #534978);
+	box-shadow: #6e7849 1px 1px 10px;
+	color: #ffffff;
+	display: inline-block;
+	text-decoration: none;
+	text-shadow: #000000 5px 5px 15px;
+
+	border: 2px solid rgb(251, 163, 163);
+	color: rgb(249, 247, 247);
 }
 .btn {
 	padding: toRem(10) toRem(15);
@@ -95,42 +168,102 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	box-shadow: 1px 1px 5px rgb(251, 250, 250);
 
 	&:hover {
-		background-color: rgb(128, 128, 241);
-		border: 2px solid black;
+		// background-color: rgb(128, 128, 241);
+		background-color: rgba(255, 255, 255, 0.105);
+		// border: 2px solid black;
 	}
 }
 .btn-primary {
-	background-color: rgba(38, 186, 15, 0.687);
-	border: 2px solid rgb(38, 186, 15);
-	color: white;
+	// font:bold 20px Verdana, Geneva, sans-serif;
+	font-style: normal;
+	color: #fffaff;
+	background: #78db85;
+	border: 1px solid #bbb;
+	text-shadow: 0px 0px 18px #520980;
+	box-shadow: -7px -7px 19px #f9f5f9;
+	-moz-box-shadow: -7px -7px 19px #f9f5f9;
+	-webkit-box-shadow: -7px -7px 19px #f9f5f9;
+	border-radius: 0px 62px 0px 53px;
+	-moz-border-radius: 0px 62px 0px 53px;
+	-webkit-border-radius: 0px 62px 0px 53px;
+
 	&:hover {
-		background-color: rgba(143, 241, 128, 0.682);
-		border: 2px solid black;
-		color: rgb(10, 10, 10);
+		background-color: rgba(143, 241, 128, 0.329);
+		border: 1px solid #bbb;
+		box-shadow: -7px -7px 19px #e8afe8;
 	}
 }
 
 .filter {
-	background-color: rgba(251, 163, 163, 0.881);
+	display: flex;
+	align-items: center;
+	margin-left: toRem(10);
+	padding: toRem(10) toRem(15);
+	font-size: toRem(20);
+	font-family: "Philosopher", sans-serif;
+	font-weight: 700;
+
+	-moz-box-shadow: #6e7849 0px 0px 10px;
+	-webkit-box-shadow: #6e7849 0 0 10px;
+	background-color: #534978;
+	background-image: -moz-linear-gradient(134deg, #b9c788, #534978);
+	background-image: -ms-linear-gradient(134deg, #b9c788, #534978);
+	background-image: -o-linear-gradient(134deg, #b9c788, #534978);
+	background-image: -webkit-linear-gradient(134deg, #b9c788, #534978);
+	background-image: linear-gradient(134deg, #b9c788, #534978);
+	box-shadow: #6e7849 1px 1px 10px;
+	color: #ffffff;
+	display: inline-block;
+	text-decoration: none;
+	text-shadow: #000000 5px 5px 15px;
+
 	border: 2px solid rgb(251, 163, 163);
-	color: rgb(16, 16, 16);
+	color: rgb(249, 247, 247);
 	cursor: pointer;
 	&:hover {
-		background-color: rgba(243, 93, 93, 0.662);
-		border: 2px solid black;
 		color: rgb(249, 248, 248);
+		border: 2px dashed rgb(251, 163, 163);
+		background-image: linear-gradient(134deg, #534978, #b9c788);
 	}
+}
+.filter img {
+	width: toRem(16);
+	margin-left: toRem(5);
+	rotate: -30deg;
 }
 .tovar {
-	background-color: rgb(117, 10, 225);
-	border: 2px solid rgb(117, 10, 225);
+	border: none;
 	color: rgb(247, 245, 245);
 	cursor: pointer;
+	background-image: -moz-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+	background-image: -ms-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+	background-image: -o-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+	background-image: -webkit-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+	background-image: linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
 	&:hover {
-		background-color: rgba(0, 0, 255, 0.199);
-		border: 2px solid black;
+		background-image: linear-gradient(153deg, rgb(117, 10, 225), #daec3c);
+		border: none;
 	}
 }
+
+.creator {
+	border: none;
+	color: white;
+	text-shadow: 1px 1px 3px #070707;
+	box-shadow: 0px -7px 7px#000000a0;
+	border-radius: 29px 0px 30px 15px;
+	-moz-border-radius: 29px 0px 30px 15px;
+	-webkit-border-radius: 29px 0px 30px 15px;
+	background-color: rgba(0, 128, 0, 0.304);
+	padding: toRem(10) toRem(20);
+	cursor: pointer;
+	&:hover {
+		border: none;
+		box-shadow: 0px -7px 7px#3a3a3aa0;
+		background-color: rgba(0, 128, 0, 0.489);
+	}
+}
+
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 .tableted {
@@ -253,18 +386,34 @@ tbody tr:hover {
 	align-items: center;
 	column-gap: toRem(10);
 }
-
+.exit {
+	display: flex;
+	align-items: center;
+	padding: toRem(6);
+	background-color: white;
+	border-radius: 5px;
+	box-shadow:
+		1px 1px 7px rgb(0, 0, 0),
+		-1px -1px 7px rgb(0, 0, 0);
+	& img {
+		width: toRem(30);
+		margin-left: 0;
+	}
+}
 .out--button {
-	padding: toRem(10);
 	font-size: toRem(18);
 	font-weight: 600;
-	border-radius: 5px;
 	cursor: pointer;
 }
-
-.btn {
+.admin-img {
+	display: flex;
+	&:hover {
+		border: none;
+	}
 }
-.btn-secondary {
+.admin-img img {
+	width: toRem(24);
+	margin-left: toRem(5);
 }
 
 // ........................................................................................
@@ -388,7 +537,7 @@ input::placeholder {
 .btn-back {
 	background-color: rgba(0, 0, 255, 0.199);
 	&:hover {
-		background-color: #eae7e7;
+		background-color: #eae7e751;
 		border: none;
 	}
 }
@@ -408,7 +557,7 @@ input::placeholder {
 	height: 100vh;
 }
 .pr {
-	background-color: rgba(0, 0, 255, 0.324);
+	background-color: rgba(12, 12, 12, 0.728);
 }
 .product {
 	text-align: center;
@@ -494,15 +643,22 @@ input::placeholder {
 
 .button-danger {
 	margin-top: toRem(100);
-	background-color: rgba(251, 163, 163, 0.881);
-	border: 2px solid rgb(251, 163, 163);
-	color: rgb(16, 16, 16);
 	height: toRem(50);
+	font-style: normal;
+	color: #ffffff;
+	background: #c50000;
+	text-shadow: 1px 1px 3px #070707;
+	box-shadow: 0px 0px 6px #454545;
+	-moz-box-shadow: 0px 0px 6px #454545;
+	-webkit-box-shadow: 0px 0px 6px #454545;
+	border-radius: 90px 15px 19px 15px;
+	-moz-border-radius: 90px 15px 19px 15px;
+	-webkit-border-radius: 90px 15px 19px 15px;
+	padding: toRem(5) toRem(20);
 	cursor: pointer;
 	&:hover {
-		background-color: rgba(243, 93, 93, 0.662);
-		border: 2px solid black;
-		color: rgb(249, 248, 248);
+		background-color: #c5000056;
+		border: none;
 	}
 }
 .btn-primary,
@@ -510,20 +666,55 @@ input::placeholder {
 .button-danger {
 	cursor: pointer;
 }
+
+.save {
+	color: #ffffff;
+	background: green;
+	height: toRem(50);
+	text-shadow: 0px 0px 0px #ffffff;
+	box-shadow: 0px 0px 6px #454545;
+	-moz-box-shadow: 0px 0px 6px #454545;
+	-webkit-box-shadow: 0px 0px 6px #454545;
+	border-radius: 19px 18px 90px 20px;
+	-moz-border-radius: 19px 18px 90px 20px;
+	-webkit-border-radius: 19px 18px 90px 20px;
+	padding: toRem(10) toRem(20);
+}
+
+.bb {
+	width: toRem(30);
+	margin-left: toRem(10);
+}
+.save,
+.done {
+	display: flex;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+}
 // ==================================================================
 
 .new--wr {
-	background-image: url(../css/icon/7.7.jpg); /* Укажите путь к вашему изображению */
+	position: relative;
+	background-image: url(../css/icon/0.0.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
 	background-position: center;
+	padding-top: toRem(200);
 	z-index: 0; /* Помещаем позади содержимого */
+}
+.category-fone {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.523);
 }
 .wrapper.new--wr .new__container {
 	position: relative;
 	z-index: 10; /* Помещаем содержимое поверх фона */
-	background-color: rgba(89, 16, 235, 0.406);
+	// background-color: rgba(89, 16, 235, 0.406);
 	width: toRem(700);
 	margin-top: toRem(200);
 }
@@ -573,20 +764,16 @@ input::placeholder {
 	column-gap: toRem(30);
 	& a {
 		color: white;
-		text-shadow: 1px 1px 2px black;
-		box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.333);
 	}
 }
-.d-flex3 button {
-	box-shadow: 2px 2px 2px rgba(55, 255, 0, 0.936);
-}
+
 // ====================================   log   ====================================================================
 
 .wrapper {
 }
 
 .new--log {
-	/*position: relative;*/
+	position: relative;
 	top: 0;
 	left: 0;
 	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
@@ -597,7 +784,14 @@ input::placeholder {
 	background-position: center;
 	z-index: 0; /* Помещаем позади содержимого */
 }
-
+.log--fone {
+	background-color: rgba(255, 255, 255, 0.578);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+}
 .log__container {
 	/*position: relative;*/
 	width: toRem(400);
@@ -684,27 +878,42 @@ legend {
 }
 .np input[type="submit"] {
 	height: toRem(30);
-	background-color: #43ea4bf6;
+	background-color: rgba(0, 128, 0, 0.989);
 	font-family: "Philosopher", sans-serif;
 	font-size: toRem(20);
 	font-weight: 500;
 	font-style: normal;
-	color: rgb(19, 18, 18);
+	color: rgb(250, 250, 250);
 	border-radius: 7px;
 	cursor: pointer;
+	&:hover {
+		background-color: rgba(7, 215, 7, 0.674);
+	}
 }
 
 .logout input[type="submit"] {
 	// height: toRem(30);
-	background-color: #f4f7f4f6;
+	background-color: rgba(255, 255, 255, 0);
 	font-family: "Philosopher", sans-serif;
 	font-size: toRem(20);
-	font-weight: 500;
+	font-weight: 400;
 	font-style: normal;
 	padding: toRem(10);
-	color: rgb(19, 18, 18);
+	border: none;
+	color: rgb(252, 248, 248);
+	text-shadow:
+		1px 1px 1px black,
+		-1px -1px 1px black;
 	cursor: pointer;
-	border-radius: 7px;
+	background-image: url(./icon/logout.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	&:hover {
+		text-shadow:
+			2px 2px 1px black,
+			-2px -2px 1px black;
+	}
 }
 input.email::placeholder {
 	text-align: center;
@@ -713,7 +922,15 @@ input.email::placeholder {
 	text-align: center;
 }
 // ==============================================================
+
+.addus,
+.delus {
+	display: flex;
+	align-items: center;
+}
+
 .register {
+	position: relative;
 	background-image: url(../css/icon/8.8.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -758,6 +975,15 @@ input.email::placeholder {
 		font-style: normal;
 	}
 }
+
+.register--fone {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.55);
+}
 .rowe {
 	display: flex;
 	align-items: center;
@@ -775,29 +1001,58 @@ input.email::placeholder {
 	row-gap: toRem(20);
 }
 
-.reg,
-.res {
-	cursor: pointer;
-	font-family: "Philosopher", sans-serif;
-	font-size: toRem(20);
-	font-weight: 400;
-	font-style: normal;
-	padding: toRem(10);
-	border-radius: 10px;
-}
-
-.reg {
-	background-color: rgba(0, 255, 4, 0.473);
-}
-.res {
-	background-color: rgba(247, 62, 62, 0.473);
-}
 .registration-cancel {
 	color: #faf7f7;
 }
 
+.addus {
+	// cursor: pointer;
+	padding-right: toRem(10);
+	background-color: rgba(0, 128, 0, 0.304);
+	& .reg {
+		font-family: "Philosopher", sans-serif;
+		font-size: toRem(20);
+		font-weight: 400;
+		font-style: normal;
+		background-color: rgba(0, 128, 0, 0.304);
+		color: white;
+		cursor: pointer;
+		padding: toRem(10);
+		&:hover {
+			background-color: rgba(0, 128, 0, 0.502);
+		}
+	}
+}
+.delus {
+	// cursor: pointer;
+	background-color: rgba(244, 12, 12, 0.447);
+	padding-right: toRem(10);
+	& .res {
+		font-family: "Philosopher", sans-serif;
+		font-size: toRem(20);
+		font-weight: 400;
+		font-style: normal;
+		background-color: rgba(244, 12, 12, 0.447);
+		color: white;
+		cursor: pointer;
+		padding: toRem(10);
+		&:hover {
+			background-color: rgba(244, 12, 12, 0.605);
+		}
+	}
+}
+
+#cans {
+	color: rgb(0, 128, 0);
+	letter-spacing: 1px;
+	text-shadow: 1px 1px 3px white;
+	&:hover {
+		text-shadow: 1px 1px 3px rgb(15, 15, 15);
+	}
+}
 // ====================================  statistic    ===========================================================================
 .stt {
+	position: relative;
 	background-image: url(../css/icon/7.7.7.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -806,10 +1061,20 @@ input.email::placeholder {
 	padding-top: toRem(50);
 }
 
+.stt__color {
+	position: fixed; /* Фиксированное позиционирование */
+	top: 0; /* Прикрепить к верхней части */
+	left: 0; /* Прикрепить к левой части */
+	width: 100%; /* Задает ширину 100% */
+	height: 100vh; /* Задает высоту 100% */
+	background-color: rgba(0, 0, 255, 0.543);
+}
+
 .statistic {
 	&__container {
-		background-color: rgba(76, 76, 242, 0.406);
-		z-index: 10;
+		//position для  з-индекса контейнера !!!!
+		position: relative;
+		// background-color: rgba(76, 76, 242, 0.406);
 	}
 	&__button {
 		display: flex;
@@ -823,6 +1088,7 @@ input.email::placeholder {
 			font-style: normal;
 			margin-left: toRem(20);
 			text-decoration: none;
+			// border: 1px solid white;
 			&:hover {
 				text-shadow:
 					3px 3px 3px rgb(242, 242, 244),
@@ -834,6 +1100,7 @@ input.email::placeholder {
 	&__title {
 		text-align: center;
 		& h3 {
+			z-index: 577;
 			font-family: "Philosopher", sans-serif;
 			font-size: toRem(50);
 			font-weight: 700;
@@ -846,17 +1113,67 @@ input.email::placeholder {
 		}
 	}
 	&__nav {
+		position: relative;
+		display: flex;
 	}
-	&__exit {
+	&__nav a::before {
+		content: "";
+		position: absolute;
+		width: toRem(50);
+		height: toRem(2);
+		top: 10px;
+		left: 50;
+		background-color: #f8f9f7;
+	}
+
+	&__exit a:hover {
+		text-shadow: none;
+		color: rgb(169, 165, 165);
 	}
 	&__table {
+		position: relative; /* для липкости шапки */
+		// margin-top: toRem(70);
+		// z-index: 50;
+		background-color: rgba(172, 255, 47, 0.413);
+		max-height: 45vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+		overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+		overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+		box-shadow:
+			9px 9px 16px rgb(234, 235, 237),
+			-9px -9px 16px rgb(255, 255, 255);
 	}
 }
 .logger-user {
 }
 .table {
 }
+// ==============================  .user +  statistic all  =====================================================================
 
+.statistic__nav a,
+.user__nav a,
+.statistic__exit a,
+.user__exit a {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.statistic__nav img,
+.user__nav img,
+.statistic__exit img,
+.user__exit img {
+	width: toRem(30);
+	margin-left: toRem(10);
+	background-color: white;
+	border-radius: 50%;
+	padding: toRem(3);
+}
+// .user__exit:hover,
+// .statistic__exit:hover {
+// 	img {
+// 		transform: translateX(20px);
+// 	}
+// }
 // ==============================  .user   =====================================================================
 
 .use {
@@ -867,11 +1184,19 @@ input.email::placeholder {
 	height: 100vh;
 	padding-top: toRem(50);
 }
-
+.use__color {
+	position: fixed; /* Фиксированное позиционирование */
+	top: 0; /* Прикрепить к верхней части */
+	left: 0; /* Прикрепить к левой части */
+	width: 100%; /* Задает ширину 100% */
+	height: 100vh; /* Задает высоту 100% */
+	background-color: rgba(0, 0, 255, 0.543);
+}
 .user {
 	&__container {
-		background-color: rgba(76, 76, 242, 0.406);
-		z-index: 10;
+		//	position для  з-индекса контейнера !!!!
+		position: relative;
+		// background-color: rgba(76, 76, 242, 0.406);
 	}
 	&__title {
 		text-align: center;
@@ -886,6 +1211,18 @@ input.email::placeholder {
 				3px -3px 5px rgb(252, 251, 251),
 				4px -4px 1px rgb(7, 7, 7);
 		}
+	}
+	&__table {
+		position: relative; /* для липкости шапки */
+		// margin-top: toRem(70);
+		z-index: 50;
+		background-color: none;
+		max-height: 45vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+		overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+		overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+		box-shadow:
+			9px 9px 16px rgb(234, 235, 237),
+			-9px -9px 16px rgb(255, 255, 255);
 	}
 	&__button {
 		display: flex;
@@ -908,9 +1245,26 @@ input.email::placeholder {
 		}
 	}
 	&__nav {
+		position: relative;
+		display: flex;
+	}
+	&__nav a::before {
+		content: "";
+		position: absolute;
+		width: toRem(50);
+		height: toRem(2);
+		top: 10px;
+		left: 50;
+		background-color: #f8f9f7;
 	}
 	&__exit {
+		display: flex;
+		& a:hover {
+			text-shadow: none;
+			color: rgb(169, 165, 165);
+		}
 	}
+
 	&__table button {
 		background-color: #ef2c2c;
 		color: white;

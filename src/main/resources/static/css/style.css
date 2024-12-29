@@ -8,11 +8,84 @@
   margin: 0 auto;
 }
 
+.creted {
+  position: absolute;
+  bottom: 0;
+  right: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 0;
+  cursor: pointer;
+}
+.creted p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 0.375rem;
+}
+.creted:hover {
+  background: linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+  border-radius: 10px;
+  padding: 0.625rem;
+  z-index: 999;
+  bottom: 0.625rem;
+}
+.creted:hover .sh {
+  width: 3.125rem;
+}
+.creted:hover p {
+  font-size: 1rem;
+  color: rgb(1, 106, 53);
+}
+.creted:hover span {
+  color: rgb(255, 215, 0);
+}
+
+.sh {
+  margin: 0 0.3125rem;
+  width: 0.625rem;
+  border-radius: 50%;
+}
+
+.refresh {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.refresh:hover {
+  background-color: rgba(255, 255, 255, 0.105);
+}
+
+.rf:hover {
+  background-color: rgba(255, 255, 255, 0.105);
+}
+
 .wrr {
+  position: relative;
   background-image: url(../css/icon/3.3.3.jpg);
   background-repeat: no-repeat;
   background-size: 150%;
   background-position: center;
+}
+
+.article--gone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.523);
 }
 
 .background-image {
@@ -42,16 +115,24 @@
 }
 
 .d-inline-block label {
-  -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
-          box-shadow: 1px 1px 5px rgb(251, 250, 250);
-  background-color: rgb(251, 163, 163);
-  color: rgb(6, 6, 6);
   font-size: 1.125rem;
   border-radius: 0.625rem;
   font-family: "Philosopher", sans-serif;
   font-weight: 700;
   font-style: italic;
   padding: 0.625rem;
+  -moz-box-shadow: #6e7849 0px 0px 10px;
+  -webkit-box-shadow: #6e7849 0 0 10px;
+  background-color: #534978;
+  background-image: linear-gradient(134deg, #b9c788, #534978);
+  -webkit-box-shadow: #6e7849 1px 1px 10px;
+          box-shadow: #6e7849 1px 1px 10px;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
+  border: 2px solid rgb(251, 163, 163);
+  color: rgb(249, 247, 247);
 }
 
 .btn {
@@ -65,42 +146,96 @@
           box-shadow: 1px 1px 5px rgb(251, 250, 250);
 }
 .btn:hover {
-  background-color: rgb(128, 128, 241);
-  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.105);
 }
 
 .btn-primary {
-  background-color: rgba(38, 186, 15, 0.687);
-  border: 2px solid rgb(38, 186, 15);
-  color: white;
+  font-style: normal;
+  color: #fffaff;
+  background: #78db85;
+  border: 1px solid #bbb;
+  text-shadow: 0px 0px 18px #520980;
+  box-shadow: -7px -7px 19px #f9f5f9;
+  -moz-box-shadow: -7px -7px 19px #f9f5f9;
+  -webkit-box-shadow: -7px -7px 19px #f9f5f9;
+  border-radius: 0px 62px 0px 53px;
+  -moz-border-radius: 0px 62px 0px 53px;
+  -webkit-border-radius: 0px 62px 0px 53px;
 }
 .btn-primary:hover {
-  background-color: rgba(143, 241, 128, 0.682);
-  border: 2px solid black;
-  color: rgb(10, 10, 10);
+  background-color: rgba(143, 241, 128, 0.329);
+  border: 1px solid #bbb;
+  -webkit-box-shadow: -7px -7px 19px #e8afe8;
+          box-shadow: -7px -7px 19px #e8afe8;
 }
 
 .filter {
-  background-color: rgba(251, 163, 163, 0.881);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0.625rem;
+  padding: 0.625rem 0.9375rem;
+  font-size: 1.25rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  -moz-box-shadow: #6e7849 0px 0px 10px;
+  -webkit-box-shadow: #6e7849 0 0 10px;
+  background-color: #534978;
+  background-image: linear-gradient(134deg, #b9c788, #534978);
+  -webkit-box-shadow: #6e7849 1px 1px 10px;
+          box-shadow: #6e7849 1px 1px 10px;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
   border: 2px solid rgb(251, 163, 163);
-  color: rgb(16, 16, 16);
+  color: rgb(249, 247, 247);
   cursor: pointer;
 }
 .filter:hover {
-  background-color: rgba(243, 93, 93, 0.662);
-  border: 2px solid black;
   color: rgb(249, 248, 248);
+  border: 2px dashed rgb(251, 163, 163);
+  background-image: linear-gradient(134deg, #534978, #b9c788);
+}
+
+.filter img {
+  width: 1rem;
+  margin-left: 0.3125rem;
+  rotate: -30deg;
 }
 
 .tovar {
-  background-color: rgb(117, 10, 225);
-  border: 2px solid rgb(117, 10, 225);
+  border: none;
   color: rgb(247, 245, 245);
   cursor: pointer;
+  background-image: linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
 }
 .tovar:hover {
-  background-color: rgba(0, 0, 255, 0.199);
-  border: 2px solid black;
+  background-image: linear-gradient(153deg, rgb(117, 10, 225), #daec3c);
+  border: none;
+}
+
+.creator {
+  border: none;
+  color: white;
+  text-shadow: 1px 1px 3px #070707;
+  -webkit-box-shadow: 0px -7px 7px rgba(0, 0, 0, 0.6274509804);
+          box-shadow: 0px -7px 7px rgba(0, 0, 0, 0.6274509804);
+  border-radius: 29px 0px 30px 15px;
+  -moz-border-radius: 29px 0px 30px 15px;
+  -webkit-border-radius: 29px 0px 30px 15px;
+  background-color: rgba(0, 128, 0, 0.304);
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+}
+.creator:hover {
+  border: none;
+  -webkit-box-shadow: 0px -7px 7px rgba(58, 58, 58, 0.6274509804);
+          box-shadow: 0px -7px 7px rgba(58, 58, 58, 0.6274509804);
+  background-color: rgba(0, 128, 0, 0.489);
 }
 
 .tableted {
@@ -223,12 +358,42 @@ tbody tr:hover {
           column-gap: 0.625rem;
 }
 
+.exit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.375rem;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 7px rgb(0, 0, 0), -1px -1px 7px rgb(0, 0, 0);
+          box-shadow: 1px 1px 7px rgb(0, 0, 0), -1px -1px 7px rgb(0, 0, 0);
+}
+.exit img {
+  width: 1.875rem;
+  margin-left: 0;
+}
+
 .out--button {
-  padding: 0.625rem;
   font-size: 1.125rem;
   font-weight: 600;
-  border-radius: 5px;
   cursor: pointer;
+}
+
+.admin-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.admin-img:hover {
+  border: none;
+}
+
+.admin-img img {
+  width: 1.5rem;
+  margin-left: 0.3125rem;
 }
 
 .error-message {
@@ -407,7 +572,7 @@ input::placeholder {
   background-color: rgba(0, 0, 255, 0.199);
 }
 .btn-back:hover {
-  background-color: #eae7e7;
+  background-color: rgba(234, 231, 231, 0.3176470588);
   border: none;
 }
 
@@ -427,7 +592,7 @@ input::placeholder {
 }
 
 .pr {
-  background-color: rgba(0, 0, 255, 0.324);
+  background-color: rgba(12, 12, 12, 0.728);
 }
 
 .product {
@@ -537,16 +702,23 @@ input::placeholder {
 
 .button-danger {
   margin-top: 6.25rem;
-  background-color: rgba(251, 163, 163, 0.881);
-  border: 2px solid rgb(251, 163, 163);
-  color: rgb(16, 16, 16);
   height: 3.125rem;
+  font-style: normal;
+  color: #ffffff;
+  background: #c50000;
+  text-shadow: 1px 1px 3px #070707;
+  box-shadow: 0px 0px 6px #454545;
+  -moz-box-shadow: 0px 0px 6px #454545;
+  -webkit-box-shadow: 0px 0px 6px #454545;
+  border-radius: 90px 15px 19px 15px;
+  -moz-border-radius: 90px 15px 19px 15px;
+  -webkit-border-radius: 90px 15px 19px 15px;
+  padding: 0.3125rem 1.25rem;
   cursor: pointer;
 }
 .button-danger:hover {
-  background-color: rgba(243, 93, 93, 0.662);
-  border: 2px solid black;
-  color: rgb(249, 248, 248);
+  background-color: rgba(197, 0, 0, 0.337254902);
+  border: none;
 }
 
 .btn-primary,
@@ -555,19 +727,59 @@ input::placeholder {
   cursor: pointer;
 }
 
+.save {
+  color: #ffffff;
+  background: green;
+  height: 3.125rem;
+  text-shadow: 0px 0px 0px #ffffff;
+  box-shadow: 0px 0px 6px #454545;
+  -moz-box-shadow: 0px 0px 6px #454545;
+  -webkit-box-shadow: 0px 0px 6px #454545;
+  border-radius: 19px 18px 90px 20px;
+  -moz-border-radius: 19px 18px 90px 20px;
+  -webkit-border-radius: 19px 18px 90px 20px;
+  padding: 0.625rem 1.25rem;
+}
+
+.bb {
+  width: 1.875rem;
+  margin-left: 0.625rem;
+}
+
+.save,
+.done {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+
 .new--wr {
-  background-image: url(../css/icon/7.7.jpg); /* Укажите путь к вашему изображению */
+  position: relative;
+  background-image: url(../css/icon/0.0.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
   background-position: center;
+  padding-top: 12.5rem;
   z-index: 0; /* Помещаем позади содержимого */
+}
+
+.category-fone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.523);
 }
 
 .wrapper.new--wr .new__container {
   position: relative;
   z-index: 10; /* Помещаем содержимое поверх фона */
-  background-color: rgba(89, 16, 235, 0.406);
   width: 43.75rem;
   margin-top: 12.5rem;
 }
@@ -612,18 +824,10 @@ input::placeholder {
 }
 .d-flex3 a {
   color: white;
-  text-shadow: 1px 1px 2px black;
-  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.333);
-          box-shadow: 2px 2px 2px rgba(0, 0, 255, 0.333);
-}
-
-.d-flex3 button {
-  -webkit-box-shadow: 2px 2px 2px rgba(55, 255, 0, 0.936);
-          box-shadow: 2px 2px 2px rgba(55, 255, 0, 0.936);
 }
 
 .new--log {
-  /*position: relative;*/
+  position: relative;
   top: 0;
   left: 0;
   width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
@@ -633,6 +837,15 @@ input::placeholder {
   background-size: cover;
   background-position: center;
   z-index: 0; /* Помещаем позади содержимого */
+}
+
+.log--fone {
+  background-color: rgba(255, 255, 255, 0.578);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
 }
 
 .log__container {
@@ -735,26 +948,37 @@ legend {
 
 .np input[type=submit] {
   height: 1.875rem;
-  background-color: rgba(67, 234, 75, 0.9647058824);
+  background-color: rgba(0, 128, 0, 0.989);
   font-family: "Philosopher", sans-serif;
   font-size: 1.25rem;
   font-weight: 500;
   font-style: normal;
-  color: rgb(19, 18, 18);
+  color: rgb(250, 250, 250);
   border-radius: 7px;
   cursor: pointer;
 }
+.np input[type=submit]:hover {
+  background-color: rgba(7, 215, 7, 0.674);
+}
 
 .logout input[type=submit] {
-  background-color: rgba(244, 247, 244, 0.9647058824);
+  background-color: rgba(255, 255, 255, 0);
   font-family: "Philosopher", sans-serif;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   padding: 0.625rem;
-  color: rgb(19, 18, 18);
+  border: none;
+  color: rgb(252, 248, 248);
+  text-shadow: 1px 1px 1px black, -1px -1px 1px black;
   cursor: pointer;
-  border-radius: 7px;
+  background-image: url(./icon/logout.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.logout input[type=submit]:hover {
+  text-shadow: 2px 2px 1px black, -2px -2px 1px black;
 }
 
 input.email::-webkit-input-placeholder {
@@ -781,7 +1005,18 @@ input.email::placeholder {
   text-align: center;
 }
 
+.addus,
+.delus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .register {
+  position: relative;
   background-image: url(../css/icon/8.8.jpg); /* Укажите путь к вашему изображению */
   background-repeat: no-repeat;
   background-size: cover;
@@ -825,6 +1060,15 @@ input.email::placeholder {
   font-style: normal;
 }
 
+.register--fone {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
 .rowe {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -852,30 +1096,57 @@ input.email::placeholder {
   row-gap: 1.25rem;
 }
 
-.reg,
-.res {
-  cursor: pointer;
-  font-family: "Philosopher", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  font-style: normal;
-  padding: 0.625rem;
-  border-radius: 10px;
-}
-
-.reg {
-  background-color: rgba(0, 255, 4, 0.473);
-}
-
-.res {
-  background-color: rgba(247, 62, 62, 0.473);
-}
-
 .registration-cancel {
   color: #faf7f7;
 }
 
+.addus {
+  padding-right: 0.625rem;
+  background-color: rgba(0, 128, 0, 0.304);
+}
+.addus .reg {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(0, 128, 0, 0.304);
+  color: white;
+  cursor: pointer;
+  padding: 0.625rem;
+}
+.addus .reg:hover {
+  background-color: rgba(0, 128, 0, 0.502);
+}
+
+.delus {
+  background-color: rgba(244, 12, 12, 0.447);
+  padding-right: 0.625rem;
+}
+.delus .res {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(244, 12, 12, 0.447);
+  color: white;
+  cursor: pointer;
+  padding: 0.625rem;
+}
+.delus .res:hover {
+  background-color: rgba(244, 12, 12, 0.605);
+}
+
+#cans {
+  color: rgb(0, 128, 0);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px white;
+}
+#cans:hover {
+  text-shadow: 1px 1px 3px rgb(15, 15, 15);
+}
+
 .stt {
+  position: relative;
   background-image: url(../css/icon/7.7.7.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -884,9 +1155,17 @@ input.email::placeholder {
   padding-top: 3.125rem;
 }
 
+.stt__color {
+  position: fixed; /* Фиксированное позиционирование */
+  top: 0; /* Прикрепить к верхней части */
+  left: 0; /* Прикрепить к левой части */
+  width: 100%; /* Задает ширину 100% */
+  height: 100vh; /* Задает высоту 100% */
+  background-color: rgba(0, 0, 255, 0.543);
+}
+
 .statistic__container {
-  background-color: rgba(76, 76, 242, 0.406);
-  z-index: 10;
+  position: relative;
 }
 .statistic__button {
   display: -webkit-box;
@@ -913,6 +1192,7 @@ input.email::placeholder {
   text-align: center;
 }
 .statistic__title h3 {
+  z-index: 577;
   font-family: "Philosopher", sans-serif;
   font-size: 3.125rem;
   font-weight: 700;
@@ -920,6 +1200,62 @@ input.email::placeholder {
   color: rgb(252, 251, 252);
   text-shadow: 2px -2px 1px rgb(18, 17, 17), 3px -3px 5px rgb(252, 251, 251), 4px -4px 1px rgb(7, 7, 7);
 }
+.statistic__nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.statistic__nav a::before {
+  content: "";
+  position: absolute;
+  width: 3.125rem;
+  height: 0.125rem;
+  top: 10px;
+  left: 50;
+  background-color: #f8f9f7;
+}
+.statistic__exit a:hover {
+  text-shadow: none;
+  color: rgb(169, 165, 165);
+}
+.statistic__table {
+  position: relative; /* для липкости шапки */
+  background-color: rgba(172, 255, 47, 0.413);
+  max-height: 45vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+          box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+}
+
+.statistic__nav a,
+.user__nav a,
+.statistic__exit a,
+.user__exit a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.statistic__nav img,
+.user__nav img,
+.statistic__exit img,
+.user__exit img {
+  width: 1.875rem;
+  margin-left: 0.625rem;
+  background-color: white;
+  border-radius: 50%;
+  padding: 0.1875rem;
+}
+
 .use {
   background-image: url(../css/icon/0.1.jpg);
   background-repeat: no-repeat;
@@ -929,9 +1265,17 @@ input.email::placeholder {
   padding-top: 3.125rem;
 }
 
+.use__color {
+  position: fixed; /* Фиксированное позиционирование */
+  top: 0; /* Прикрепить к верхней части */
+  left: 0; /* Прикрепить к левой части */
+  width: 100%; /* Задает ширину 100% */
+  height: 100vh; /* Задает высоту 100% */
+  background-color: rgba(0, 0, 255, 0.543);
+}
+
 .user__container {
-  background-color: rgba(76, 76, 242, 0.406);
-  z-index: 10;
+  position: relative;
 }
 .user__title {
   text-align: center;
@@ -943,6 +1287,16 @@ input.email::placeholder {
   font-style: normal;
   color: rgb(252, 251, 252);
   text-shadow: 2px -2px 1px rgb(18, 17, 17), 3px -3px 5px rgb(252, 251, 251), 4px -4px 1px rgb(7, 7, 7);
+}
+.user__table {
+  position: relative; /* для липкости шапки */
+  z-index: 50;
+  background-color: none;
+  max-height: 45vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+          box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
 }
 .user__button {
   display: -webkit-box;
@@ -964,6 +1318,30 @@ input.email::placeholder {
 .user__button a:hover {
   text-shadow: 3px 3px 3px rgb(242, 242, 244), -3px -3px 3px rgb(243, 243, 245);
   color: #0e0e0e;
+}
+.user__nav {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.user__nav a::before {
+  content: "";
+  position: absolute;
+  width: 3.125rem;
+  height: 0.125rem;
+  top: 10px;
+  left: 50;
+  background-color: #f8f9f7;
+}
+.user__exit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.user__exit a:hover {
+  text-shadow: none;
+  color: rgb(169, 165, 165);
 }
 .user__table button {
   background-color: #ef2c2c;

@@ -18,7 +18,7 @@
 <body>
 
 <div class="wrapper wr">
-	<div class="article--gone"></div>
+    <div class="article--gone"></div>
     <div class="background-image">
         <div class="wrapper__container">
             <div class="new">
@@ -59,7 +59,10 @@
 
                     <div class="d-flex ">
                         <button type="submit" class="btn creator">Створити</button>
-                        <a href="/articles" class="btn btn-back refresh">Назад<img class="bb" src="src/main/resources/static/css/icon/refresh.svg"></a>
+                        <a href="/articles" class="btn btn-back refresh">Назад
+                            <img class="bb" th:src="@{/css/icon/refresh.svg}">
+<!--                            <img class="bb" src="src/main/resources/static/css/icon/refresh.svg">-->
+                        </a>
                     </div>
                 </form>
             </div>
@@ -67,9 +70,12 @@
 
         </div>
     </div>
-	<div class="creted">
-		<p>Created by :<img class="sh" src="src/main/resources/static/css/icon/SH.jpeg"><span>Studio</span> </p>
-	</div>
+    <div class="creted">
+        <p>Created by :
+<!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
+            <img class="sh" th:src="@{/css/icon/SH.jpeg}">
+            <span>Studio</span> </p>
+    </div>
 </div>
 
 

@@ -17,6 +17,7 @@
 <body>
 
 <div class="wrapper new--wr">
+    <div class="category-fone"></div>
     <div class="background-image">
         <div class="new__container">
             <h2>Додати нову категорію</h2>
@@ -28,12 +29,21 @@
                     <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
                 </div>
                 <div class="d-flex3 ">
-                    <button type="submit" class="btn btn-primary">Зберегти</button>
-                    <a href="/articles" class="btn btn-secondary">Назад</a>
+                    <button type="submit" class="btn creator">Зберегти</button>
+                    <a href="/articles" class="btn  refresh rf">Назад
+                        <img class="bb" th:src="@{/css/icon/refresh.svg}">
+<!--                        <img class="bb" src="src/main/resources/static/css/icon/refresh.svg">-->
+                    </a>
                 </div>
             </form>
 
         </div>
+    </div>
+    <div class="creted">
+        <p>Created by :
+<!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
+            <img class="sh" th:src="@{/css/icon/SH.jpeg}">
+            <span>Studio</span> </p>
     </div>
 </div>
 

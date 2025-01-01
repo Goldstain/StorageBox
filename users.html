@@ -2,104 +2,346 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Адмін Панель | Користувачи </title>
+	<meta charset="UTF-8">
+	<title>Адмін Панель | Користувачи </title>
 
-    <link rel="stylesheet" href="src\main/resources/static/css/style.css">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 
 </head>
 
 <body>
-<div class="stt">
+	<div class="stt">
+		<div class="fone--ton"></div>
+		<div class="user__container">
+			<div class="logger-user">
+				<span th:text="${loggedUser.firstName+' '}">Mohamed</span>
+				<span th:text="${loggedUser.lastName}">Ali</span>
+			</div>
 
-    <div class="use__color"></div>
-    <div class="user__container">
-        <div class="logger-user">
-            <span th:text="${loggedUser.firstName+' '}"></span>
-            <span th:text="${loggedUser.lastName}"></span>
-        </div>
-
-        <div class="user__title">
-            <h3>Панель адміністратора - Керування користувачами</h3>
-        </div>
-
-
-        <div class="user__button">
-            <nav class="user__nav">
-                <a href="/admin/statistics">
-                    <p>Статистика</p> <img th:src="@{/css/icon/chart_up.svg}">
-<!--                    <img src="src/main/resources/static/css/icon/chart_up.svg">-->
-                </a>
-                <a href="/admin/users">
-                    <p>Користувачи</p> <img th:src="@{/css/icon/users.svg}">
-<!--                    <img src="src/main/resources/static/css/icon/users.svg">-->
-                </a>
-            </nav>
-
-            <div class="user__exit">
-                <a href="/articles">
-                    <p>Вихід</p> <img th:src="@{/css/icon/ex.png}">
-<!--                    <img src="src/main/resources/static/css/icon/ex.png">-->
-                </a>
-            </div>
-        </div>
-
-        <div class="user__table">
-            <table class="table">
-                <thead class="sticky-header">
-                <tr>
-                    <th>ID</th>
-                    <th>Ім'я</th>
-                    <th>Прізвище</th>
-                    <th>Email</th>
-                    <th>Ролі</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="userDTO : ${usersDTO}">
-                    <form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
-                        <input type="hidden" name="_method" value="DELETE">
-
-                        <td th:text="${userDTO.id}"></td>
-                        <td th:text="${userDTO.firstName}"></td>
-                        <td th:text="${userDTO.lastName}"></td>
-                        <td>
-                            <a th:href="@{/admin/users/{id}(id=${userDTO.id})}"
-                               th:text="${userDTO.email}"> </a>
-                        </td>
+			<div class="user__title">
+				<h3>Панель адміністратора - Керування користувачами</h3>
+			</div>
 
 
-                        <td>
-                            <ul>
-                                <li th:each="role : ${userDTO.roles}">
-                                    <span th:text="${role}"></span>
-                                </li>
-                            </ul>
-                        </td>
+			<div class="user__button">
+				<nav class="user__nav">
+					<a href="/admin/statistics">
+						<!-- <p>Статистика</p> <img th:src="@{/css/icon/chart_up.svg}"> -->
+						<p>Статистика<img src="src/main/resources/static/css/icon/chart_up.svg"></p>
+					</a>
+					<a href="/admin/users">
+						<!-- <p>Користувачи</p> <img th:src="@{/css/icon/users.svg}"> -->
+						<p>Користувачи<img src="src/main/resources/static/css/icon/users.svg"></p>
+					</a>
+				</nav>
 
-                        <td>
-                            <button type="submit"
-                                    th:if="${userDTO.email!='admin@example.com'}"
-                                    onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
-                                Видалити
-                            </button>
-                        </td>
-                    </form>
+				<div class="user__exit">
+					<a href="/articles">
+						<!-- <p>Вихід</p> <img th:src="@{/css/icon/ex.png}"> -->
+						<p>Вихід<img src="src/main/resources/static/css/icon/ex.png"></p>
+					</a>
+				</div>
+			</div>
 
-                </tr>
-                </tbody>
-            </table>
-        </div>
+			<div class="user__table">
+				<table class="table">
+					<thead class="sticky-header">
+						<tr>
+							<th>ID</th>
+							<th>Ім'я</th>
+							<th>Прізвище</th>
+							<th>Email</th>
+							<th>Ролі</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
 
 
-        <div class="creted">
-            <p>Created by :
-<!--                <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
-                <img class="sh" th:src="@{/css/icon/SH.jpeg}">
-                <span>Studio</span></p>
-        </div>
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
 
-    </div>
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+						<tr th:each="userDTO : ${usersDTO}">
+							<form th:action="@{/admin/users/{id}(id=${userDTO.id})}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+
+								<td th:text="${userDTO.id}">Данные</td>
+								<td th:text="${userDTO.firstName}">Данные</td>
+								<td th:text="${userDTO.lastName}">Данные</td>
+								<td>
+									<a th:href="@{/admin/users/{id}(id=${userDTO.id})}" th:text="${userDTO.email}">
+									</a>Данные
+								</td>
+
+
+								<td>
+									<ul>
+										<li th:each="role : ${userDTO.roles}">
+											<span th:text="${role}">Данные</span>
+										</li>
+									</ul>
+								</td>
+
+								<td>
+									<button type="submit" th:if="${userDTO.email!='admin@example.com'}"
+										onclick="return confirm('Ви впевнені, що хочете видалити цього користувача?')">
+										Видалити
+									</button>
+								</td>
+							</form>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+
+
+		</div>
+		<div class="creted">
+			<p>Created by :
+				<img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">
+				<!-- <img class="sh" th:src="@{/css/icon/SH.jpeg}"> -->
+				<span>Studio</span>
+			</p>
+		</div>
+	</div>
 </body>
+
 </html>

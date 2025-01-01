@@ -2,155 +2,163 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Редагування товару</title>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>Редагування товару</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+		rel="stylesheet">
 
-    <link rel="stylesheet" href="src\main/resources/static/css/style.css">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
 
 
 <body>
 
-<div class="wrapper wrrr">
-    <div class="background-image pr">
-        <div class="wrapper__container">
+	<div class=" wrrr">
+		<div class="fone--ton"></div>
+		<div>
+			<div class="wrapper__container">
 
-            <div class="product">
-                <h2>Картка товару</h2>
-                <form th:action="@{/articles/{id}(id=${article.getId()})}" th:object="${article}" method="post">
-                    <input type="hidden" name="_method" value="PUT">
-                    <div class="form__block">
+				<div class="product">
+					<h2>Картка товару</h2>
+					<form th:action="@{/articles/{id}(id=${article.getId()})}" th:object="${article}" method="post">
+						<input type="hidden" name="_method" value="PUT">
+						<div class="form__block">
 
-                        <div class="form__block--block">
-                            <label for="category">Категорія</label>
-                            <select id="category" class="form-control" th:field="*{category}">
-                                <option value="" disabled>Оберіть категорію</option>
-                                <option th:each="category: ${categories}" th:value="${category.id}"
-                                        th:text="${category.name}"></option>
-                            </select>
-                            <div class="error-message" th:if="${#fields.hasErrors('category')}" th:errors="*{category}">
-                            </div>
-                        </div>
+							<div class="form__block--block">
+								<label for="category">Категорія</label>
+								<select id="category" class="form-control" th:field="*{category}">
+									<option value="" disabled>Оберіть категорію</option>
+									<option th:each="category: ${categories}" th:value="${category.id}"
+										th:text="${category.name}"></option>
+								</select>
+								<div class="error-message" th:if="${#fields.hasErrors('category')}"
+									th:errors="*{category}">
+								</div>
+							</div>
 
-                        <div class="form__block--block">
+							<div class="form__block--block">
 
-                            <label for="name">Назва</label>
-                            <input class="input-field" type="text" th:field="*{name}" id="name"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
-                                Помилкове
-                                ім'я
-                            </div>
-                        </div>
+								<label for="name">Назва</label>
+								<input class="input-field" type="text" th:field="*{name}" id="name" />
+								<div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+									Помилкове
+									ім'я
+								</div>
+							</div>
 
-                        <div class="form__block--block">
-                            <label for="purchase">Ціна закупівлі</label>
-                            <input class="input-field" type="text" th:field="*{purchase}" id="purchase"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('purchase')}" th:errors="*{purchase}">
-                                Помилкова
-                                ціна
-                            </div>
-                        </div>
+							<div class="form__block--block">
+								<label for="purchase">Ціна закупівлі</label>
+								<input class="input-field" type="text" th:field="*{purchase}" id="purchase" />
+								<div class="error-message" th:if="${#fields.hasErrors('purchase')}"
+									th:errors="*{purchase}">
+									Помилкова
+									ціна
+								</div>
+							</div>
 
-                        <div class="form__block--block">
-                            <label for="sellingPrize">Ціна продажу</label>
-                            <input class="input-field" type="text" th:field="*{sellingPrize}" id="sellingPrize"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('sellingPrize')}"
-                                 th:errors="*{sellingPrize}">
-                                Помилкова
-                                ціна продажу
-                            </div>
+							<div class="form__block--block">
+								<label for="sellingPrize">Ціна продажу</label>
+								<input class="input-field" type="text" th:field="*{sellingPrize}" id="sellingPrize" />
+								<div class="error-message" th:if="${#fields.hasErrors('sellingPrize')}"
+									th:errors="*{sellingPrize}">
+									Помилкова
+									ціна продажу
+								</div>
 
-                        </div>
+							</div>
 
-                    </div>
-
-
-                    <div class="form__block">
-                        <div class="form__block--block">
-                            <label for="spentMoney">Витрати</label>
-                            <input class="input-field" type="text" th:field="*{spentMoney}" id="spentMoney"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('spentMoney')}"
-                                 th:errors="*{spentMoney}">
-                                Помилкові
-                                витрати
-                            </div>
-                        </div>
-
-                        <div class="form__block--block">
-                            <label for="quantity">Кількість куплено</label>
-                            <input class="input-field" type="text" th:field="*{quantity}" id="quantity"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}">
-                                Помилкова
-                                кількість
-                            </div>
-                        </div>
-
-                        <div class="form__block--block">
-                            <label for="soldQuantity">Кількість продано</label>
-                            <input class="input-field" type="text" th:field="*{soldQuantity}" id="soldQuantity"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('soldQuantity')}"
-                                 th:errors="*{soldQuantity}">
-                                Помилкова
-                                кількість
-                            </div>
-
-                        </div>
-
-                    </div>
+						</div>
 
 
-                    <label class="product__status" for="status">Статус</label>
-                    <select id="status" class="form-control" th:field="*{status}">
-                        <option value="" disabled selected>Оберіть статус</option>
-                        <option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}"></option>
+						<div class="form__block">
+							<div class="form__block--block">
+								<label for="spentMoney">Витрати</label>
+								<input class="input-field" type="text" th:field="*{spentMoney}" id="spentMoney" />
+								<div class="error-message" th:if="${#fields.hasErrors('spentMoney')}"
+									th:errors="*{spentMoney}">
+									Помилкові
+									витрати
+								</div>
+							</div>
 
-                    </select>
-                    <div class="d-flex4 ">
-                        <button type="submit" class="btn btn-primary save"><p>Зберегти</p>
-                            <img class="bb" th:src="@{/css/icon/accept.svg}">
-<!--                            <img class="bb" src="src/main/resources/static/css/icon/accept.svg">-->
-                        </button>
-                    </div>
+							<div class="form__block--block">
+								<label for="quantity">Кількість куплено</label>
+								<input class="input-field" type="text" th:field="*{quantity}" id="quantity" />
+								<div class="error-message" th:if="${#fields.hasErrors('quantity')}"
+									th:errors="*{quantity}">
+									Помилкова
+									кількість
+								</div>
+							</div>
 
-                </form>
-                <div class="button__block">
-                    <div class="button__block--button">
-                        <form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}"
-                              method="post">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn button-danger done"><p>Видалити</p>
-                                <img class="bb" th:src="@{/css/icon/delete.svg}">
-<!--                                <img class="bb" src="src/main/resources/static/css/icon/delete.svg">-->
-                            </button>
+							<div class="form__block--block">
+								<label for="soldQuantity">Кількість продано</label>
+								<input class="input-field" type="text" th:field="*{soldQuantity}" id="soldQuantity" />
+								<div class="error-message" th:if="${#fields.hasErrors('soldQuantity')}"
+									th:errors="*{soldQuantity}">
+									Помилкова
+									кількість
+								</div>
 
-                            <div class="d-flex2 ">
-                                <a href="/articles" class="btn  btn-back refresh">Назад
-                                    <img class="bb" th:src="@{/css/icon/refresh.svg}">
-<!--                                    <img class="bb" src="src/main/resources/static/css/icon/refresh.svg">-->
-                                </a>
-                            </div>
+							</div>
 
-                        </form>
-
-                    </div>
-                </div>
+						</div>
 
 
-            </div>
+						<label class="product__status" for="status">Статус</label>
+						<select id="status" class="form-control" th:field="*{status}">
+							<option value="" disabled selected>Оберіть статус</option>
+							<option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}">
+							</option>
+
+						</select>
+						<div class="d-flex4 ">
+							<button type="submit" class="btn btn-primary save">
+								<p>Зберегти</p>
+								<!-- <img class="bb" th:src="@{/css/icon/accept.svg}"> -->
+								<img class="bb" src="src/main/resources/static/css/icon/accept.svg">
+							</button>
+						</div>
+
+					</form>
+					<div class="button__block">
+						<div class="button__block--button">
+							<form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}"
+								method="post">
+								<input type="hidden" name="_method" value="DELETE">
+								<button type="submit" class="btn button-danger done">
+									<p>Видалити</p>
+									<!-- <img class="bb" th:src="@{/css/icon/delete.svg}"> -->
+									<img class="bb" src="src/main/resources/static/css/icon/delete.svg">
+								</button>
+
+								<div class="d-flex2 ">
+									<a href="/articles" class="btn  btn-back refresh">Назад
+										<!-- <img class="bb" th:src="@{/css/icon/refresh.svg}"> -->
+										<img class="bb" src="src/main/resources/static/css/icon/refresh.svg">
+									</a>
+								</div>
+
+							</form>
+
+						</div>
+					</div>
 
 
-        </div>
-    </div>
-    <div class="creted">
-        <p>Created by :
-<!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
-            <img class="sh" th:src="@{/css/icon/SH.jpeg}">
-            <span>Studio</span> </p>
-    </div>
-</div>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="creted">
+			<p>Created by :
+				<img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">
+				<!-- <img class="sh" th:src="@{/css/icon/SH.jpeg}"> -->
+				<span>Studio</span>
+			</p>
+		</div>
+	</div>
 
 
 </body>

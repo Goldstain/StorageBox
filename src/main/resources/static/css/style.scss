@@ -86,6 +86,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	align-items: center;
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.105);
+		color: white;
 	}
 }
 .rf:hover {
@@ -98,7 +99,8 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	position: relative;
 	background-image: url(../css/icon/3.3.3.jpg);
 	background-repeat: no-repeat;
-	background-size: 150%;
+	background-size: cover;
+	// background-size: 100% 150vh ;
 	background-position: center;
 
 	// position: relative;
@@ -112,16 +114,9 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	height: 100vh;
 	background-color: rgba(255, 255, 255, 0.523);
 }
-.background-image {
-	position: fixed; /* Фиксированное позиционирование */
-	top: 0; /* Прикрепить к верхней части */
-	left: 0; /* Прикрепить к левой части */
-	width: 100%; /* Задает ширину 100% */
-	height: 100vh; /* Задает высоту 100% */
-	background-color: rgba(0, 0, 255, 0.205);
-}
 
 .wrapper__container {
+	// для кнопок
 	position: relative;
 }
 .btn-group {
@@ -250,7 +245,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	border: none;
 	color: white;
 	text-shadow: 1px 1px 3px #070707;
-	box-shadow: 0px -7px 7px#000000a0;
+	box-shadow: 1px 1px 7px#f9f8f8a0;
 	border-radius: 29px 0px 30px 15px;
 	-moz-border-radius: 29px 0px 30px 15px;
 	-webkit-border-radius: 29px 0px 30px 15px;
@@ -268,10 +263,10 @@ $maxWidth: 1620; // Ширина полотна (макета)
 
 .tableted {
 	position: relative; /* для липкости шапки */
-	margin-top: toRem(70);
+	margin-top: toRem(20);
 	z-index: 50;
 	background-color: rgba(0, 0, 255, 0.409);
-	max-height: 65vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+	max-height: 71vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
 	overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
 	overflow-x: hidden; /* Убирает горизонтальную прокрутку */
 	box-shadow:
@@ -328,20 +323,6 @@ td {
 	padding: toRem(10);
 }
 
-.tableted {
-	margin-top: toRem(70);
-	z-index: 50;
-	background-color: rgba(0, 0, 255, 0.409);
-
-	max-height: 65vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
-	overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
-	overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-	position: relative;
-	box-shadow:
-		9px 9px 16px rgb(234, 235, 237),
-		-9px -9px 16px rgb(255, 255, 255);
-}
-
 .sticky-header {
 	position: sticky; /* Делаем шапку фиксированной */
 	top: 0; /* Прилипание к верхней части контейнера */
@@ -381,7 +362,7 @@ tbody tr:hover {
 
 .out {
 	// position: absolute;
-	margin-top: toRem(50);
+	margin-top: toRem(20);
 	display: flex;
 	align-items: center;
 	column-gap: toRem(10);
@@ -421,24 +402,21 @@ tbody tr:hover {
 
 .error-message {
 	color: #ff0000;
-	text-shadow:
-		2px 2px 2px rgb(11, 11, 11),
-		-2px -2px 2px rgb(11, 11, 11);
-	// background-color: rgba(255, 255, 255, 0.311);
+	// text-shadow:
+	// 	2px 2px 2px rgb(11, 11, 11),
+	// 	-2px -2px 2px rgb(11, 11, 11);
+	// // background-color: rgba(255, 255, 255, 0.311);
 }
 .wr {
 	background-image: url(../css/icon/0.0.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	width: 100%;
+	height: 75vh;
 	padding-top: toRem(200);
 }
-.wrapper {
-	height: 75vh;
-	&__container {
-		border-radius: 10px;
-	}
-}
+
 .new {
 	display: flex;
 	flex-direction: column;
@@ -513,6 +491,9 @@ input::placeholder {
 	display: flex;
 	column-gap: toRem(20);
 	margin-top: toRem(100);
+	& a:hover {
+		color: white;
+	}
 }
 
 .adaptiv-class {
@@ -550,16 +531,16 @@ input::placeholder {
 // ============================   product  =======================================================
 
 .wrrr {
-	background-image: url(../css/icon/9.9.jpg);
+	position: relative;
+	background-image: url(.//icon/7.1.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: center;
-	height: 100vh;
+	background-size: cover;
+	height: 98vh;
 }
-.pr {
-	background-color: rgba(12, 12, 12, 0.728);
-}
+
 .product {
+	margin-top: toRem(-50);
 	text-align: center;
 	& h2 {
 		font-size: toRem(50);
@@ -629,9 +610,7 @@ input::placeholder {
 	& a {
 		color: white;
 		text-shadow: 1px 1px 2px black;
-		&:hover {
-			color: rgb(8, 8, 8);
-		}
+		text-decoration: none;
 	}
 }
 
@@ -648,7 +627,7 @@ input::placeholder {
 	color: #ffffff;
 	background: #c50000;
 	text-shadow: 1px 1px 3px #070707;
-	box-shadow: 0px 0px 6px #454545;
+	box-shadow: 0px 0px 6px #e80303;
 	-moz-box-shadow: 0px 0px 6px #454545;
 	-webkit-box-shadow: 0px 0px 6px #454545;
 	border-radius: 90px 15px 19px 15px;
@@ -669,9 +648,7 @@ input::placeholder {
 
 .save {
 	color: #ffffff;
-	background: green;
 	height: toRem(50);
-	text-shadow: 0px 0px 0px #ffffff;
 	box-shadow: 0px 0px 6px #454545;
 	-moz-box-shadow: 0px 0px 6px #454545;
 	-webkit-box-shadow: 0px 0px 6px #454545;
@@ -679,6 +656,10 @@ input::placeholder {
 	-moz-border-radius: 19px 18px 90px 20px;
 	-webkit-border-radius: 19px 18px 90px 20px;
 	padding: toRem(10) toRem(20);
+	box-shadow: 0px 0px 6px white;
+	&:hover {
+		box-shadow: 4px 4px 16px rgba(143, 241, 128, 0.329);
+	}
 }
 
 .bb {
@@ -691,7 +672,13 @@ input::placeholder {
 	align-items: center;
 	background-color: rgba(255, 255, 255, 0);
 	border: none;
+	box-shadow: 0px 0px 6px white;
 }
+
+.done:hover {
+	box-shadow: 1px 1px 6px #c5000056;
+}
+
 // ==================================================================
 
 .new--wr {
@@ -777,25 +764,19 @@ input::placeholder {
 	top: 0;
 	left: 0;
 	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
-	height: 100vh; /* Увеличиваем высоту, чтобы изображение поместилось */
+	height: 95.5vh; /* Увеличиваем высоту, чтобы изображение поместилось */
 	background-image: url(../css/icon/5.5.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	padding-top: toRem(20);
 	z-index: 0; /* Помещаем позади содержимого */
 }
-.log--fone {
-	background-color: rgba(255, 255, 255, 0.578);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-}
+
 .log__container {
 	/*position: relative;*/
 	width: toRem(400);
-	margin-top: toRem(20);
+	// padding-top: toRem(20);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -843,7 +824,7 @@ input::placeholder {
 	font-size: toRem(20);
 	font-weight: 700;
 	font-style: normal;
-	color: rgb(19, 18, 18);
+	color: red;
 	font-style: italic;
 }
 
@@ -934,7 +915,7 @@ input.email::placeholder {
 	background-image: url(../css/icon/8.8.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 100vh;
+	height: 98vh;
 	background-position: center;
 	z-index: 0; /* Помещаем позади содержимого */
 
@@ -976,14 +957,6 @@ input.email::placeholder {
 	}
 }
 
-.register--fone {
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-	top: 0;
-	left: 0;
-	background-color: rgba(255, 255, 255, 0.55);
-}
 .rowe {
 	display: flex;
 	align-items: center;
@@ -1053,21 +1026,11 @@ input.email::placeholder {
 // ====================================  statistic    ===========================================================================
 .stt {
 	position: relative;
-	background-image: url(../css/icon/7.7.7.jpg);
+	background-image: url(.//icon/7.1.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: center;
-	height: 100vh;
-	padding-top: toRem(50);
-}
-
-.stt__color {
-	position: fixed; /* Фиксированное позиционирование */
-	top: 0; /* Прикрепить к верхней части */
-	left: 0; /* Прикрепить к левой части */
-	width: 100%; /* Задает ширину 100% */
-	height: 100vh; /* Задает высоту 100% */
-	background-color: rgba(0, 0, 255, 0.543);
+	background-size: cover;
+	height: 98vh;
 }
 
 .statistic {
@@ -1078,8 +1041,10 @@ input.email::placeholder {
 	}
 	&__button {
 		display: flex;
+		align-items: center;
 		justify-content: space-around;
-		margin: toRem(50) 0;
+		margin-top: toRem(-50);
+		// border: 1px solid white;
 		& a {
 			font-family: "Philosopher", sans-serif;
 			font-size: toRem(20);
@@ -1099,10 +1064,11 @@ input.email::placeholder {
 	}
 	&__title {
 		text-align: center;
+		margin-top: toRem(-50);
 		& h3 {
 			z-index: 577;
 			font-family: "Philosopher", sans-serif;
-			font-size: toRem(50);
+			font-size: toRem(30);
 			font-weight: 700;
 			font-style: normal;
 			color: rgb(252, 251, 252);
@@ -1121,7 +1087,7 @@ input.email::placeholder {
 		position: absolute;
 		width: toRem(50);
 		height: toRem(2);
-		top: 10px;
+		top: 18px;
 		left: 50;
 		background-color: #f8f9f7;
 	}
@@ -1132,10 +1098,8 @@ input.email::placeholder {
 	}
 	&__table {
 		position: relative; /* для липкости шапки */
-		// margin-top: toRem(70);
-		// z-index: 50;
 		background-color: rgba(172, 255, 47, 0.413);
-		max-height: 45vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+		max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
 		overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
 		overflow-x: hidden; /* Убирает горизонтальную прокрутку */
 		box-shadow:
@@ -1144,15 +1108,31 @@ input.email::placeholder {
 	}
 }
 .logger-user {
+	position: absolute;
+	top: toRem(20);
+	left: toRem(-100);
+	background-color: white;
+	padding: toRem(3);
+	border-radius: 5px;
+	box-shadow:
+		1px 1px 6px rgb(234, 235, 237),
+		-1px -1px 6px rgb(255, 255, 255);
 }
 .table {
+	// position: relative;
 }
+tfoot {
+	position: sticky;
+	bottom: 0;
+	background-color: #6e7849;
+}
+
 // ==============================  .user +  statistic all  =====================================================================
 
-.statistic__nav a,
-.user__nav a,
-.statistic__exit a,
-.user__exit a {
+.statistic__nav p,
+.user__nav p,
+.statistic__exit p,
+.user__exit p {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -1168,12 +1148,7 @@ input.email::placeholder {
 	border-radius: 50%;
 	padding: toRem(3);
 }
-// .user__exit:hover,
-// .statistic__exit:hover {
-// 	img {
-// 		transform: translateX(20px);
-// 	}
-// }
+
 // ==============================  .user   =====================================================================
 
 .use {
@@ -1184,14 +1159,7 @@ input.email::placeholder {
 	height: 100vh;
 	padding-top: toRem(50);
 }
-.use__color {
-	position: fixed; /* Фиксированное позиционирование */
-	top: 0; /* Прикрепить к верхней части */
-	left: 0; /* Прикрепить к левой части */
-	width: 100%; /* Задает ширину 100% */
-	height: 100vh; /* Задает высоту 100% */
-	background-color: rgba(0, 0, 255, 0.543);
-}
+
 .user {
 	&__container {
 		//	position для  з-индекса контейнера !!!!
@@ -1200,9 +1168,10 @@ input.email::placeholder {
 	}
 	&__title {
 		text-align: center;
+		margin-top: toRem(-50);
 		& h3 {
 			font-family: "Philosopher", sans-serif;
-			font-size: toRem(50);
+			font-size: toRem(30);
 			font-weight: 700;
 			font-style: normal;
 			color: rgb(252, 251, 252);
@@ -1217,7 +1186,7 @@ input.email::placeholder {
 		// margin-top: toRem(70);
 		z-index: 50;
 		background-color: none;
-		max-height: 45vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+		max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
 		overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
 		overflow-x: hidden; /* Убирает горизонтальную прокрутку */
 		box-shadow:
@@ -1227,7 +1196,7 @@ input.email::placeholder {
 	&__button {
 		display: flex;
 		justify-content: space-around;
-		margin: toRem(50) 0;
+		margin-top: toRem(-40);
 		& a {
 			font-family: "Philosopher", sans-serif;
 			font-size: toRem(20);
@@ -1253,7 +1222,7 @@ input.email::placeholder {
 		position: absolute;
 		width: toRem(50);
 		height: toRem(2);
-		top: 10px;
+		top: 20px;
 		left: 50;
 		background-color: #f8f9f7;
 	}
@@ -1278,4 +1247,75 @@ input.email::placeholder {
 	}
 }
 .logger-user {
+}
+// ==========================================================================================================
+
+.user {
+	&__edit {
+		position: relative;
+		background-image: url(.//icon/7.1.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 98vh;
+		// z-index: 1;
+	}
+}
+.fone--ton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(9, 9, 9, 0.454); /* Полупрозрачный черный цвет для притемнения */
+	z-index: 0; /* Этот блок будет находиться под контентом */
+}
+.edit--title {
+	text-align: center;
+	margin-top: toRem(-50);
+	& h3 {
+		z-index: 577;
+		font-family: "Philosopher", sans-serif;
+		font-size: toRem(30);
+		font-weight: 700;
+		font-style: normal;
+		color: rgb(252, 251, 252);
+
+		text-shadow:
+			2px -2px 1px rgb(18, 17, 17),
+			3px -3px 5px rgb(252, 251, 251),
+			4px -4px 1px rgb(7, 7, 7);
+	}
+}
+.edit {
+	&__container {
+		position: relative;
+		z-index: 1; /* Контент будет отображаться поверх фона и подложки */
+	}
+}
+.edit--exit {
+	width: toRem(50);
+	padding: toRem(10);
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0px 0px 16px white;
+	cursor: pointer;
+	&:hover {
+		box-shadow: 0px 0px 10px white;
+	}
+	& a {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.edit--button {
+	background-color: #6e7849;
+	color: white;
+	padding: toRem(5);
+	cursor: pointer;
+}
+.edit--table {
+}
+.error-message {
 }

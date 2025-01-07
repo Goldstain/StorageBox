@@ -28,6 +28,10 @@ nbu:
     url: https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json
 
 
+  redis:
+    host: localhost
+    port: 6379
+
 #    url: jdbc:postgresql://localhost:5432/storagebox
 #    username: postgres
 #    password: postgres

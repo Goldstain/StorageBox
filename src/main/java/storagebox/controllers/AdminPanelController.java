@@ -12,7 +12,7 @@ import storagebox.entities.security.Role;
 import storagebox.entities.security.User;
 import storagebox.services.AdminPanelService;
 import storagebox.services.UserService;
-import storagebox.services.impl.models.ArticlesGroupingByName;
+import storagebox.dto.ArticlesGroupingByName;
 
 import java.security.Principal;
 import java.util.List;

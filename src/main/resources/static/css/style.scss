@@ -97,7 +97,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 
 .wrr {
 	position: relative;
-	background-image: url(../css/icon/3.3.3.jpg);
+	background-image: url(../css/icon/2.2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	// background-size: 100% 150vh ;
@@ -281,7 +281,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 .sticky-header {
 	position: sticky; /* Делаем шапку фиксированной */
 	top: 0; /* Прилипание к верхней части контейнера */
-	background-color: rgba(0, 0, 255, 0.874);
+	background-color: rgba(149, 242, 255, 0.57);
 	color: white;
 	z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения 
@@ -326,7 +326,7 @@ td {
 .sticky-header {
 	position: sticky; /* Делаем шапку фиксированной */
 	top: 0; /* Прилипание к верхней части контейнера */
-	background-color: rgba(0, 0, 255, 0.874);
+	background-color: rgba(0, 225, 255, 0.57);
 	color: white;
 	z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения 
@@ -345,13 +345,13 @@ td {
 tbody tr:hover {
 	box-shadow:
 		1px 15px 5px rgba(58, 58, 240, 0.582),
-		-1px -15px 5px rgba(51, 51, 252, 0.519);
-	background-color: blue;
+		-1px -15px 5px rgba(51, 51, 252, 0.319);
+	background-color: #84f1ff;
 }
 // (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
 
 .highlight {
-	background-color: rgba(7, 7, 247, 0.582);
+	background-color: rgba(111, 240, 250, 0.38);
 	box-shadow:
 		15px 1px 5px rgba(60, 60, 247, 0.582),
 		-15px -1px 5px rgba(59, 59, 247, 0.519);
@@ -408,7 +408,7 @@ tbody tr:hover {
 	// // background-color: rgba(255, 255, 255, 0.311);
 }
 .wr {
-	background-image: url(../css/icon/0.0.jpg);
+	background-image: url(../css/icon/7.7.7.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -532,7 +532,7 @@ input::placeholder {
 
 .wrrr {
 	position: relative;
-	background-image: url(.//icon/7.1.jpg);
+	background-image: url(./icon/7.1.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -765,7 +765,7 @@ input::placeholder {
 	left: 0;
 	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
 	height: 95.5vh; /* Увеличиваем высоту, чтобы изображение поместилось */
-	background-image: url(../css/icon/5.5.jpg); /* Укажите путь к вашему изображению */
+	background-image: url(../css/icon/1.1.jpg); /* Укажите путь к вашему изображению */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -1026,7 +1026,7 @@ input.email::placeholder {
 // ====================================  statistic    ===========================================================================
 .stt {
 	position: relative;
-	background-image: url(.//icon/7.1.jpg);
+	background-image: url(./icon/3.3.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -1253,7 +1253,7 @@ tfoot {
 .user {
 	&__edit {
 		position: relative;
-		background-image: url(.//icon/7.1.jpg);
+		background-image: url(./icon/7.1.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
@@ -1267,7 +1267,7 @@ tfoot {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(9, 9, 9, 0.454); /* Полупрозрачный черный цвет для притемнения */
+	background-color: rgba(9, 9, 9, 0.1); /* Полупрозрачный черный цвет для притемнения */
 	z-index: 0; /* Этот блок будет находиться под контентом */
 }
 .edit--title {

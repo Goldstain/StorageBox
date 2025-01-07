@@ -14,8 +14,9 @@
 
 <body>
 
-<div class="wrapper wrrr">
-    <div class="background-image pr">
+<div class=" wrrr">
+    <div class="fone--ton"></div>
+    <div>
         <div class="wrapper__container">
 
             <div class="product">
@@ -31,14 +32,15 @@
                                 <option th:each="category: ${categories}" th:value="${category.id}"
                                         th:text="${category.name}"></option>
                             </select>
-                            <div class="error-message" th:if="${#fields.hasErrors('category')}" th:errors="*{category}">
+                            <div class="error-message" th:if="${#fields.hasErrors('category')}"
+                                 th:errors="*{category}">
                             </div>
                         </div>
 
                         <div class="form__block--block">
 
                             <label for="name">Назва</label>
-                            <input class="input-field" type="text" th:field="*{name}" id="name"/>
+                            <input class="input-field" type="text" th:field="*{name}" id="name" />
                             <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
                                 Помилкове
                                 ім'я
@@ -47,8 +49,9 @@
 
                         <div class="form__block--block">
                             <label for="purchase">Ціна закупівлі</label>
-                            <input class="input-field" type="text" th:field="*{purchase}" id="purchase"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('purchase')}" th:errors="*{purchase}">
+                            <input class="input-field" type="text" th:field="*{purchase}" id="purchase" />
+                            <div class="error-message" th:if="${#fields.hasErrors('purchase')}"
+                                 th:errors="*{purchase}">
                                 Помилкова
                                 ціна
                             </div>
@@ -56,7 +59,7 @@
 
                         <div class="form__block--block">
                             <label for="sellingPrize">Ціна продажу</label>
-                            <input class="input-field" type="text" th:field="*{sellingPrize}" id="sellingPrize"/>
+                            <input class="input-field" type="text" th:field="*{sellingPrize}" id="sellingPrize" />
                             <div class="error-message" th:if="${#fields.hasErrors('sellingPrize')}"
                                  th:errors="*{sellingPrize}">
                                 Помилкова
@@ -71,7 +74,7 @@
                     <div class="form__block">
                         <div class="form__block--block">
                             <label for="spentMoney">Витрати</label>
-                            <input class="input-field" type="text" th:field="*{spentMoney}" id="spentMoney"/>
+                            <input class="input-field" type="text" th:field="*{spentMoney}" id="spentMoney" />
                             <div class="error-message" th:if="${#fields.hasErrors('spentMoney')}"
                                  th:errors="*{spentMoney}">
                                 Помилкові
@@ -81,8 +84,9 @@
 
                         <div class="form__block--block">
                             <label for="quantity">Кількість куплено</label>
-                            <input class="input-field" type="text" th:field="*{quantity}" id="quantity"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}">
+                            <input class="input-field" type="text" th:field="*{quantity}" id="quantity" />
+                            <div class="error-message" th:if="${#fields.hasErrors('quantity')}"
+                                 th:errors="*{quantity}">
                                 Помилкова
                                 кількість
                             </div>
@@ -90,7 +94,7 @@
 
                         <div class="form__block--block">
                             <label for="soldQuantity">Кількість продано</label>
-                            <input class="input-field" type="text" th:field="*{soldQuantity}" id="soldQuantity"/>
+                            <input class="input-field" type="text" th:field="*{soldQuantity}" id="soldQuantity" />
                             <div class="error-message" th:if="${#fields.hasErrors('soldQuantity')}"
                                  th:errors="*{soldQuantity}">
                                 Помилкова
@@ -105,12 +109,14 @@
                     <label class="product__status" for="status">Статус</label>
                     <select id="status" class="form-control" th:field="*{status}">
                         <option value="" disabled selected>Оберіть статус</option>
-                        <option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}"></option>
+                        <option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}">
+                        </option>
 
                     </select>
                     <div class="d-flex4 ">
-                        <button type="submit" class="btn btn-primary save"><p>Зберегти</p>
-                            <img class="bb" th:src="@{/css/icon/accept.svg}">
+                        <button type="submit" class="btn btn-primary save">
+                            <p>Зберегти</p>
+                             <img class="bb" th:src="@{/css/icon/accept.svg}">
 <!--                            <img class="bb" src="src/main/resources/static/css/icon/accept.svg">-->
                         </button>
                     </div>
@@ -121,14 +127,15 @@
                         <form th:action="@{/articles/{id} (id=${article.getId()})} " th:object="${article}"
                               method="post">
                             <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn button-danger done"><p>Видалити</p>
-                                <img class="bb" th:src="@{/css/icon/delete.svg}">
+                            <button type="submit" class="btn button-danger done">
+                                <p>Видалити</p>
+                                 <img class="bb" th:src="@{/css/icon/delete.svg}">
 <!--                                <img class="bb" src="src/main/resources/static/css/icon/delete.svg">-->
                             </button>
 
                             <div class="d-flex2 ">
                                 <a href="/articles" class="btn  btn-back refresh">Назад
-                                    <img class="bb" th:src="@{/css/icon/refresh.svg}">
+                                     <img class="bb" th:src="@{/css/icon/refresh.svg}">
 <!--                                    <img class="bb" src="src/main/resources/static/css/icon/refresh.svg">-->
                                 </a>
                             </div>
@@ -147,8 +154,9 @@
     <div class="creted">
         <p>Created by :
 <!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
-            <img class="sh" th:src="@{/css/icon/SH.jpeg}">
-            <span>Studio</span> </p>
+             <img class="sh" th:src="@{/css/icon/SH.jpeg}">
+            <span>Studio</span>
+        </p>
     </div>
 </div>
 

@@ -23,6 +23,10 @@ admin:
   login: admin@example.com
   password: admin
 
+nbu:
+  api:
+    url: https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json
+
 
 #    url: jdbc:postgresql://localhost:5432/storagebox
 #    username: postgres

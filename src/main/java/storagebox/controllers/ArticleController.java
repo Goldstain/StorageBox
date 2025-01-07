@@ -17,10 +17,12 @@ import storagebox.exceptions.CategoryNotFoundException;
 import storagebox.exceptions.WrongValueException;
 import storagebox.services.ArticleService;
 import storagebox.services.CategoryService;
+import storagebox.services.ExchangeRateService;
 
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/articles")
@@ -29,12 +31,14 @@ public class ArticleController {
 
     private final ArticleService articleService;
     private final CategoryService categoryService;
+    private final ExchangeRateService exchangeRateService;
 
     @Autowired
     public ArticleController(
-            ArticleService articleService, CategoryService categoryService) {
+            ArticleService articleService, CategoryService categoryService, ExchangeRateService exchangeRateService) {
         this.articleService = articleService;
         this.categoryService = categoryService;
+        this.exchangeRateService = exchangeRateService;
     }
 
 
@@ -48,6 +52,11 @@ public class ArticleController {
             return userDTO;
         }
         return null;
+    }
+
+    @ModelAttribute(name = "currencyData")
+    public Map<String, Double> currencyData() {
+        return exchangeRateService.getExchangeRateMap();
     }
 
 

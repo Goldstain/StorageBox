@@ -17,9 +17,9 @@
 
 <body>
 
-<div class="wrapper wr">
-    <div class="article--gone"></div>
-    <div class="background-image">
+<div class=" wr">
+
+    <div>
         <div class="wrapper__container">
             <div class="new">
                 <h2>Додати новий товар</h2>
@@ -37,7 +37,8 @@
                     </div>
                     <div class="adaptiv-class">
                         <label for="name">Назва</label>
-                        <input class="input-field" type="text" id="name" th:field="*{name}" placeholder="Введіть назву">
+                        <input class="input-field" type="text" id="name" th:field="*{name}"
+                               placeholder="Введіть назву">
                         <div class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
                     </div>
                     <div class="adaptiv-class">
@@ -59,9 +60,9 @@
 
                     <div class="d-flex ">
                         <button type="submit" class="btn creator">Створити</button>
-                        <a href="/articles" class="btn btn-back refresh">Назад
+                        <a href="/articles" class="btn  refresh rf">Назад
                             <img class="bb" th:src="@{/css/icon/refresh.svg}">
-<!--                            <img class="bb" src="src/main/resources/static/css/icon/refresh.svg">-->
+<!--                                 src="src/main/resources/static/css/icon/refresh.svg">-->
                         </a>
                     </div>
                 </form>
@@ -73,8 +74,9 @@
     <div class="creted">
         <p>Created by :
 <!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
-            <img class="sh" th:src="@{/css/icon/SH.jpeg}">
-            <span>Studio</span> </p>
+             <img class="sh" th:src="@{/css/icon/SH.jpeg}">
+            <span>Studio</span>
+        </p>
     </div>
 </div>
 

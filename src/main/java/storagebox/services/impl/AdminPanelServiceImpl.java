@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import storagebox.entities.Article;
 import storagebox.repositories.AdminPanelRepository;
 import storagebox.services.AdminPanelService;
-import storagebox.services.impl.models.ArticlesGroupingByName;
+import storagebox.dto.ArticlesGroupingByName;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -12,8 +12,7 @@
 
 <body>
 <div class="stt">
-
-    <div class="use__color"></div>
+    <div class="fone--ton"></div>
     <div class="user__container">
         <div class="logger-user">
             <span th:text="${loggedUser.firstName+' '}"></span>
@@ -29,18 +28,18 @@
             <nav class="user__nav">
                 <a href="/admin/statistics">
                     <p>Статистика</p> <img th:src="@{/css/icon/chart_up.svg}">
-<!--                    <img src="src/main/resources/static/css/icon/chart_up.svg">-->
+                    <!--                    <img src="src/main/resources/static/css/icon/chart_up.svg">-->
                 </a>
                 <a href="/admin/users">
                     <p>Користувачи</p> <img th:src="@{/css/icon/users.svg}">
-<!--                    <img src="src/main/resources/static/css/icon/users.svg">-->
+                    <!--                    <img src="src/main/resources/static/css/icon/users.svg">-->
                 </a>
             </nav>
 
             <div class="user__exit">
                 <a href="/articles">
                     <p>Вихід</p> <img th:src="@{/css/icon/ex.png}">
-<!--                    <img src="src/main/resources/static/css/icon/ex.png">-->
+                    <!--                    <img src="src/main/resources/static/css/icon/ex.png">-->
                 </a>
             </div>
         </div>
@@ -95,11 +94,12 @@
 
         <div class="creted">
             <p>Created by :
-<!--                <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
+                <!--                <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
                 <img class="sh" th:src="@{/css/icon/SH.jpeg}">
                 <span>Studio</span></p>
         </div>
 
     </div>
+</div>
 </body>
 </html>

@@ -1,88 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Адмін Панель | Користувачи | Редагування </title>
 
-    <link rel="stylesheet" href="src\main/resources/static/css/style.css">
+    <link rel="stylesheet" href="src/main/resources/static/css/style.css">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 
 </head>
+
 <body>
-<div>
+<div class="user__edit">
+    <div class="fone--ton"></div>
+    <div class="edit__container">
 
-    <div>
-        <h3>Панель адміністратора - Редагування користувача</h3>
-    </div>
 
-    <div>
-        <a href="/admin/users">Вихід</a>
-    </div>
+        <div class="edit--title">
+            <h3>Панель адміністратора - Редагування користувача</h3>
+        </div>
 
-    <div>
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Ім'я</th>
-                <th>Прізвище</th>
-                <th>Email</th>
-                <th>Ролі</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <form th:action="@{/admin/users/{id}(id=${userDTO.id})}" th:object="${userDTO}" method="post">
-                    <input type="hidden" name="_method" value="PUT">
+        <div class="edit--exit">
+            <a href="/admin/users">Вихід</a>
+        </div>
 
-                    <td th:text="*{id}"></td>
-                    <td>
-                        <input type="text" th:field="*{firstName}">
-                        <div class="error-message"
-                             th:if="${#fields.hasErrors('firstName')}"
-                             th:errors="*{firstName}">
-                        </div>
-                    </td>
-                    <td>
-                        <input type="text" th:field="*{lastName}">
-                        <div class="error-message"
-                             th:if="${#fields.hasErrors('lastName')}"
-                             th:errors="*{lastName}">
-                        </div>
-                    </td>
-                    <td>
-                        <input type="email" th:field="*{email}">
-                        <div class="error-message"
-                             th:if="${#fields.hasErrors('email')}"
-                             th:errors="*{email}">
-                        </div>
-                    </td>
+        <div>
+            <table class="edit--table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ім'я</th>
+                    <th>Прізвище</th>
+                    <th>Email</th>
+                    <th>Ролі</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <form th:action="@{/admin/users/{id}(id=${userDTO.id})}" th:object="${userDTO}"
+                          method="post">
+                        <input type="hidden" name="_method" value="PUT">
 
-                    <td>
-                        <ul>
-                            <li th:each="role : ${roles}">
-                                <label>
-                                    <input type="checkbox" th:field="*{roles}" th:value="${role}"
-                                           th:checked="${userDTO.roles.contains(role)}">
-                                    <span th:text="${role}"></span>
-                                </label>
-                            </li>
-                        </ul>
-                    </td>
+                        <td th:text="*{id}">text</td>
+                        <td>
+                            <input type="text" th:field="*{firstName}">
+                            <div class="error-message" th:if="${#fields.hasErrors('firstName')}"
+                                 th:errors="*{firstName}">
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" th:field="*{lastName}">
+                            <div class="error-message" th:if="${#fields.hasErrors('lastName')}"
+                                 th:errors="*{lastName}">
+                            </div>
+                        </td>
+                        <td>
+                            <input type="email" th:field="*{email}">
+                            <div class="error-message" th:if="${#fields.hasErrors('email')}"
+                                 th:errors="*{email}">
+                            </div>
+                        </td>
 
-                    <td>
-                        <button type="submit"
-                                onclick="return confirm('Ви впевнені, що хочете оновити дані цього користувача?')">
-                            Зберегти
-                        </button>
-                    </td>
-                </form>
+                        <td>
+                            <ul>
+                                <li th:each="role : ${roles}">
+                                    <label>
+                                        <input type="checkbox" th:field="*{roles}" th:value="${role}"
+                                               th:checked="${userDTO.roles.contains(role)}">
+                                        <span th:text="${role}">text</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </td>
 
-            </tr>
-            </tbody>
-        </table>
+                        <td>
+                            <button class="edit--button" type="submit"
+                                    onclick="return confirm('Ви впевнені, що хочете оновити дані цього користувача?')">
+                                Зберегти
+                            </button>
+                        </td>
+                    </form>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 </div>
 </body>
+
 </html>

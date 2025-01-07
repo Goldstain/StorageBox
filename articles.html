@@ -25,6 +25,17 @@
 				<span th:text="${loggedUser.lastName}">Ali</span>
 			</div>
 
+			<fieldset class="currency">
+				<legend>Курси валют</legend>
+				<div>
+                  <span th:each="entry : ${currencyData}">
+                     <span th:text="${entry.key}"></span>:
+                     <span th:text="${entry.value}"></span>&nbsp;&nbsp;&nbsp;
+                  </span>
+				</div>
+			</fieldset>
+
+
 			<div class="btn-group " role="group" aria-label="Actions">
 				<form th:action="@{/articles/new-article}" method="get" class="d-inline-block">
 					<button type="submit" class="btn btn-primary">Додати новий товар</button>

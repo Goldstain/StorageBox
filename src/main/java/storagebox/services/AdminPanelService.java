@@ -1,6 +1,6 @@
 package storagebox.services;
 
-import storagebox.services.impl.models.ArticlesGroupingByName;
+import storagebox.dto.ArticlesGroupingByName;
 
 import java.util.List;
 

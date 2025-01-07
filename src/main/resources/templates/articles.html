@@ -25,12 +25,23 @@
             <span th:text="${loggedUser.lastName}"></span>
         </div>
 
+        <fieldset class="currency">
+            <legend>Курси валют</legend>
+            <div>
+                  <span th:each="entry : ${currencyData}">
+                     <span th:text="${entry.key}"></span>:
+                     <span th:text="${entry.value}"></span>&nbsp;&nbsp;&nbsp;
+                  </span>
+            </div>
+        </fieldset>
+
+
         <div class="btn-group " role="group" aria-label="Actions">
             <form th:action="@{/articles/new-article}" method="get" class="d-inline-block">
                 <button type="submit" class="btn btn-primary">Додати новий товар</button>
             </form>
 
-            <form th:action="@{/categories/new-category}" method="get" class="d-inline-block ">
+            <form th:action="@{/categories/new-category}" method="get" class="d-inline-block">
                 <button type="submit" class="btn btn-primary">Додати нову категорію</button>
             </form>
 
@@ -48,7 +59,8 @@
             <form th:action="@{/articles/search-by-name}" method="get" class="d-inline-block">
                 <input class="input-field" type="text" id="searchName" name="searchName" required
                        placeholder="Введіть назву">
-                <button type="submit" class="btn filter">Пошук<img th:src="@{/css/icon/search3.svg}">
+                <button type="submit" class="btn filter">Пошук
+                    <img th:src="@{/css/icon/exit.png}">
 <!--                    <img src="src/main/resources/static/css/icon/search3.svg">-->
                 </button>
             </form>
@@ -58,28 +70,28 @@
             </form>
         </div>
 
-        <!-- ............................................................................. -->
+
 
         <div class="out">
             <form method="POST" th:action="@{/logout}">
                 <div class="exit"><input class="out--button" type="submit" value="Вихід" role="button"/>
                     <img th:src="@{/css/icon/exit.png}">
-<!--                    <img src="src/main/resources/static/css/icon/exit.png">-->
+                    <!--                    <img src="src/main/resources/static/css/icon/exit.png">-->
                 </div>
             </form>
 
             <div>
-                <a href="/admin/statistics" class="btn btn-secondary admin-img" role="button"
+                <a href="/admin/statistics" class="btn  admin-img" role="button"
                    sec:authorize="hasRole('ROLE_ADMIN')">Адмін панель
                     <img th:src="@{/css/icon/admin2.svg}">
-<!--                    <img src="src/main/resources/static/css/icon/admin2.svg">-->
+                    <!--                    <img src="src/main/resources/static/css/icon/admin2.svg">-->
                 </a>
             </div>
         </div>
-        <!-- ................................................................................... -->
+
         <div class="tableted">
             <table class="table ">
-                <thead class="sticky-header">
+                <thead class="sticky-header tovar">
                 <tr>
                     <th style="width: 8%;">ID</th>
                     <th style="width: 8%;">Категорія</th>
@@ -121,7 +133,7 @@
 
     <div class="creted">
         <p>Created by :
-<!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
+            <!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
             <img class="sh" th:src="@{/css/icon/SH.jpeg}">
             <span>Studio</span></p>
     </div>

@@ -1,6 +1,7 @@
 package storagebox.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import storagebox.entities.Article;
@@ -40,6 +41,7 @@ public class ArticleServiceImpl implements ArticleService {
         article.setStatus(ArticleStatus.ON_THE_WAY);
         return articleRepository.save(article);
     }
+
 
     public Article findById(int id) throws ArticleNotFoundException {
         return articleRepository.findById(id).orElseThrow(

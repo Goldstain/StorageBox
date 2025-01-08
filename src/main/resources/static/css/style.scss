@@ -7,703 +7,764 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 @function toRem($value) {
-	// Базовый размер шрифта (обычно 16px)
-	$baseFontSize: 16;
-	// Вычисление значения в rem
-	@return ($value / $baseFontSize) * 1rem;
+  // Базовый размер шрифта (обычно 16px)
+  $baseFontSize: 16;
+  // Вычисление значения в rem
+  @return ($value / $baseFontSize) * 1rem;
 }
+
 // !Миксины ================================================================================
 // adaptiveValue = ($property-css стиль, $pcSize-максимальный параметр, $mobSize-минимальный параметр)
 
 $maxWidth: 1620; // Ширина полотна (макета)
 
 @mixin adaptiveValue($property, $pcSize, $mobSize) {
-	$addSize: $pcSize - $mobSize;
-	$addMobSize: $addSize + $addSize * 0.7;
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
 
-	@media (min-width: toRem(1620)) {
-		#{$property}: #{$pcSize + px};
-	}
+  @media (min-width: toRem(1620)) {
+    #{$property}: #{$pcSize + px};
+  }
 
-	@media (max-width: toRem(1620)) {
-		@media (max-width: 1620px) {
-			#{$property}: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 767px) / #{$maxWidth}));
-		}
-	}
+  @media (max-width: toRem(1620)) {
+    @media (max-width: 1620px) {
+      #{$property}: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 767px) / #{$maxWidth}));
+    }
+  }
 }
+
 //   @include adaptiveValue ($property , $pcSize, $mobSize);
 
 // ..................................................................................
 // общие стили
 [class*="__container"] {
-	max-width: toRem(1620);
-	padding: toRem(50) toRem(15);
-	margin: 0 auto;
+  max-width: toRem(1620);
+  padding: toRem(50) toRem(15);
+  margin: 0 auto;
 }
+
 .creted {
-	position: absolute;
-	bottom: 0;
-	right: toRem(10);
-	display: flex;
-	justify-content: end;
-	padding: 0;
-	cursor: pointer;
-	& p {
-		display: flex;
-		align-items: center;
-		color: white;
-		font-size: toRem(6);
-	}
-	&:hover {
-		// background-color: rgb(255, 215, 0);
-		background: -webkit-linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
-		background: -moz-linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
-		background: linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
-		border-radius: 10px;
-		padding: toRem(10);
-		z-index: 999;
-		bottom: toRem(10);
-		.sh {
-			width: toRem(50);
-		}
-		& p {
-			font-size: toRem(16);
-			color: rgb(1, 106, 53);
-		}
-		& span {
-			color: rgb(255, 215, 0);
-		}
-	}
+  position: absolute;
+  bottom: 0;
+  right: toRem(10);
+  display: flex;
+  justify-content: end;
+  padding: 0;
+  cursor: pointer;
+
+  & p {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: toRem(6);
+  }
+
+  &:hover {
+    // background-color: rgb(255, 215, 0);
+    background: -webkit-linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+    background: -moz-linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+    background: linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+    border-radius: 10px;
+    padding: toRem(10);
+    z-index: 999;
+    bottom: toRem(10);
+
+    .sh {
+      width: toRem(50);
+    }
+
+    & p {
+      font-size: toRem(16);
+      color: rgb(1, 106, 53);
+    }
+
+    & span {
+      color: rgb(255, 215, 0);
+    }
+  }
 }
+
 .sh {
-	margin: 0 toRem(5);
-	width: toRem(10);
-	border-radius: 50%;
+  margin: 0 toRem(5);
+  width: toRem(10);
+  border-radius: 50%;
 }
 
 .refresh {
-	display: flex;
-	align-items: center;
-	&:hover {
-		background-color: rgba(255, 255, 255, 0.105);
-		color: white;
-	}
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(27, 84, 92, 0.66);
+    color: white;
+  }
 }
+
 .rf:hover {
-	background-color: rgba(255, 255, 255, 0.105);
+  background-color: rgba(86, 162, 218, 0.8);
 }
 
 // ......................................................................................
 
 .wrr {
-	position: relative;
-	background-image: url(../css/icon/2.2.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	// background-size: 100% 150vh ;
-	background-position: center;
+  min-height: 100vh;
+  position: relative;
+  background-image: url(../css/icon/2.2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-size: 100% 150vh ;
+  background-position: center;
 
-	// position: relative;
-	// padding-top: 60px; /* Отступ сверху, чтобы шапка не перекрывала элементы */
+  // position: relative;
+  // padding-top: 60px; /* Отступ сверху, чтобы шапка не перекрывала элементы */
 }
+
 .article--gone {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.523);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.523);
 }
 
 .wrapper__container {
-	// для кнопок
-	position: relative;
+  position: relative;
 }
+
+.currency {
+  width: 12%; /* Зміна розміру блоку */
+  padding: 20px;
+  background-color: rgba(233, 247, 255, 0.61);
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.currency legend {
+  color: #3189c5; /* Зміна кольору тексту в legend */
+}
+
 .btn-group {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .d-inline-block select {
-	cursor: pointer;
-	margin-right: toRem(50);
+  cursor: pointer;
+  margin-right: toRem(50);
 }
 
 .d-inline-block label {
-	font-size: toRem(18);
-	border-radius: toRem(10);
-	font-family: "Philosopher", sans-serif;
-	font-weight: 700;
-	font-style: italic;
-	padding: toRem(10);
-	-moz-box-shadow: #6e7849 0px 0px 10px;
-	-webkit-box-shadow: #6e7849 0 0 10px;
-	background-color: #534978;
-	background-image: -moz-linear-gradient(134deg, #b9c788, #534978);
-	background-image: -ms-linear-gradient(134deg, #b9c788, #534978);
-	background-image: -o-linear-gradient(134deg, #b9c788, #534978);
-	background-image: -webkit-linear-gradient(134deg, #b9c788, #534978);
-	background-image: linear-gradient(134deg, #b9c788, #534978);
-	box-shadow: #6e7849 1px 1px 10px;
-	color: #ffffff;
-	display: inline-block;
-	text-decoration: none;
-	text-shadow: #000000 5px 5px 15px;
+  font-size: toRem(18);
+  border-radius: toRem(10);
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: toRem(10);
+  -moz-box-shadow: #6b9dd6 0px 0px 10px;
+  -webkit-box-shadow: #6e7849 0 0 10px;
+  background-color: rgba(111, 141, 198, 0.72);
+  //background-image: -moz-linear-gradient(134deg, #b9c788, #534978);
+  //background-image: -ms-linear-gradient(134deg, #b9c788, #534978);
+  //background-image: -o-linear-gradient(134deg, #b9c788, #534978);
+  //background-image: -webkit-linear-gradient(134deg, #b9c788, #534978);
+  background-image: linear-gradient(134deg, rgba(168, 248, 160, 0.96), rgba(75, 204, 63, 0.97));
+  box-shadow: #6e7849 1px 1px 10px;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
 
-	border: 2px solid rgb(251, 163, 163);
-	color: rgb(249, 247, 247);
+  border: 2px solid rgba(113, 177, 113, 0.61);
+  color: rgb(249, 247, 247);
 }
+
 .btn {
-	padding: toRem(10) toRem(15);
-	font-size: toRem(20);
-	border-radius: toRem(10);
-	font-family: "Philosopher", sans-serif;
-	font-weight: 700;
-	font-style: italic;
-	box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  padding: toRem(10) toRem(15);
+  font-size: toRem(20);
+  border-radius: toRem(10);
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
 
-	&:hover {
-		// background-color: rgb(128, 128, 241);
-		background-color: rgba(255, 255, 255, 0.105);
-		// border: 2px solid black;
-	}
+  &:hover {
+    // background-color: rgb(128, 128, 241);
+    background-color: rgba(255, 255, 255, 0.105);
+    // border: 2px solid black;
+  }
 }
-.btn-primary {
-	// font:bold 20px Verdana, Geneva, sans-serif;
-	font-style: normal;
-	color: #fffaff;
-	background: #78db85;
-	border: 1px solid #bbb;
-	text-shadow: 0px 0px 18px #520980;
-	box-shadow: -7px -7px 19px #f9f5f9;
-	-moz-box-shadow: -7px -7px 19px #f9f5f9;
-	-webkit-box-shadow: -7px -7px 19px #f9f5f9;
-	border-radius: 0px 62px 0px 53px;
-	-moz-border-radius: 0px 62px 0px 53px;
-	-webkit-border-radius: 0px 62px 0px 53px;
 
-	&:hover {
-		background-color: rgba(143, 241, 128, 0.329);
-		border: 1px solid #bbb;
-		box-shadow: -7px -7px 19px #e8afe8;
-	}
+.btn-primary {
+  // font:bold 20px Verdana, Geneva, sans-serif;
+  font-style: normal;
+  color: #fffaff;
+  background: #78db85;
+  border: 1px solid #bbb;
+  text-shadow: 0px 0px 18px #520980;
+  box-shadow: -7px -7px 19px #f9f5f9;
+  -moz-box-shadow: -7px -7px 19px #f9f5f9;
+  -webkit-box-shadow: -7px -7px 19px #f9f5f9;
+  border-radius: 0px 62px 0px 53px;
+  -moz-border-radius: 0px 62px 0px 53px;
+  -webkit-border-radius: 0px 62px 0px 53px;
+
+  &:hover {
+    background-color: rgba(143, 241, 128, 0.8);
+    border: 1px solid #bbb;
+    box-shadow: -7px -7px 19px rgba(99, 150, 205, 0.68);
+  }
 }
 
 .filter {
-	display: flex;
-	align-items: center;
-	margin-left: toRem(10);
-	padding: toRem(10) toRem(15);
-	font-size: toRem(20);
-	font-family: "Philosopher", sans-serif;
-	font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-left: toRem(10);
+  padding: toRem(10) toRem(15);
+  font-size: toRem(20);
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
 
-	-moz-box-shadow: #6e7849 0px 0px 10px;
-	-webkit-box-shadow: #6e7849 0 0 10px;
-	background-color: #534978;
-	background-image: -moz-linear-gradient(134deg, #b9c788, #534978);
-	background-image: -ms-linear-gradient(134deg, #b9c788, #534978);
-	background-image: -o-linear-gradient(134deg, #b9c788, #534978);
-	background-image: -webkit-linear-gradient(134deg, #b9c788, #534978);
-	background-image: linear-gradient(134deg, #b9c788, #534978);
-	box-shadow: #6e7849 1px 1px 10px;
-	color: #ffffff;
-	display: inline-block;
-	text-decoration: none;
-	text-shadow: #000000 5px 5px 15px;
+  -moz-box-shadow: #6e7849 0px 0px 10px;
+  -webkit-box-shadow: #6e7849 0 0 10px;
+  background-color: #534978;
+  //background-image: -moz-linear-gradient(134deg, #b9c788, #534978);
+  //background-image: -ms-linear-gradient(134deg, #b9c788, #534978);
+  //background-image: -o-linear-gradient(134deg, #b9c788, #534978);
+  //background-image: -webkit-linear-gradient(134deg, #b9c788, #534978);
+  background-image: linear-gradient(134deg, rgba(168, 248, 160, 0.96), rgba(75, 204, 63, 0.97));
+  box-shadow: #6e7849 1px 1px 10px;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
 
-	border: 2px solid rgb(251, 163, 163);
-	color: rgb(249, 247, 247);
-	cursor: pointer;
-	&:hover {
-		color: rgb(249, 248, 248);
-		border: 2px dashed rgb(251, 163, 163);
-		background-image: linear-gradient(134deg, #534978, #b9c788);
-	}
+  border: 2px solid rgba(113, 177, 113, 0.61);
+  color: rgb(249, 247, 247);
+  cursor: pointer;
+
+  &:hover {
+    color: rgb(249, 248, 248);
+    border: 2px dashed rgb(19, 138, 6);
+    background-image: linear-gradient(134deg, rgba(75, 204, 63, 0.97), rgba(168, 248, 160, 0.96));
+  }
 }
+
 .filter img {
-	width: toRem(16);
-	margin-left: toRem(5);
-	rotate: -30deg;
+  width: toRem(16);
+  margin-left: toRem(5);
+  rotate: -30deg;
 }
+
 .tovar {
-	border: none;
-	color: rgb(247, 245, 245);
-	cursor: pointer;
-	background-image: -moz-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
-	background-image: -ms-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
-	background-image: -o-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
-	background-image: -webkit-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
-	background-image: linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
-	&:hover {
-		background-image: linear-gradient(153deg, rgb(117, 10, 225), #daec3c);
-		border: none;
-	}
+  border: none;
+  color: rgb(247, 245, 245);
+  cursor: pointer;
+  //background-image: -moz-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+  //background-image: -ms-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+  //background-image: -o-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+  //background-image: -webkit-linear-gradient(153deg, #daec3c, rgb(117, 10, 225));
+  background-image: linear-gradient(153deg, rgba(185, 218, 255, 0.98), rgba(115, 175, 253, 0.97));
+
+  &:hover {
+    background-image: linear-gradient(153deg, rgba(70, 179, 246, 0.96), rgba(191, 232, 246, 0.95));
+    border: none;
+  }
 }
 
 .creator {
-	border: none;
-	color: white;
-	text-shadow: 1px 1px 3px #070707;
-	box-shadow: 1px 1px 7px#f9f8f8a0;
-	border-radius: 29px 0px 30px 15px;
-	-moz-border-radius: 29px 0px 30px 15px;
-	-webkit-border-radius: 29px 0px 30px 15px;
-	background-color: rgba(0, 128, 0, 0.304);
-	padding: toRem(10) toRem(20);
-	cursor: pointer;
-	&:hover {
-		border: none;
-		box-shadow: 0px -7px 7px#3a3a3aa0;
-		background-color: rgba(0, 128, 0, 0.489);
-	}
+  border: none;
+  color: white;
+  text-shadow: 1px 1px 3px #070707;
+  box-shadow: 1px 1px 7px #f9f8f8a0;
+  border-radius: 29px 0px 30px 15px;
+  -moz-border-radius: 29px 0px 30px 15px;
+  -webkit-border-radius: 29px 0px 30px 15px;
+  background-color: rgba(32, 87, 184, 0.45);
+  padding: toRem(10) toRem(20);
+  cursor: pointer;
+
+  &:hover {
+    border: none;
+    box-shadow: 0px -7px 7px #3a3a3aa0;
+    background-color: rgba(35, 102, 179, 0.76);
+  }
 }
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 .tableted {
-	position: relative; /* для липкости шапки */
-	margin-top: toRem(20);
-	z-index: 50;
-	background-color: rgba(0, 0, 255, 0.409);
-	max-height: 71vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
-	overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
-	overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-	box-shadow:
-		9px 9px 16px rgb(234, 235, 237),
-		-9px -9px 16px rgb(255, 255, 255);
+  position: relative; /* для липкости шапки */
+  margin-top: toRem(20);
+  z-index: 50;
+  background-color: rgba(134, 232, 255, 0.41);
+  max-height: 71vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  box-shadow: 9px 9px 16px rgb(234, 235, 237),
+  -9px -9px 16px rgb(255, 255, 255);
 }
 
 .sticky-header th {
-	padding: toRem(20);
+  padding: toRem(20);
 }
 
 .sticky-header {
-	position: sticky; /* Делаем шапку фиксированной */
-	top: 0; /* Прилипание к верхней части контейнера */
-	background-color: rgba(149, 242, 255, 0.57);
-	color: white;
-	z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения 
-	
+  position: sticky; /* Делаем шапку фиксированной */
+  top: 0; /* Прилипание к верхней части контейнера */
+  background-color: rgba(149, 214, 255, 0.7);
+  color: white;
+  z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .table {
-				// /* Включаем раздельное отображение границ */
-	border-spacing: 0 10px; /* Горизонтальные отступы между строками */
-	margin: 0 auto;
-	font-size: toRem(18);
+  // /* Включаем раздельное отображение границ */
+  border-spacing: 0 10px; /* Горизонтальные отступы между строками */
+  margin: 0 auto;
+  font-size: toRem(18);
 }
 
 .tbody a {
-	color: white;
+  color: #1b1a1a;
 }
+
 tbody tr {
-	background-color: rgba(0, 0, 255, 0.345); /* Легкий фон для строк */
-	font-size: toRem(20);
-	color: white;
+  background-color: rgba(196, 207, 253, 0.65); /* Легкий фон для строк */
+  font-size: toRem(20);
+  color: #3e3d3d;
 }
 
 // .................................................................................
 th,
 td {
-	width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
-	text-align: center; /* Центрируем текст */
-	vertical-align: middle; /* Выравниваем по вертикали */
-	overflow-wrap: break-word; /* Разрешаем перенос слов */
-	word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
-	white-space: normal; /* Позволяем перенос строк */
-	border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
-	font-size: toRem(20);
-	font-family: "Philosopher", sans-serif;
-	font-weight: 700;
-	font-style: normal;
-	color: rgb(242, 238, 238);
+  width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
+  text-align: center; /* Центрируем текст */
+  vertical-align: middle; /* Выравниваем по вертикали */
+  overflow-wrap: break-word; /* Разрешаем перенос слов */
+  word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
+  white-space: normal; /* Позволяем перенос строк */
+  border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
+  font-size: toRem(20);
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(55, 62, 67, 0.85);
 }
 
 .sticky-header th {
-	padding: toRem(10);
+  padding: toRem(10);
 }
 
 .sticky-header {
-	position: sticky; /* Делаем шапку фиксированной */
-	top: 0; /* Прилипание к верхней части контейнера */
-	background-color: rgba(0, 225, 255, 0.57);
-	color: white;
-	z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Легкая тень для выделения 
+  position: sticky; /* Делаем шапку фиксированной */
+  top: 0; /* Прилипание к верхней части контейнера */
+  background-color: rgba(120, 154, 239, 0.83);
+  color: white;
+  z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Легкая тень для выделения
+ }
+
+
+
+     padding: 10px; /* Отступы внутри ячеек */
 }
 
-
-
-	padding: 10px; /* Отступы внутри ячеек */
-}
 .table tbody tr td {
-	padding: 15px;
-	position: relative;
-	cursor: pointer;
+  padding: 12px;
+  position: relative;
+  cursor: pointer;
 }
 
 tbody tr:hover {
-	box-shadow:
-		1px 15px 5px rgba(58, 58, 240, 0.582),
-		-1px -15px 5px rgba(51, 51, 252, 0.319);
-	background-color: #84f1ff;
+  box-shadow: 1px 7px 5px rgba(74, 126, 237, 0.4),
+  -1px -15px 5px rgba(58, 131, 240, 0.58);
+  background-color: rgba(74, 126, 237, 0.4);
 }
+
 // (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
 
 .highlight {
-	background-color: rgba(111, 240, 250, 0.38);
-	box-shadow:
-		15px 1px 5px rgba(60, 60, 247, 0.582),
-		-15px -1px 5px rgba(59, 59, 247, 0.519);
+  background-color: rgba(132, 177, 234, 0.58);
+  box-shadow: 5px 1px 5px rgba(83, 176, 243, 0.58),
+  -5px -1px 5px rgba(132, 177, 234, 0.48);
 }
 
 // )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
 // ...............................   enter  ....................................................
 
 .out {
-	// position: absolute;
-	margin-top: toRem(20);
-	display: flex;
-	align-items: center;
-	column-gap: toRem(10);
+  // position: absolute;
+  margin-top: toRem(20);
+  display: flex;
+  align-items: center;
+  column-gap: toRem(10);
 }
+
 .exit {
-	display: flex;
-	align-items: center;
-	padding: toRem(6);
-	background-color: white;
-	border-radius: 5px;
-	box-shadow:
-		1px 1px 7px rgb(0, 0, 0),
-		-1px -1px 7px rgb(0, 0, 0);
-	& img {
-		width: toRem(30);
-		margin-left: 0;
-	}
+  display: flex;
+  align-items: center;
+  padding: toRem(6);
+  background-color: rgba(239, 242, 244, 0.13);
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.71),
+  -1px -1px 3px rgb(0, 0, 0, 0.56);
+
+  & img {
+    width: toRem(30);
+    margin-left: 0;
+  }
 }
+
 .out--button {
-	font-size: toRem(18);
-	font-weight: 600;
-	cursor: pointer;
+  font-size: toRem(18);
+  font-weight: 600;
+  cursor: pointer;
 }
+
 .admin-img {
-	display: flex;
-	&:hover {
-		border: none;
-	}
+  display: flex;
+
+  &:hover {
+    border: rgba(69, 154, 198, 0.86);
+  }
 }
+
 .admin-img img {
-	width: toRem(24);
-	margin-left: toRem(5);
+  width: toRem(24);
+  margin-left: toRem(5);
 }
 
 // ........................................................................................
 // ======================================================
 
 .error-message {
-	color: #ff0000;
-	// text-shadow:
-	// 	2px 2px 2px rgb(11, 11, 11),
-	// 	-2px -2px 2px rgb(11, 11, 11);
-	// // background-color: rgba(255, 255, 255, 0.311);
+  color: #ff0000;
+  // text-shadow:
+  // 	2px 2px 2px rgb(11, 11, 11),
+  // 	-2px -2px 2px rgb(11, 11, 11);
+  // // background-color: rgba(255, 255, 255, 0.311);
 }
+
 .wr {
-	background-image: url(../css/icon/7.7.7.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	width: 100%;
-	height: 75vh;
-	padding-top: toRem(200);
+  background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)),
+  url(../css/icon/2.2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 75vh;
+  padding-top: toRem(200);
 }
 
 .new {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	& h2 {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(44);
-		font-weight: 700;
-		font-style: normal;
-		color: white;
-		text-shadow: 2px 2px 3px black;
-	}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & h2 {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(44);
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    text-shadow: 2px 2px 3px black;
+  }
 }
+
 .form-block {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-	align-items: center;
-	font-family: "Philosopher", sans-serif;
-	font-size: toRem(24);
-	font-weight: 700;
-	font-style: normal;
-	color: white;
-	text-shadow: 2px 2px 3px black;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Philosopher", sans-serif;
+  font-size: toRem(24);
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 3px black;
 }
 
 input::placeholder {
-	color: rgba(255, 255, 255, 0.5);
-	font-style: italic;
-	font-size: 14px;
-	color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
 }
 
 .form-control {
-	background-color: #f0f0f0; /* Цвет фона */
-	border: 1px solid #131313; /* Цвет рамки */
-	padding: 10px; /* Отступы */
-	border-radius: 5px; /* Скругление углов */
-	font-size: 16px; /* Размер шрифта */
-	box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  background-color: #f0f0f0; /* Цвет фона */
+  border: 1px solid #131313; /* Цвет рамки */
+  padding: 10px; /* Отступы */
+  border-radius: 5px; /* Скругление углов */
+  font-size: 16px; /* Размер шрифта */
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
 }
 
 .form-control option {
-	color: #0c0b0b; /* Цвет текста для опций */
-	box-shadow: 1px 1px 5px rgb(251, 250, 250);
-	background-color: rgb(251, 163, 163);
-	font-size: toRem(18);
-	border-radius: toRem(10);
-	font-family: "Philosopher", sans-serif;
-	font-weight: 700;
-	font-style: italic;
-	padding: toRem(10);
+  color: #0c0b0b; /* Цвет текста для опций */
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  background-color: rgb(251, 163, 163);
+  font-size: toRem(18);
+  border-radius: toRem(10);
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: toRem(10);
 }
 
 .input-field {
-	width: 200px; /* Ширина поля ввода */
-	height: 20px; /* Высота поля ввода */
-	padding: 10px; /* Отступы внутри поля */
-	font-size: 16px; /* Размер шрифта */
-	border: 1px solid #ccc; /* Цвет рамки */
-	border-radius: 5px; /* Скругление углов */
-	background-color: #f0f0f0; /* Цвет фона */
-	font-weight: 700;
+  width: 200px; /* Ширина поля ввода */
+  height: 20px; /* Высота поля ввода */
+  padding: 10px; /* Отступы внутри поля */
+  font-size: 16px; /* Размер шрифта */
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 5px; /* Скругление углов */
+  background-color: #f0f0f0; /* Цвет фона */
+  font-weight: 700;
 }
 
 .d-flex {
-	position: absolute;
-	top: toRem(150);
-	margin-left: 50%;
-	top: toRem(250);
-	margin-left: 40%;
-	display: flex;
-	column-gap: toRem(20);
-	margin-top: toRem(100);
-	& a:hover {
-		color: white;
-	}
+  position: absolute;
+  top: toRem(150);
+  margin-left: 50%;
+  top: toRem(250);
+  margin-left: 40%;
+  display: flex;
+  column-gap: toRem(20);
+  margin-top: toRem(100);
+
+  & a:hover {
+    color: white;
+  }
 }
 
 .adaptiv-class {
-	min-height: toRem(130);
-	position: relative;
-	@media (max-width: toRem(1401)) {
-		display: flex;
-		flex-direction: column;
-		row-gap: toRem(10);
-		align-items: center;
-	}
+  min-height: toRem(130);
+  position: relative;
+  @media (max-width: toRem(1401)) {
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(10);
+    align-items: center;
+  }
 }
 
 .adaptiv-class .error-message {
-	position: absolute;
-	top: 70px;
-	padding: toRem(10);
-	text-align: center;
-	z-index: 10;
+  position: absolute;
+  top: 70px;
+  padding: toRem(10);
+  text-align: center;
+  z-index: 10;
 }
 
 .btn-back {
-	background-color: rgba(0, 0, 255, 0.199);
-	&:hover {
-		background-color: #eae7e751;
-		border: none;
-	}
+  background-color: rgba(0, 0, 255, 0.199);
+
+  &:hover {
+    background-color: #eae7e751;
+    border: none;
+  }
 }
+
 .d-flex a {
-	color: white;
-	&:hover {
-		color: rgb(13, 13, 13);
-	}
+  color: white;
+
+  &:hover {
+    color: rgb(13, 13, 13);
+  }
 }
+
 // ============================   product  =======================================================
 
 .wrrr {
-	position: relative;
-	background-image: url(./icon/7.1.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 98vh;
+  position: relative;
+  background-image: url(./icon/2.2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 98vh;
 }
 
 .product {
-	margin-top: toRem(-50);
-	text-align: center;
-	& h2 {
-		font-size: toRem(50);
-		color: rgb(248, 246, 246);
-		text-shadow:
-			2px -2px 5px rgb(6, 6, 6),
-			-2px 2px 5px rgb(9, 9, 9);
-	}
+  margin-top: toRem(-50);
+  text-align: center;
+
+  & h2 {
+    font-size: toRem(50);
+    color: rgb(248, 246, 246);
+    text-shadow: 2px -2px 5px rgb(28, 96, 174, 0.32),
+    -2px 2px 5px rgb(9, 9, 9, 0.71);
+  }
 }
+
 .form__block {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	margin-bottom: toRem(50);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: toRem(50);
 }
+
 .form__block--block {
-	display: flex;
-	flex-direction: column;
-	row-gap: toRem(20);
-	& input {
-		width: toRem(300);
-		height: toRem(40);
-		font-size: toRem(20);
-		font-weight: 700;
-	}
+  display: flex;
+  flex-direction: column;
+  row-gap: toRem(20);
+
+  & input {
+    width: toRem(300);
+    height: toRem(40);
+    font-size: toRem(20);
+    font-weight: 700;
+  }
 }
+
 .form__block label {
-	padding: toRem(10); /* Отступы внутри поля */
-	font-size: toRem(26); /* Размер шрифта */
-	border: 1px solid #ccc; /* Цвет рамки */
-	border-radius: 5px; /* Скругление углов */
-	background-color: #f0f0f0; /* Цвет фона */
-	font-weight: 700;
+  padding: toRem(10); /* Отступы внутри поля */
+  font-size: toRem(26); /* Размер шрифта */
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 5px; /* Скругление углов */
+  background-color: #f0f0f0; /* Цвет фона */
+  font-weight: 700;
 }
+
 .product__status {
-	font-size: toRem(20);
-	border: 1px solid #ccc; /* Цвет рамки */
-	border-radius: 10px; /* Скругление углов */
-	background-color: #ef2c2c; /* Цвет фона */
-	padding: toRem(10); /* Отступы внутри поля */
-	color: white;
+  font-size: toRem(20);
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 10px; /* Скругление углов */
+  background-color: (77, 129, 225, 0.61); /* Цвет фона */
+  padding: toRem(10); /* Отступы внутри поля */
+  color: white;
 }
 
 .button__block--status label {
-	color: #0c0b0b; /* Цвет текста для опций */
-	box-shadow: 1px 1px 5px rgb(251, 250, 250);
-	background-color: rgb(251, 163, 163);
-	font-size: toRem(18);
-	border-radius: toRem(10);
-	font-family: "Philosopher", sans-serif;
-	font-weight: 700;
-	font-style: italic;
-	padding: toRem(10);
+  color: #0c0b0b; /* Цвет текста для опций */
+  box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  background-color: rgb(251, 163, 163);
+  font-size: toRem(18);
+  border-radius: toRem(10);
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: toRem(10);
 }
 
 .button__block--button form {
-	display: flex;
-	text-align: center;
-	flex-direction: row;
-	justify-content: space-around;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .d-flex2 {
-	display: flex;
-	column-gap: toRem(20);
-	margin-top: toRem(100);
-	& a {
-		color: white;
-		text-shadow: 1px 1px 2px black;
-		text-decoration: none;
-	}
+  display: flex;
+  column-gap: toRem(20);
+  margin-top: toRem(100);
+
+  & a {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    text-decoration: none;
+  }
 }
 
 .d-flex4 {
-	position: absolute;
-	bottom: toRem(50);
-	left: toRem(550);
+  position: absolute;
+  bottom: toRem(50);
+  left: toRem(550);
 }
 
 .button-danger {
-	margin-top: toRem(100);
-	height: toRem(50);
-	font-style: normal;
-	color: #ffffff;
-	background: #c50000;
-	text-shadow: 1px 1px 3px #070707;
-	box-shadow: 0px 0px 6px #e80303;
-	-moz-box-shadow: 0px 0px 6px #454545;
-	-webkit-box-shadow: 0px 0px 6px #454545;
-	border-radius: 90px 15px 19px 15px;
-	-moz-border-radius: 90px 15px 19px 15px;
-	-webkit-border-radius: 90px 15px 19px 15px;
-	padding: toRem(5) toRem(20);
-	cursor: pointer;
-	&:hover {
-		background-color: #c5000056;
-		border: none;
-	}
+  margin-top: toRem(100);
+  height: toRem(50);
+  font-style: normal;
+  color: #ffffff;
+  background: #c50000;
+  text-shadow: 1px 1px 3px #070707;
+  box-shadow: 0px 0px 6px #e80303;
+  -moz-box-shadow: 0px 0px 6px #454545;
+  -webkit-box-shadow: 0px 0px 6px #454545;
+  border-radius: 90px 15px 19px 15px;
+  -moz-border-radius: 90px 15px 19px 15px;
+  -webkit-border-radius: 90px 15px 19px 15px;
+  padding: toRem(5) toRem(20);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #c5000056;
+    border: none;
+  }
 }
+
 .btn-primary,
 .btn-danger,
 .button-danger {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .save {
-	color: #ffffff;
-	height: toRem(50);
-	box-shadow: 0px 0px 6px #454545;
-	-moz-box-shadow: 0px 0px 6px #454545;
-	-webkit-box-shadow: 0px 0px 6px #454545;
-	border-radius: 19px 18px 90px 20px;
-	-moz-border-radius: 19px 18px 90px 20px;
-	-webkit-border-radius: 19px 18px 90px 20px;
-	padding: toRem(10) toRem(20);
-	box-shadow: 0px 0px 6px white;
-	&:hover {
-		box-shadow: 4px 4px 16px rgba(143, 241, 128, 0.329);
-	}
+  color: #ffffff;
+  height: toRem(50);
+  box-shadow: 0px 0px 6px #454545;
+  -moz-box-shadow: 0px 0px 6px #454545;
+  -webkit-box-shadow: 0px 0px 6px #454545;
+  border-radius: 19px 18px 90px 20px;
+  -moz-border-radius: 19px 18px 90px 20px;
+  -webkit-border-radius: 19px 18px 90px 20px;
+  padding: toRem(10) toRem(20);
+  box-shadow: 0px 0px 6px white;
+
+  &:hover {
+    box-shadow: 4px 4px 16px rgba(143, 241, 128, 0.329);
+  }
 }
 
 .bb {
-	width: toRem(30);
-	margin-left: toRem(10);
+  width: toRem(30);
+  margin-left: toRem(10);
 }
+
 .save,
 .done {
-	display: flex;
-	align-items: center;
-	background-color: rgba(255, 255, 255, 0);
-	border: none;
-	box-shadow: 0px 0px 6px white;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  box-shadow: 0px 0px 6px white;
 }
 
 .done:hover {
-	box-shadow: 1px 1px 6px #c5000056;
+  box-shadow: 1px 1px 6px #c5000056;
 }
 
 // ==================================================================
 
 .new--wr {
-	position: relative;
-	background-image: url(../css/icon/0.0.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	padding-top: toRem(200);
-	z-index: 0; /* Помещаем позади содержимого */
+  position: relative;
+  background-image: url(../css/icon/0.0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: toRem(200);
+  z-index: 0; /* Помещаем позади содержимого */
 }
+
 .category-fone {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	background-color: rgba(255, 255, 255, 0.523);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.523);
 }
+
 .wrapper.new--wr .new__container {
-	position: relative;
-	z-index: 10; /* Помещаем содержимое поверх фона */
-	// background-color: rgba(89, 16, 235, 0.406);
-	width: toRem(700);
-	margin-top: toRem(200);
+  position: relative;
+  z-index: 10; /* Помещаем содержимое поверх фона */
+  // background-color: rgba(89, 16, 235, 0.406);
+  width: toRem(700);
+  margin-top: toRem(200);
 }
 
 // .wrapper.new--wr::after {
@@ -718,40 +779,41 @@ input::placeholder {
 // }
 
 .new {
-	&__container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-		& h2 {
-			font-family: "Philosopher", sans-serif;
-			font-size: toRem(50);
-			font-weight: 700;
-			font-style: normal;
-			color: rgb(249, 249, 252);
-			text-shadow:
-				2px -2px 1px rgb(18, 17, 17),
-				3px -3px 1px rgb(252, 251, 251),
-				4px -4px 1px rgb(7, 7, 7);
-		}
+    & h2 {
+      font-family: "Philosopher", sans-serif;
+      font-size: toRem(50);
+      font-weight: 700;
+      font-style: normal;
+      color: white;
+      text-shadow: 2px -2px 1px rgb(18, 17, 17),
+      3px -3px 1px rgb(252, 251, 251),
+      2px -3px 1px rgb(7, 7, 7);
+    }
 
-		& label {
-			font-family: "Philosopher", sans-serif;
-			font-size: toRem(24);
-			font-weight: 700;
-			font-style: normal;
-			color: white;
-			text-shadow: 1px -1px 5px rgb(87, 6, 174);
-		}
-	}
+    & label {
+      font-family: "Philosopher", sans-serif;
+      font-size: toRem(24);
+      font-weight: 700;
+      font-style: normal;
+      color: white;
+      text-shadow: 1px -1px 5px rgba(9, 9, 9, 0.89);
+    }
+  }
 }
+
 .d-flex3 {
-	margin-top: toRem(50);
-	display: flex;
-	column-gap: toRem(30);
-	& a {
-		color: white;
-	}
+  margin-top: toRem(50);
+  display: flex;
+  column-gap: toRem(30);
+
+  & a {
+    color: rgba(41, 39, 39, 0.73);
+  }
 }
 
 // ====================================   log   ====================================================================
@@ -760,371 +822,400 @@ input::placeholder {
 }
 
 .new--log {
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
-	height: 95.5vh; /* Увеличиваем высоту, чтобы изображение поместилось */
-	background-image: url(../css/icon/1.1.jpg); /* Укажите путь к вашему изображению */
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	padding-top: toRem(20);
-	z-index: 0; /* Помещаем позади содержимого */
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
+  height: 95.5vh; /* Увеличиваем высоту, чтобы изображение поместилось */
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+  url(../css/icon/1.1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: toRem(20);
+  z-index: 0; /* Помещаем позади содержимого */
 }
 
 .log__container {
-	/*position: relative;*/
-	width: toRem(400);
-	// padding-top: toRem(20);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	z-index: 10; /* Помещаем содержимое поверх фона */
-	background-color: rgba(255, 255, 255, 0.578);
-	& h2 {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(50);
-		font-weight: 700;
-		font-style: normal;
-		color: rgb(100, 10, 227);
-		text-shadow:
-			2px -2px 1px rgb(18, 17, 17),
-			3px -3px 1px rgb(252, 251, 251),
-			4px -4px 1px rgb(7, 7, 7);
-	}
-	& p {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(30);
-		font-weight: 700;
-		font-style: normal;
-		color: rgb(19, 18, 18);
-		& a {
-			color: rgb(127, 26, 243);
-			cursor: pointer;
-			text-decoration: dashed;
-		}
-	}
-	& label {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(20);
-		font-weight: 700;
-		font-style: normal;
-		color: rgb(19, 18, 18);
+  /*position: relative;*/
+  width: toRem(400);
+  // padding-top: toRem(20);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 10; /* Помещаем содержимое поверх фона */
+  background-color: rgba(255, 255, 255, 0.578);
 
-		margin-bottom: toRem(10);
-	}
+  & h2 {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(50);
+    font-weight: 700;
+    font-style: normal;
+    color: rgba(3, 16, 53, 0.79);
+    text-shadow: 1px -2px 1px rgb(158, 184, 250, 0.66),
+    2px -1px 1px rgb(53, 53, 230, 0.36),
+    1px -2px 1px rgb(53, 53, 230, 0.36);
+  }
+
+  & p {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(30);
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(19, 18, 18);
+
+    & a {
+      color: rgb(0, 76, 211);
+      cursor: pointer;
+      text-decoration: dashed;
+    }
+  }
+
+  & label {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(20);
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(19, 18, 18);
+
+    margin-bottom: toRem(10);
+  }
 }
 
 //
 
 .alert {
-	font-family: "Philosopher", sans-serif;
-	font-size: toRem(20);
-	font-weight: 700;
-	font-style: normal;
-	color: red;
-	font-style: italic;
+  font-family: "Philosopher", sans-serif;
+  font-size: toRem(20);
+  font-weight: 700;
+  font-style: normal;
+  color: red;
+  font-style: italic;
 }
 
 fieldset {
-	margin-top: toRem(70);
-	width: toRem(300);
-	display: flex;
-	flex-direction: column;
-	padding: toRem(20);
-	margin-bottom: toRem(30);
-	border-radius: 15px;
-	background-color: rgba(90, 16, 194, 0.365);
+  margin-top: toRem(70);
+  width: toRem(300);
+  display: flex;
+  flex-direction: column;
+  padding: toRem(20);
+  margin-bottom: toRem(30);
+  border-radius: 15px;
+  background-color: rgba(70, 140, 246, 0.22);
 }
+
 legend {
-	font-family: "Philosopher", sans-serif;
-	font-size: toRem(20);
-	font-weight: 700;
-	font-style: normal;
-	color: rgb(249, 244, 244);
-	// font-style: italic;
+  font-family: "Philosopher", sans-serif;
+  font-size: toRem(20);
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(7, 24, 66, 0.96);
+  // font-style: italic;
 }
+
 .np {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .np input[type="text"],
 .np input[type="password"] {
-	height: 30px; /* или любой другой размер */
-	font-size: 16px; /* для увеличения текста */
-	border-radius: 7px;
+  height: 30px; /* или любой другой размер */
+  font-size: 16px; /* для увеличения текста */
+  border-radius: 7px;
 }
+
 .np input[type="submit"] {
-	height: toRem(30);
-	background-color: rgba(0, 128, 0, 0.989);
-	font-family: "Philosopher", sans-serif;
-	font-size: toRem(20);
-	font-weight: 500;
-	font-style: normal;
-	color: rgb(250, 250, 250);
-	border-radius: 7px;
-	cursor: pointer;
-	&:hover {
-		background-color: rgba(7, 215, 7, 0.674);
-	}
+  height: toRem(30);
+  background-color: rgba(19, 69, 174, 0.9);
+  font-family: "Philosopher", sans-serif;
+  font-size: toRem(20);
+  font-weight: 500;
+  font-style: normal;
+  color: rgb(250, 250, 250);
+  border-radius: 7px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(3, 24, 158, 0.58);
+  }
 }
 
 .logout input[type="submit"] {
-	// height: toRem(30);
-	background-color: rgba(255, 255, 255, 0);
-	font-family: "Philosopher", sans-serif;
-	font-size: toRem(20);
-	font-weight: 400;
-	font-style: normal;
-	padding: toRem(10);
-	border: none;
-	color: rgb(252, 248, 248);
-	text-shadow:
-		1px 1px 1px black,
-		-1px -1px 1px black;
-	cursor: pointer;
-	background-image: url(./icon/logout.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	&:hover {
-		text-shadow:
-			2px 2px 1px black,
-			-2px -2px 1px black;
-	}
+  // height: toRem(30);
+  background-color: rgba(255, 255, 255, 0);
+  font-family: "Philosopher", sans-serif;
+  font-size: toRem(20);
+  font-weight: 400;
+  font-style: normal;
+  padding: 2rem 0.625rem 3.7rem;;
+  border: none;
+  color: rgb(243, 239, 239);
+  text-shadow: 1px 1px 1px black,
+  -1px -1px 1px black;
+  cursor: pointer;
+  background-image: url(./icon/logout.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 54px;
+  text-align: center;
+
+  &:hover {
+    text-shadow: 1px 1px 1px black,
+    -1px -2px 1px black;
+  }
 }
+
 input.email::placeholder {
-	text-align: center;
+  text-align: center;
 }
+
 #password {
-	text-align: center;
+  text-align: center;
 }
+
 // ==============================================================
 
 .addus,
 .delus {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .register {
-	position: relative;
-	background-image: url(../css/icon/8.8.jpg); /* Укажите путь к вашему изображению */
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 98vh;
-	background-position: center;
-	z-index: 0; /* Помещаем позади содержимого */
+  position: relative;
+  background-image: url(../css/icon/1.1.jpg); /* Укажите путь к вашему изображению */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 98vh;
+  background-position: center;
+  z-index: 0; /* Помещаем позади содержимого */
 
-	&__container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		z-index: 10; /* Помещаем содержимое поверх фона */
-	}
-	& h2 {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(50);
-		font-weight: 700;
-		font-style: normal;
-		color: rgb(250, 249, 249);
-		text-shadow:
-			2px -2px 1px rgb(18, 17, 17),
-			3px -3px 1px rgb(252, 251, 251),
-			4px -4px 1px rgb(7, 7, 7);
-	}
-	& label {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(20);
-		font-weight: 700;
-		font-style: normal;
-		color: white;
-		// background-color: rgba(255, 255, 255, 0.392);
-		// padding: toRem(10);
-	}
-	& input {
-		// padding: toRem(10);
-	}
-	& a {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(20);
-		font-weight: 900;
-		font-style: normal;
-	}
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10; /* Помещаем содержимое поверх фона */
+  }
+
+  & h2 {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(50);
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px -2px 1px rgba(18, 17, 17, 0.73), 2px -2px 1px rgb(252, 251, 251)
+    , 2px -2px 1px rgba(7, 7, 7, 0.68), -1px 1px 1px rgba(18, 17, 17, 0.59);
+  }
+
+  & label {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(20);
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    // background-color: rgba(255, 255, 255, 0.392);
+    // padding: toRem(10);
+  }
+
+  & input {
+    // padding: toRem(10);
+  }
+
+  & a {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(20);
+    font-weight: 900;
+    font-style: normal;
+  }
 }
 
 .rowe {
-	display: flex;
-	align-items: center;
-	column-gap: toRem(30);
-	& input {
-		padding: toRem(10);
-		border-radius: 5px;
-	}
+  display: flex;
+  align-items: center;
+  column-gap: toRem(30);
+
+  & input {
+    padding: toRem(10);
+    border-radius: 5px;
+  }
 }
 
 .register__container fieldset {
-	width: 800px;
-	display: flex;
-	align-items: center;
-	row-gap: toRem(20);
+  width: 800px;
+  display: flex;
+  align-items: center;
+  row-gap: toRem(20);
 }
 
 .registration-cancel {
-	color: #faf7f7;
+  color: #faf7f7;
 }
 
 .addus {
-	// cursor: pointer;
-	padding-right: toRem(10);
-	background-color: rgba(0, 128, 0, 0.304);
-	& .reg {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(20);
-		font-weight: 400;
-		font-style: normal;
-		background-color: rgba(0, 128, 0, 0.304);
-		color: white;
-		cursor: pointer;
-		padding: toRem(10);
-		&:hover {
-			background-color: rgba(0, 128, 0, 0.502);
-		}
-	}
+  padding-left: 0.05rem;
+  padding-right: 0.05rem;
+  background-color: rgba(130, 162, 221, 0.08);
+
+  & .reg {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(20);
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgba(0, 128, 0, 0.42);
+    color: white;
+    cursor: pointer;
+    padding: toRem(10);
+
+    &:hover {
+      background-color: rgba(0, 128, 0, 0.75);
+    }
+  }
+  .reg,
+  .res {
+    margin: 0.15rem 1rem;
+  }
 }
+
 .delus {
-	// cursor: pointer;
-	background-color: rgba(244, 12, 12, 0.447);
-	padding-right: toRem(10);
-	& .res {
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(20);
-		font-weight: 400;
-		font-style: normal;
-		background-color: rgba(244, 12, 12, 0.447);
-		color: white;
-		cursor: pointer;
-		padding: toRem(10);
-		&:hover {
-			background-color: rgba(244, 12, 12, 0.605);
-		}
-	}
+  background-color: rgba(236, 115, 115, 0.06);
+  padding-right: 0.45rem;
+  padding-left: 0.01rem;
+
+  & .res {
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(20);
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgba(244, 12, 12, 0.447);
+    color: white;
+    cursor: pointer;
+    padding: toRem(10);
+
+    &:hover {
+      background-color: rgba(186, 5, 5, 0.68);
+    }
+  }
 }
 
 #cans {
-	color: rgb(0, 128, 0);
-	letter-spacing: 1px;
-	text-shadow: 1px 1px 3px white;
-	&:hover {
-		text-shadow: 1px 1px 3px rgb(15, 15, 15);
-	}
+  color: rgb(1, 33, 138);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px white;
+
+  &:hover {
+    text-shadow: 1px 1px 2px rgb(6, 28, 170, 0.55);
+  }
 }
+
 // ====================================  statistic    ===========================================================================
 .stt {
-	position: relative;
-	background-image: url(./icon/3.3.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 98vh;
+  position: relative;
+  background-image: url(./icon/3.3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 98vh;
 }
 
 .statistic {
-	&__container {
-		//position для  з-индекса контейнера !!!!
-		position: relative;
-		// background-color: rgba(76, 76, 242, 0.406);
-	}
-	&__button {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		margin-top: toRem(-50);
-		// border: 1px solid white;
-		& a {
-			font-family: "Philosopher", sans-serif;
-			font-size: toRem(20);
-			font-weight: 700;
-			color: #eae7e7;
-			font-style: normal;
-			margin-left: toRem(20);
-			text-decoration: none;
-			// border: 1px solid white;
-			&:hover {
-				text-shadow:
-					3px 3px 3px rgb(242, 242, 244),
-					-3px -3px 3px rgb(243, 243, 245);
-				color: #0e0e0e;
-			}
-		}
-	}
-	&__title {
-		text-align: center;
-		margin-top: toRem(-50);
-		& h3 {
-			z-index: 577;
-			font-family: "Philosopher", sans-serif;
-			font-size: toRem(30);
-			font-weight: 700;
-			font-style: normal;
-			color: rgb(252, 251, 252);
-			text-shadow:
-				2px -2px 1px rgb(18, 17, 17),
-				3px -3px 5px rgb(252, 251, 251),
-				4px -4px 1px rgb(7, 7, 7);
-		}
-	}
-	&__nav {
-		position: relative;
-		display: flex;
-	}
-	&__nav a::before {
-		content: "";
-		position: absolute;
-		width: toRem(50);
-		height: toRem(2);
-		top: 18px;
-		left: 50;
-		background-color: #f8f9f7;
-	}
+  &__container {
+    //position для  з-индекса контейнера !!!!
+    position: relative;
+  }
 
-	&__exit a:hover {
-		text-shadow: none;
-		color: rgb(169, 165, 165);
-	}
-	&__table {
-		position: relative; /* для липкости шапки */
-		background-color: rgba(172, 255, 47, 0.413);
-		max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
-		overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
-		overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-		box-shadow:
-			9px 9px 16px rgb(234, 235, 237),
-			-9px -9px 16px rgb(255, 255, 255);
-	}
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: toRem(-50);
+    // border: 1px solid white;
+    & a {
+      font-family: "Philosopher", sans-serif;
+      font-size: toRem(20);
+      font-weight: 700;
+      color: #5e5d5d;
+      font-style: normal;
+      margin-left: toRem(20);
+      text-decoration: none;
+      // border: 1px solid white;
+      &:hover {
+        text-shadow: 3px 3px 3px rgb(242, 242, 244),
+        -3px -3px 3px rgb(243, 243, 245);
+        color: #0e0e0e;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-top: toRem(-50);
+
+    & h3 {
+      z-index: 577;
+      font-family: "Philosopher", sans-serif;
+      font-size: toRem(30);
+      font-weight: 700;
+      font-style: normal;
+      color: rgb(252, 251, 252);
+      text-shadow: 1px 1px 1px rgb(18, 17, 17),
+      1px -1px 1px rgb(185, 202, 202),
+      1px -1px 2px rgb(57, 56, 56);
+    }
+  }
+
+  &__nav {
+    position: relative;
+    display: flex;
+  }
+
+  &__nav a::before {
+    content: "";
+    position: absolute;
+    width: toRem(50);
+    height: toRem(2);
+    top: 18px;
+    left: 50;
+    background-color: #f8f9f7;
+  }
+
+  &__exit a:hover {
+    text-shadow: none;
+    color: rgb(90, 89, 89);
+  }
+
+  &__table {
+    position: relative; /* для липкости шапки */
+    background-color: rgba(104, 223, 251, 0.21);
+    max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+    overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+    box-shadow: 9px 9px 16px rgb(234, 235, 237),
+    -9px -9px 16px rgb(255, 255, 255);
+  }
 }
+
 .logger-user {
-	position: absolute;
-	top: toRem(20);
-	left: toRem(-100);
-	background-color: white;
-	padding: toRem(3);
-	border-radius: 5px;
-	box-shadow:
-		1px 1px 6px rgb(234, 235, 237),
-		-1px -1px 6px rgb(255, 255, 255);
+  position: absolute;
+  top: 0.5rem;
+  right: 0.85rem;
+  background-color: rgba(255, 255, 255, 0.11);
+  padding: toRem(3);
+  border-radius: 2px;
+  box-shadow: 1px 1px 6px rgb(234, 235, 237),
+  -1px -1px 6px rgb(255, 255, 255);
 }
+
 .table {
-	// position: relative;
+  // position: relative;
 }
+
 tfoot {
-	position: sticky;
-	bottom: 0;
-	background-color: #6e7849;
+  position: sticky;
+  bottom: 0;
+  background-color: rgba(172, 193, 246, 0.98);
 }
 
 // ==============================  .user +  statistic all  =====================================================================
@@ -1133,189 +1224,216 @@ tfoot {
 .user__nav p,
 .statistic__exit p,
 .user__exit p {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .statistic__nav img,
 .user__nav img,
 .statistic__exit img,
 .user__exit img {
-	width: toRem(30);
-	margin-left: toRem(10);
-	background-color: white;
-	border-radius: 50%;
-	padding: toRem(3);
+  width: toRem(30);
+  margin-left: toRem(10);
+  background-color: white;
+  border-radius: 50%;
+  padding: toRem(3);
 }
 
 // ==============================  .user   =====================================================================
 
 .use {
-	background-image: url(../css/icon/0.1.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	height: 100vh;
-	padding-top: toRem(50);
+  background-image: url(../css/icon/0.1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-top: toRem(50);
 }
 
 .user {
-	&__container {
-		//	position для  з-индекса контейнера !!!!
-		position: relative;
-		// background-color: rgba(76, 76, 242, 0.406);
-	}
-	&__title {
-		text-align: center;
-		margin-top: toRem(-50);
-		& h3 {
-			font-family: "Philosopher", sans-serif;
-			font-size: toRem(30);
-			font-weight: 700;
-			font-style: normal;
-			color: rgb(252, 251, 252);
-			text-shadow:
-				2px -2px 1px rgb(18, 17, 17),
-				3px -3px 5px rgb(252, 251, 251),
-				4px -4px 1px rgb(7, 7, 7);
-		}
-	}
-	&__table {
-		position: relative; /* для липкости шапки */
-		// margin-top: toRem(70);
-		z-index: 50;
-		background-color: none;
-		max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
-		overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
-		overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-		box-shadow:
-			9px 9px 16px rgb(234, 235, 237),
-			-9px -9px 16px rgb(255, 255, 255);
-	}
-	&__button {
-		display: flex;
-		justify-content: space-around;
-		margin-top: toRem(-40);
-		& a {
-			font-family: "Philosopher", sans-serif;
-			font-size: toRem(20);
-			font-weight: 700;
-			color: #eae7e7;
-			font-style: normal;
-			margin-left: toRem(20);
-			text-decoration: none;
-			&:hover {
-				text-shadow:
-					3px 3px 3px rgb(242, 242, 244),
-					-3px -3px 3px rgb(243, 243, 245);
-				color: #0e0e0e;
-			}
-		}
-	}
-	&__nav {
-		position: relative;
-		display: flex;
-	}
-	&__nav a::before {
-		content: "";
-		position: absolute;
-		width: toRem(50);
-		height: toRem(2);
-		top: 20px;
-		left: 50;
-		background-color: #f8f9f7;
-	}
-	&__exit {
-		display: flex;
-		& a:hover {
-			text-shadow: none;
-			color: rgb(169, 165, 165);
-		}
-	}
+  &__container {
+    //	position для  з-индекса контейнера !!!!
+    position: relative;
+    // background-color: rgba(76, 76, 242, 0.406);
+  }
 
-	&__table button {
-		background-color: #ef2c2c;
-		color: white;
-		cursor: pointer;
-		padding: toRem(5);
-		text-transform: uppercase;
-		&:hover {
-			background-color: #f7f3f3;
-			color: #ef0808;
-		}
-	}
+  &__title {
+    text-align: center;
+    margin-top: toRem(-50);
+
+    & h3 {
+      font-family: "Philosopher", sans-serif;
+      font-size: toRem(30);
+      font-weight: 700;
+      font-style: normal;
+      color: rgb(252, 251, 252);
+      text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202)
+      , 1px -1px 2px rgb(57, 56, 56);
+    }
+  }
+
+  &__table {
+    position: relative; /* для липкости шапки */
+    // margin-top: toRem(70);
+    z-index: 50;
+    background-color: none;
+    max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+    overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+    box-shadow: 9px 9px 16px rgb(234, 235, 237),
+    -9px -9px 16px rgb(255, 255, 255);
+  }
+
+  &__button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: toRem(-40);
+
+    & a {
+      font-family: "Philosopher", sans-serif;
+      font-size: toRem(20);
+      font-weight: 700;
+      color: #5e5d5d;
+      font-style: normal;
+      margin-left: toRem(20);
+      text-decoration: none;
+
+      &:hover {
+        text-shadow: 3px 3px 3px rgb(242, 242, 244),
+        -3px -3px 3px rgb(243, 243, 245);
+        color: #0e0e0e;
+      }
+    }
+  }
+
+  &__nav {
+    position: relative;
+    display: flex;
+  }
+
+  &__nav a::before {
+    content: "";
+    position: absolute;
+    width: toRem(50);
+    height: toRem(2);
+    top: 20px;
+    left: 50;
+    background-color: #f8f9f7;
+  }
+
+  &__exit {
+    display: flex;
+
+    & a:hover {
+      text-shadow: none;
+      color: rgb(169, 165, 165);
+    }
+  }
+
+  &__table button {
+    background-color: rgba(12, 126, 255, 0.93);
+    color: white;
+    cursor: pointer;
+    padding: toRem(5);
+    text-transform: uppercase;
+    border-radius: 2px;
+
+    &:hover {
+      background-color: #f7f3f3;
+      color: rgba(239, 8, 8, 0.85);
+      border-radius: 2px;
+    }
+  }
 }
+
 .logger-user {
 }
+
 // ==========================================================================================================
 
 .user {
-	&__edit {
-		position: relative;
-		background-image: url(./icon/7.1.jpg);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		height: 98vh;
-		// z-index: 1;
-	}
+  &__edit {
+    position: relative;
+    background-image: url(./icon/3.3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 98vh;
+  }
 }
-.fone--ton {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(9, 9, 9, 0.1); /* Полупрозрачный черный цвет для притемнения */
-	z-index: 0; /* Этот блок будет находиться под контентом */
-}
-.edit--title {
-	text-align: center;
-	margin-top: toRem(-50);
-	& h3 {
-		z-index: 577;
-		font-family: "Philosopher", sans-serif;
-		font-size: toRem(30);
-		font-weight: 700;
-		font-style: normal;
-		color: rgb(252, 251, 252);
 
-		text-shadow:
-			2px -2px 1px rgb(18, 17, 17),
-			3px -3px 5px rgb(252, 251, 251),
-			4px -4px 1px rgb(7, 7, 7);
-	}
+.fone--ton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(9, 9, 9, 0.03); /* Полупрозрачный черный цвет для притемнения */
+  z-index: 0; /* Этот блок будет находиться под контентом */
 }
+
+.edit--title {
+  text-align: center;
+  margin-top: toRem(-50);
+
+  & h3 {
+    z-index: 577;
+    font-family: "Philosopher", sans-serif;
+    font-size: toRem(30);
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(252, 251, 252);
+    text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202)
+    , 1px -1px 2px rgb(57, 56, 56);
+  }
+}
+
 .edit {
-	&__container {
-		position: relative;
-		z-index: 1; /* Контент будет отображаться поверх фона и подложки */
-	}
+  &__container {
+    position: relative;
+    z-index: 1; /* Контент будет отображаться поверх фона и подложки */
+  }
 }
+.edit--table {
+  margin-top: 120px;
+}
+
 .edit--exit {
-	width: toRem(50);
-	padding: toRem(10);
-	border-radius: 10px;
-	text-align: center;
-	box-shadow: 0px 0px 16px white;
-	cursor: pointer;
-	&:hover {
-		box-shadow: 0px 0px 10px white;
-	}
-	& a {
-		color: white;
-		text-decoration: none;
-	}
+  position: absolute;
+  top: 3.25rem;
+  right: 1.25rem;
+  width: 3.125rem;
+  padding: 0.625rem;
+  border-radius: 4px;
+  text-align: center;
+  -webkit-box-shadow: 1px 2px 16px rgba(56, 165, 204, 0.83);
+  box-shadow: 2px 2px 16px rgba(136, 160, 241, 0.62);
+  cursor: pointer;
+
+  &:hover {
+    -webkit-box-shadow: 1px 2px 10px rgba(125, 164, 239, 0.86);
+    box-shadow: 0px 0px 10px rgba(91, 124, 225, 0.8);
+  }
+
+  & a {
+    color: rgba(2, 1, 1, 0.84);
+    text-decoration: none;
+  }
 }
 
 .edit--button {
-	background-color: #6e7849;
-	color: white;
-	padding: toRem(5);
-	cursor: pointer;
+  background-color: rgba(127, 227, 251, 0.36);
+  color: white;
+  padding: 0.3125rem;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 150px;
+  height: 40px;
 }
+
 .edit--table {
 }
+
 .error-message {
 }

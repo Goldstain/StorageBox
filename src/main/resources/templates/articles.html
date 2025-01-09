@@ -18,23 +18,41 @@
 <body>
 <div class=" wrr">
     <div class="background-image"></div>
+    <div class="logger-user">
+        <span th:text="${loggedUser.firstName+' '}"></span><br><br>
+        <span th:text="${loggedUser.lastName}"></span>
+    </div>
     <div class="wrapper__container">
 
-        <div class="logger-user">
-            <span th:text="${loggedUser.firstName+' '}"></span>
-            <span th:text="${loggedUser.lastName}"></span>
-        </div>
-
-        <fieldset class="currency">
-            <legend>Курси валют</legend>
-            <div>
-                  <span th:each="entry : ${currencyData}">
-                     <span th:text="${entry.key}"></span>:
-                     <span th:text="${entry.value}"></span>&nbsp;&nbsp;&nbsp;
-                  </span>
+        <div class="wrapper__container--button">
+            <div class="currency">
+                <legend>Курси валют</legend>
+                <div class="currency--div">
+						<span class="currency--sp" th:each="entry : ${currencyData}">
+							<span th:text="${entry.key}"></span>  :
+							<span th:text="${entry.value}"></span>&nbsp;&nbsp;&nbsp;
+						</span>
+                </div>
             </div>
-        </fieldset>
 
+
+            <div class="out">
+                <form method="POST" th:action="@{/logout}">
+                    <div class="exit"><input class="out--button" type="submit" value="Вихід" role="button"/>
+                        <img th:src="@{/css/icon/exit.png}">
+                        <!--        <img src="src/main/resources/static/css/icon/exit.png">-->
+                    </div>
+                </form>
+
+                <div>
+                    <a href="/admin/statistics" class="btn  admin-img" role="button"
+                       sec:authorize="hasRole('ROLE_ADMIN')">Адмін панель
+                        <img th:src="@{/css/icon/admin2.svg}">
+                        <!--                    <img src="src/main/resources/static/css/icon/admin2.svg">-->
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <div class="btn-group " role="group" aria-label="Actions">
             <form th:action="@{/articles/new-article}" method="get" class="d-inline-block">
@@ -60,8 +78,8 @@
                 <input class="input-field" type="text" id="searchName" name="searchName" required
                        placeholder="Введіть назву">
                 <button type="submit" class="btn filter">Пошук
-                    <img th:src="@{/css/icon/exit.png}">
-<!--                    <img src="src/main/resources/static/css/icon/search3.svg">-->
+                    <img th:src="@{/css/icon/search3.svg}">
+                    <!--                    <img src="src/main/resources/static/css/icon/search3.svg">-->
                 </button>
             </form>
 
@@ -71,27 +89,9 @@
         </div>
 
 
-
-        <div class="out">
-            <form method="POST" th:action="@{/logout}">
-                <div class="exit"><input class="out--button" type="submit" value="Вихід" role="button"/>
-                    <img th:src="@{/css/icon/exit.png}">
-                    <!--                    <img src="src/main/resources/static/css/icon/exit.png">-->
-                </div>
-            </form>
-
-            <div>
-                <a href="/admin/statistics" class="btn  admin-img" role="button"
-                   sec:authorize="hasRole('ROLE_ADMIN')">Адмін панель
-                    <img th:src="@{/css/icon/admin2.svg}">
-                    <!--                    <img src="src/main/resources/static/css/icon/admin2.svg">-->
-                </a>
-            </div>
-        </div>
-
         <div class="tableted">
             <table class="table ">
-                <thead class="sticky-header tovar">
+                <thead class="sticky-header">
                 <tr>
                     <th style="width: 8%;">ID</th>
                     <th style="width: 8%;">Категорія</th>

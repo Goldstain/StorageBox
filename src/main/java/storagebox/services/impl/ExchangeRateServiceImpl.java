@@ -9,10 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import storagebox.dto.ExchangeRateModel;
 import storagebox.services.ExchangeRateService;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @Data
@@ -26,22 +23,22 @@ public class ExchangeRateServiceImpl implements ExchangeRateService {
 
     @Override
     public Map<String, Double> getExchangeRateMap() {
-        Map<String, Double> currencyData = new HashMap<>();
+        Map<String, Double> currencyData = new LinkedHashMap<>();
+        String[] currencyCodes = {"EUR", "USD", "GBP", "CHF", "HUF", "INR", "ILS", "CAD"};
 
-        getExchangeRate("USD")
-                .ifPresent(rate -> currencyData.put("USD", rate));
+        ExchangeRateModel[] rates = restTemplate.getForObject(
+                apiUrl, ExchangeRateModel[].class);
 
-        getExchangeRate("EUR")
-                .ifPresent(rate -> currencyData.put("EUR", rate));
+        for (String currencyCode : currencyCodes) {
+            getExchangeRate(currencyCode, rates)
+                    .ifPresent(rate -> currencyData.put(currencyCode, rate));
+        }
 
         return currencyData;
     }
 
 
-    private Optional<Double> getExchangeRate(String currency) {
-        ExchangeRateModel[] rates = restTemplate.getForObject(
-                apiUrl, ExchangeRateModel[].class);
-
+    private Optional<Double> getExchangeRate(String currency, ExchangeRateModel[] rates) {
         if (rates != null) {
             return Arrays.stream(rates)
                     .filter(rate -> currency.equalsIgnoreCase(rate.getCc()))

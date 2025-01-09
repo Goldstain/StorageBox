@@ -331,7 +331,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	margin-top: toRem(20);
 	z-index: 50;
 	background-color: rgba(134, 232, 255, 0.41);
-	max-height: 71vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+	max-height: 79vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
 	overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
 	overflow-x: hidden; /* Убирает горизонтальную прокрутку */
 	box-shadow:
@@ -964,25 +964,25 @@ legend {
 	font-size: toRem(20);
 	font-weight: 600;
 	font-style: normal;
-	padding: toRem(18) 0;
+	padding: 2rem 0.625rem 3.7rem;
 	border: none;
 	color: rgb(243, 239, 239);
 	text-shadow:
-		1px 1px 16px black,
-		-1px -1px 16px black;
+		1px 1px 1px black,
+		-1px -1px 1px black;
 	cursor: pointer;
 	background-image: url(./icon/logout.png);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 54px;
 	text-align: center;
-	box-shadow: 0px 0px 16px red;
+
 
 	&:hover {
-		box-shadow: 0px 0px 6px red;
-		// text-shadow:
-		// 	1px 1px 1px black,
-		// 	-1px -2px 1px black;
+		//box-shadow: 0px 0px 1px red;
+		 text-shadow:
+		 	1px 1px 1px black,
+		 	-1px -2px 1px black;
 	}
 }
 
@@ -1218,7 +1218,7 @@ input.email::placeholder {
 	background-color: rgba(255, 255, 255, 0.11);
 	padding: toRem(3);
 	border-radius: 2px;
-	box-shadow: 0px 0px 6px black;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 	// -1px -1px 6px rgb(255, 255, 255);
 }
 

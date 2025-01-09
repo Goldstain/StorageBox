@@ -12,15 +12,17 @@
 
 <body>
 	<div class="stt">
+
 		<div class="fone--ton"></div>
+		<div class="logger-user">
+			<span th:text="${loggedUser.firstName+' '}">Mohamed</span>
+			<span th:text="${loggedUser.lastName}">Ali</span>
+		</div>
 		<div class="user__container">
-			<div class="logger-user">
-				<span th:text="${loggedUser.firstName+' '}">Mohamed</span>
-				<span th:text="${loggedUser.lastName}">Ali</span>
-			</div>
+
 
 			<div class="user__title">
-				<h3>Панель адміністратора - Керування користувачами</h3>
+				<h3>Панель адміністратора - <span class="statistic__title--span">Керування користувачами</span></h3>
 			</div>
 
 
@@ -32,7 +34,7 @@
 					</a>
 					<a href="/admin/users">
 						<!-- <p>Користувачи</p> <img th:src="@{/css/icon/users.svg}"> -->
-						<p>Користувачи<img src="src/main/resources/static/css/icon/users.svg"></p>
+						<p class="nav--active">Користувачи<img src="src/main/resources/static/css/icon/users.svg"></p>
 					</a>
 				</nav>
 

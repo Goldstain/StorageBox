@@ -18,22 +18,45 @@
 <body>
 	<div class=" wrr">
 		<div class="background-image"></div>
+		<div class="logger-user">
+			<span th:text="${loggedUser.firstName+' '}">Mohamed</span>
+			<span th:text="${loggedUser.lastName}">Ali</span>
+		</div>
 		<div class="wrapper__container">
 
-			<div class="logger-user">
-				<span th:text="${loggedUser.firstName+' '}">Mohamed</span>
-				<span th:text="${loggedUser.lastName}">Ali</span>
-			</div>
-
-			<fieldset class="currency">
-				<legend>Курси валют</legend>
-				<div>
-                  <span th:each="entry : ${currencyData}">
-                     <span th:text="${entry.key}"></span>:
-                     <span th:text="${entry.value}"></span>&nbsp;&nbsp;&nbsp;
-                  </span>
+		<div class="wrapper__container--button">
+				<div class="currency">
+					<legend>Курси валют</legend>
+					<div class="currency--div">
+						<span class="currency--sp" th:each="entry : ${currencyData}">USD
+							<span th:text="${entry.key}"></span>: 42.00
+							<span th:text="${entry.value}"></span>&nbsp;&nbsp;&nbsp;
+						</span>
+					</div>
+					<div class="currency--div">
+						<span class="currency--sp" th:each="entry : ${currencyData}">EURO
+							<span th:text="${entry.key}"></span>: 45.00
+							<span th:text="${entry.value}"></span>&nbsp;&nbsp;&nbsp;
+						</span>
+					</div>
 				</div>
-			</fieldset>
+				<div class="out">
+					<form method="POST" th:action="@{/logout}">
+						<div class="exit"><input class="out--button" type="submit" value="Вихід" role="button" />
+
+							<img src="src/main/resources/static/css/icon/exit.png">
+						</div>
+					</form>
+
+					<div>
+						<a href="/admin/statistics" class="btn  admin-img" role="button"
+							sec:authorize="hasRole('ROLE_ADMIN')">Адмін панель
+
+							<img src="src/main/resources/static/css/icon/admin2.svg">
+						</a>
+					</div>
+				</div>
+			</div> 
 
 
 			<div class="btn-group " role="group" aria-label="Actions">
@@ -70,23 +93,6 @@
 			</div>
 
 
-
-			<div class="out">
-				<form method="POST" th:action="@{/logout}">
-					<div class="exit"><input class="out--button" type="submit" value="Вихід" role="button" />
-						<!-- <img th:src="@{/css/icon/exit.png}"> -->
-						<img src="src/main/resources/static/css/icon/exit.png">
-					</div>
-				</form>
-
-				<div>
-					<a href="/admin/statistics" class="btn  admin-img" role="button"
-						sec:authorize="hasRole('ROLE_ADMIN')">Адмін панель
-						<!-- <img th:src="@{/css/icon/admin2.svg}"> -->
-						<img src="src/main/resources/static/css/icon/admin2.svg">
-					</a>
-				</div>
-			</div>
 
 			<div class="tableted">
 				<table class="table ">

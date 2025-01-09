@@ -14,22 +14,22 @@
 
 
 	<div class="stt">
-<div class="fone--ton"></div>
+		<div class="logger-user">
+			<span th:text="${loggedUser.firstName+' '}">Mohamed</span>
+			<span th:text="${loggedUser.lastName}">Ali</span>
+		</div>
+		<div class="fone--ton"></div>
 		<div class="statistic__container">
 
-			<div class="logger-user">
-				<span th:text="${loggedUser.firstName+' '}">Mohamed</span>
-				<span th:text="${loggedUser.lastName}">Ali</span>
-			</div>
-
+			
 			<div class="statistic__title">
-				<h3>Панель адміністратора - Статистика</h3>
+				<h3>Панель адміністратора - <span class="statistic__title--span" >Статистика</span></h3>
 			</div>
 			<div class="statistic__button">
 				<nav class="statistic__nav">
 					<a href="/admin/statistics">
 						<!-- <p>Статистика</p><img th:src="@{/css/icon/chart_up.svg}"> -->
-						<p>Статистика<img src="src/main/resources/static/css/icon/chart_up.svg"></p>
+						<p class="nav--active">Статистика<img src="src/main/resources/static/css/icon/chart_up.svg"></p>
 					</a>
 					<a href="/admin/users">
 						<!-- <p>Користувачи</p><img th:src="@{/css/icon/users.svg}"> -->

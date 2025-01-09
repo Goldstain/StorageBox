@@ -109,7 +109,9 @@
 						<label class="product__status" for="status">Статус</label>
 						<select id="status" class="form-control" th:field="*{status}">
 							<option value="" disabled selected>Оберіть статус</option>
-							<option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}">
+							<option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}">text
+							<option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}">text
+							<option th:each="status: ${statuses}" th:value="${status}" th:text="${status.alias}">text
 							</option>
 
 						</select>

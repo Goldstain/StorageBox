@@ -3,84 +3,86 @@
 
 <head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale = 1.0 , user-scalable = 0">
 
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    <link rel="stylesheet" href="src\main/resources/static/css/style.css">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="src\main/resources/static/css/style.css">
 
-    <title>StorageBox</title>
+	<title>StorageBox</title>
 </head>
 
 <body>
 
-<div class="register">
-   
-    <div class="background-image">
-        <div class="register__container">
+	<div class="register">
 
-            <h2>Register</h2>
+		<div class="background-image">
+			<div class="register__container">
 
-            <div>
-                <form th:action="@{/register}" method="post" id="registerForm" th:object="${registrationForm}">
-                    <fieldset>
-                        <legend>New account</legend>
+				<h2>Register</h2>
 
-                        <div th:if="${error}" style="color: red;">
-                            <p th:text="${error}"></p>
-                        </div>
-                        <div class="rowe">
-                            <label for="firstName">First name: </label>
-                            <input type="text" name="firstName" id="firstName" th:field="*{firstName}"
-                                   placeholder=" enter your first name" required="required"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('firstName')}"
-                                 th:errors="*{firstName}">
-                            </div>
+				<div>
+					<form th:action="@{/register}" method="post" id="registerForm" th:object="${registrationForm}">
+						<fieldset>
+							<legend>New account</legend>
 
-
-                            <label for="lastName">Last name: </label>
-                            <input type="text" name="lastName" id="lastName" th:field="*{lastName}"
-                                   placeholder=" enter your last name" required="required"/>
-                            <div class="error-message" th:if="${#fields.hasErrors()}" th:errors="*{lastName}"></div>
-
-                        </div>
-
-                        <div class="rowe">
-                            <label for="email">Email: </label>
-                            <input type="text" name="email" id="email" th:field="*{email}" placeholder=" your email"
-                                   required="required"/>
-                            <div class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
-                            </div>
+							<div th:if="${error}" style="color: red;">
+								<p th:text="${error}"></p>
+							</div>
+							<div class="rowe">
+								<label for="firstName">First name: </label>
+								<input type="text" name="firstName" id="firstName" th:field="*{firstName}"
+									placeholder=" enter your first name" required="required" />
+								<div class="error-message" th:if="${#fields.hasErrors('firstName')}"
+									th:errors="*{firstName}">
+								</div>
 
 
-                            <label for="password">Password: </label>
-                            <input type="password" name="password" id="password" th:field="*{password}"
-                                   placeholder=" your password" required="required"/>
+								<label for="lastName">Last name: </label>
+								<input type="text" name="lastName" id="lastName" th:field="*{lastName}"
+									placeholder=" enter your last name" required="required" />
+								<div class="error-message" th:if="${#fields.hasErrors()}" th:errors="*{lastName}"></div>
 
-                        </div>
+							</div>
+
+							<div class="rowe">
+								<label for="email">Email: </label>
+								<input type="text" name="email" id="email" th:field="*{email}" placeholder=" your email"
+									required="required" />
+								<div class="error-message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+								</div>
 
 
-                        <div class="addus"><input class="reg" type="submit" value="Register">
-                            <!-- <img class="bb" th:src="@{/css/icon/add_user.svg}"> -->
-                           <img class="bb" src="src/main/resources/static/css/icon/add_user.svg"></div>
+								<label for="password">Password: </label>
+								<input type="password" name="password" id="password" th:field="*{password}"
+									placeholder=" your password" required="required" />
 
-                        <div class="delus"><input class="res" type="reset" value="Reset">
-                            <!-- <img class="bb" th:src="@{/css/icon/delete_user.svg}"> -->
-                           <img class="bb" src="src/main/resources/static/css/icon/delete_user.svg">
-                        </div>
+							</div>
 
-                    </fieldset>
-                    <a id="cans" href="/login" class="registration-cancel">Cancel</a>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="creted">
-        <p>Created by :
-           <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">
-            <!-- <img class="sh" th:src="@{/css/icon/SH.jpeg}"> -->
-            <span>Studio</span></p>
-    </div>
-</div>
+
+							<div class="addus"><input class="reg" type="submit" value="Register">
+								<!-- <img class="bb" th:src="@{/css/icon/add_user.svg}"> -->
+								<img class="bb" src="src/main/resources/static/css/icon/add_user.svg">
+							</div>
+
+							<div class="delus"><input class="res" type="reset" value="Reset">
+								<!-- <img class="bb" th:src="@{/css/icon/delete_user.svg}"> -->
+								<img class="bb" src="src/main/resources/static/css/icon/delete_user.svg">
+							</div>
+
+						</fieldset>
+						<a id="cans" href="/login" class="registration-cancel">Cancel</a>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="creted">
+			<p>Created by :
+				<img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">
+				<!-- <img class="sh" th:src="@{/css/icon/SH.jpeg}"> -->
+				<span>Studio</span>
+			</p>
+		</div>
+	</div>
 
 
 </body>

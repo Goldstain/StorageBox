@@ -1,27 +1,29 @@
 package storagebox.controllers.security;
 
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import storagebox.repositories.security.UserRepository;
 import storagebox.security.RegistrationForm;
+import storagebox.services.UserService;
 
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
 
-    private UserRepository userRepository;
+    private UserService userService;
     private PasswordEncoder passwordEncoder;
 
-    public RegistrationController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
+    @Autowired
+    public RegistrationController(UserService userService, PasswordEncoder passwordEncoder) {
+        this.userService = userService;
         this.passwordEncoder = passwordEncoder;
     }
 
@@ -43,11 +45,11 @@ public class RegistrationController {
             if (bindingResult.hasErrors()) {
                 return "registration";
             }
-            if (userRepository.findByEmail(form.getEmail()).isPresent()) {
+            if (userService.findByEmail(form.getEmail())) {
                 model.addAttribute("error", "This email address is already in use");
                 return "registration";
             }
-            userRepository.save(form.toUser(passwordEncoder));
+            userService.save(form.toUser(passwordEncoder));
             form.setPassword(null);
             return "redirect:/login";
         } catch (IllegalArgumentException e) {

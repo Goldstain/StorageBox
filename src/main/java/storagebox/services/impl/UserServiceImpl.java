@@ -24,13 +24,23 @@ public class UserServiceImpl implements UserService {
     public List<UserDTO> findAll() {
         return userRepository.findAll().stream()
                 .map(user -> new UserDTO(user))
-                .sorted((u1,u2)-> u1.getId().compareTo(u2.getId()))
+                .sorted((u1, u2) -> u1.getId().compareTo(u2.getId()))
                 .toList();
     }
 
     @Override
     public UserDTO findById(long id) {
         return new UserDTO(userRepository.findById(id).orElse(new User()));
+    }
+
+    @Override
+    public boolean findByEmail(String email) {
+        return userRepository.findByEmail(email).isPresent();
+    }
+
+    @Override
+    public void save(User user) {
+        userRepository.save(user);
     }
 
     @Override

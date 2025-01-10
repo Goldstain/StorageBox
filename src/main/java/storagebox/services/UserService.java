@@ -11,6 +11,10 @@ public interface UserService {
 
     public UserDTO findById(long id);
 
+    public boolean findByEmail(String email);
+
+    public void save(User user);
+
     public void update(long id, UserDTO userDTO);
 
     public void delete(long id);

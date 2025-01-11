@@ -28,6 +28,8 @@ nbu:
     url: https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json
 
 
+
+
 #  redis:
 #    host: localhost
 #    port: 6379

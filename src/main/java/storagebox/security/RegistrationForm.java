@@ -1,6 +1,7 @@
 package storagebox.security;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -25,6 +26,8 @@ public class RegistrationForm {
 
     @Email(message = "This is not an email format")
     private String email;
+
+    @NotBlank
     private String password;
 
     public User toUser(PasswordEncoder passwordEncoder) {

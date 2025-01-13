@@ -17,6 +17,7 @@ import storagebox.exceptions.WrongValueException;
 import storagebox.repositories.ArticleRepository;
 import storagebox.services.impl.ArticleServiceImpl;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -82,12 +83,47 @@ public class ArticleServiceTests {
         article.setSpentMoney(10.0);
 
         article.setSoldQuantity(6);
-        assertThrows(WrongValueException.class, ()-> articleService.update(id, article));
+        assertThrows(WrongValueException.class, () -> articleService.update(id, article));
 
         article.setSoldQuantity(-2);
-        assertThrows(WrongValueException.class, ()-> articleService.update(id, article));
+        assertThrows(WrongValueException.class, () -> articleService.update(id, article));
 
         verify(articleRepository, times(3)).findById(id);
 
+    }
+
+    @Test
+    public void shouldCountDataOfArticleFromDBCorrectly() throws ArticleNotFoundException, WrongValueException {
+        Article articleFromDB = new Article(1, new Category(1, "Tools"), "Tool"
+                , 500.0, 2000.0, 50.0, 950, 3, 2
+                , LocalDate.now(), ArticleStatus.IN_STOCK);
+        when(articleRepository.findById(anyInt())).thenReturn(Optional.of(articleFromDB));
+
+        Article articleFromView = new Article(1, new Category(1, "Tools"), "Tool"
+                , 500.0, 3000.0, 100.0, 950, 3, 3
+                , LocalDate.now(), ArticleStatus.IN_STOCK);
+
+        articleService.update(1, articleFromView);
+
+        assertEquals(1, articleFromDB.getId());
+        assertEquals("Tools", articleFromDB.getCategory().getName());
+        assertEquals("Tool", articleFromDB.getName());
+        assertEquals(500.0, articleFromDB.getPurchase(), 1e-3);
+        assertEquals(3000.0, articleFromDB.getSellingPrize(), 1e-3);
+        assertEquals(100.0, articleFromDB.getSpentMoney(), 1e-3);
+        assertEquals(1400.0, articleFromDB.getProfit(), 1e-3);
+        assertEquals(3, articleFromDB.getQuantity());
+        assertEquals(3, articleFromDB.getSoldQuantity());
+        assertEquals(0, articleFromDB.getRemainder());
+        assertEquals(ArticleStatus.OUT_OF_STOCK, articleFromDB.getStatus());
+
+        verify(articleRepository).save(articleFromDB);
+    }
+
+    @Test
+    public void shouldThrowsExceptionIfArticleNotfoundInDB() throws ArticleNotFoundException {
+        when(articleRepository.findById(anyInt())).thenReturn(Optional.empty());
+
+        assertThrows(ArticleNotFoundException.class, () -> articleService.delete(anyInt()));
     }
 }

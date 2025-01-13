@@ -18,8 +18,8 @@ import storagebox.services.UserService;
 @RequestMapping("/register")
 public class RegistrationController {
 
-    private UserService userService;
-    private PasswordEncoder passwordEncoder;
+    private final UserService userService;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
     public RegistrationController(UserService userService, PasswordEncoder passwordEncoder) {

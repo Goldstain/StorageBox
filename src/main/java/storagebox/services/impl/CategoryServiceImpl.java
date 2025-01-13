@@ -19,6 +19,13 @@ public class CategoryServiceImpl implements CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
+    public void saveCategory(Category category) throws CategoryAlreadyExistsException {
+        if (categoryRepository.existsByName(category.getName())) {
+            throw new CategoryAlreadyExistsException("Ця категорія вже існує");
+        }
+        categoryRepository.save(category);
+    }
+
     public Category findById(int id) throws CategoryNotFoundException {
         return categoryRepository.findById(id).orElseThrow(() -> new CategoryNotFoundException(
                 "Категорію з id " + id + " не знайдено"));
@@ -28,10 +35,4 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.findAll();
     }
 
-    public void saveCategory(Category category) throws CategoryAlreadyExistsException {
-        if (categoryRepository.existsByName(category.getName())) {
-            throw new CategoryAlreadyExistsException("Ця категорія вже існує");
-        }
-        categoryRepository.save(category);
-    }
 }

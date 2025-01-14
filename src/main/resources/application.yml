@@ -4,11 +4,6 @@ spring:
     show-sql: false
     hibernate:
       ddl-auto: update
-  datasource:
-    url: jdbc:postgresql://dpg-ctg75gbgbbvc73au8r00-a.oregon-postgres.render.com/storagebox
-    username: storagebox_user
-    password: vrSanpxy7Z1aUfKWfygaQ9hsojDT3m5i
-    driver-class-name: org.postgresql.Driver
   sql:
     init:
       platform: postgres
@@ -19,9 +14,6 @@ spring:
 server:
   port: 8080
 
-admin:
-  login: admin@example.com
-  password: admin
 
 nbu:
   api:

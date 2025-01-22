@@ -2,1539 +2,1459 @@
 @import "src/resources/static/css/null.css";
 @import "src/resources/static/css/var.css";
 @import "src/resources/static/css/basestyle.css";
-
 [class*=__container] {
-    max-width: 101.25rem;
-    padding: 3.125rem 0.9375rem;
-    margin: 0 auto;
+  max-width: 101.25rem;
+  padding: 3.125rem 0.9375rem;
+  margin: 0 auto;
 }
 
 .creted {
-    position: absolute;
-    bottom: 0;
-    right: 0.625rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: end;
-    padding: 0;
-    cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 0;
+  cursor: pointer;
 }
-
 .creted p {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: white;
-    font-size: 0.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 0.375rem;
 }
-
 .creted:hover {
-    background: linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
-    border-radius: 10px;
-    padding: 0.625rem;
-    z-index: 999;
-    bottom: 0.625rem;
+  background: linear-gradient(135deg, rgb(255, 215, 0), rgb(1, 106, 53));
+  border-radius: 10px;
+  padding: 0.625rem;
+  z-index: 999;
+  bottom: 0.625rem;
 }
-
 .creted:hover .sh {
-    width: 3.125rem;
+  width: 3.125rem;
 }
-
 .creted:hover p {
-    font-size: 1rem;
-    color: rgb(1, 106, 53);
+  font-size: 1rem;
+  color: rgb(1, 106, 53);
 }
-
 .creted:hover span {
-    color: rgb(255, 215, 0);
+  color: rgb(255, 215, 0);
 }
 
 .sh {
-    margin: 0 0.3125rem;
-    width: 0.625rem;
-    border-radius: 50%;
+  margin: 0 0.3125rem;
+  width: 0.625rem;
+  border-radius: 50%;
 }
 
 .refresh {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
-    box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
+          box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
 }
-
 .refresh:hover {
-    background-color: rgba(27, 84, 92, 0.66);
-    color: white;
-    -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
-    box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
+  background-color: rgba(27, 84, 92, 0.66);
+  color: white;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
+          box-shadow: 0px 0px 6px rgba(0, 0, 255, 0.199);
 }
 
 .rf {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-    text-decoration: none;
-    -webkit-box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
-    box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
-    border-radius: 29px 0px 30px 15px;
-    -moz-border-radius: 29px 0px 30px 15px;
-    -webkit-border-radius: 29px 0px 30px 15px;
-    background-color: rgba(32, 87, 184, 0.45);
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  text-decoration: none;
+  -webkit-box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
+          box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
+  border-radius: 29px 0px 30px 15px;
+  -moz-border-radius: 29px 0px 30px 15px;
+  -webkit-border-radius: 29px 0px 30px 15px;
+  background-color: rgba(32, 87, 184, 0.45);
 }
 
 .wrr {
-    height: 100vh;
-    position: relative;
-    background-image: url(../css/icon/2.2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  height: 100vh;
+  position: relative;
+  background-image: url(../css/icon/2.2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .wrapper__container {
-    position: relative;
+  position: relative;
 }
 
 .wrapper__container--button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 0;
-    margin-top: -2.875rem;
-    margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin-top: -2.875rem;
+  margin-bottom: 1rem;
 }
 
 .currency {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    row-gap: 0.625rem;
-    padding: 0.625rem;
-    border-radius: 4px;
-    background-color: rgba(21, 133, 198, 0.228);
-    -webkit-box-shadow: 0px 0px 6px rgb(4, 4, 4);
-    box-shadow: 0px 0px 6px rgb(4, 4, 4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 0.625rem;
+  padding: 0.625rem;
+  border-radius: 4px;
+  background-color: rgba(21, 133, 198, 0.228);
+  -webkit-box-shadow: 0px 0px 6px rgb(4, 4, 4);
+          box-shadow: 0px 0px 6px rgb(4, 4, 4);
 }
 
 .currency--div {
-    font-weight: 900;
-    overflow: hidden;
-    -webkit-box-shadow: 0px 0px 6px white;
-    box-shadow: 0px 0px 6px white;
+  font-weight: 900;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 6px white;
+          box-shadow: 0px 0px 6px white;
 }
 
 .currency--sp {
-    display: inline-block;
-    white-space: nowrap; /* Предотвращаем перенос строки */
-    -webkit-animation: scroll-left 10s linear infinite;
-    animation: scroll-left 10s linear infinite; /* Анимация бегущей строки */
-}
-
-.currency--div:nth-child(1) .scrolling-text {
-    -webkit-animation-duration: 14s;
-    animation-duration: 14s; /* Разная скорость для первой строки */
-}
-
-.currency--div:nth-child(2) .scrolling-text {
-    -webkit-animation-duration: 6s;
-    animation-duration: 6s; /* Разная скорость для второй строки */
+  display: inline-block;
+  white-space: nowrap; /* Предотвращаем перенос строки */
+  -webkit-animation: scroll-left 19s linear infinite;
+          animation: scroll-left 19s linear infinite; /* Анимация бегущей строки */
 }
 
 /* Определение анимации */
 @-webkit-keyframes scroll-left {
-    0% {
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%); /* Старт с правой стороны */
-    }
-    100% {
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%); /* Конец на левой стороне */
-    }
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); /* Старт с правой стороны */
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); /* Конец на левой стороне */
+  }
 }
-
 @keyframes scroll-left {
-    0% {
-        -webkit-transform: translateX(100%);
-        transform: translateX(100%); /* Старт с правой стороны */
-    }
-    100% {
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%); /* Конец на левой стороне */
-    }
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); /* Старт с правой стороны */
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); /* Конец на левой стороне */
+  }
 }
-
 .currency legend {
-    color: #0e8fe4; /* Зміна кольору тексту в legend */
+  color: #0e8fe4; /* Зміна кольору тексту в legend */
 }
 
 .btn-group {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .d-inline-block select {
-    cursor: pointer;
-    margin-right: 3.125rem;
+  cursor: pointer;
+  margin-right: 3.125rem;
 }
 
 .d-inline-block label {
-    font-size: 1.125rem;
-    border-radius: 0.625rem;
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-    padding: 0.625rem;
-    -moz-box-shadow: #6b9dd6 0px 0px 10px;
-    -webkit-box-shadow: #6e7849 0 0 10px;
-    background-color: rgba(111, 141, 198, 0.72);
-    background-image: linear-gradient(134deg, rgba(168, 248, 160, 0.96), rgba(75, 204, 63, 0.97));
-    -webkit-box-shadow: #6e7849 1px 1px 10px;
-    box-shadow: #6e7849 1px 1px 10px;
-    color: #ffffff;
-    display: inline-block;
-    text-decoration: none;
-    text-shadow: #000000 5px 5px 15px;
-    border: 2px solid rgba(113, 177, 113, 0.61);
-    color: rgb(249, 247, 247);
+  font-size: 1.125rem;
+  border-radius: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: 0.625rem;
+  -moz-box-shadow: #6b9dd6 0px 0px 10px;
+  -webkit-box-shadow: #6e7849 0 0 10px;
+  background-color: rgba(111, 141, 198, 0.72);
+  background-image: linear-gradient(134deg, rgba(168, 248, 160, 0.96), rgba(75, 204, 63, 0.97));
+  -webkit-box-shadow: #6e7849 1px 1px 10px;
+          box-shadow: #6e7849 1px 1px 10px;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
+  border: 2px solid rgba(113, 177, 113, 0.61);
+  color: rgb(249, 247, 247);
 }
 
 .btn {
-    padding: 0.625rem 0.9375rem;
-    font-size: 1.25rem;
-    border-radius: 0.625rem;
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-    -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
-    box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  padding: 0.625rem 0.9375rem;
+  font-size: 1.25rem;
+  border-radius: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
+          box-shadow: 1px 1px 5px rgb(251, 250, 250);
 }
-
 .btn:hover {
-    background-color: rgba(255, 255, 255, 0.105);
+  background-color: rgba(255, 255, 255, 0.105);
 }
 
 .btn-primary {
-    font-style: normal;
-    color: #fffaff;
-    background: #78db85;
-    border: 1px solid #bbb;
-    text-shadow: 0px 0px 18px #520980;
-    box-shadow: -7px -7px 19px #f9f5f9;
-    -moz-box-shadow: -7px -7px 19px #f9f5f9;
-    -webkit-box-shadow: -7px -7px 19px #f9f5f9;
-    border-radius: 0px 62px 0px 53px;
-    -moz-border-radius: 0px 62px 0px 53px;
-    -webkit-border-radius: 0px 62px 0px 53px;
+  font-style: normal;
+  color: #fffaff;
+  background: #78db85;
+  border: 1px solid #bbb;
+  text-shadow: 0px 0px 18px #520980;
+  box-shadow: -7px -7px 19px #f9f5f9;
+  -moz-box-shadow: -7px -7px 19px #f9f5f9;
+  -webkit-box-shadow: -7px -7px 19px #f9f5f9;
+  border-radius: 0px 62px 0px 53px;
+  -moz-border-radius: 0px 62px 0px 53px;
+  -webkit-border-radius: 0px 62px 0px 53px;
 }
-
 .btn-primary:hover {
-    background-color: rgba(143, 241, 128, 0.8);
-    border: 1px solid #bbb;
-    -webkit-box-shadow: -7px -7px 19px rgba(99, 150, 205, 0.68);
-    box-shadow: -7px -7px 19px rgba(99, 150, 205, 0.68);
+  background-color: rgba(143, 241, 128, 0.8);
+  border: 1px solid #bbb;
+  -webkit-box-shadow: -7px -7px 19px rgba(99, 150, 205, 0.68);
+          box-shadow: -7px -7px 19px rgba(99, 150, 205, 0.68);
 }
 
 .filter {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-left: 0.625rem;
-    padding: 0.625rem 0.9375rem;
-    font-size: 1.25rem;
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    -moz-box-shadow: #6e7849 0px 0px 10px;
-    -webkit-box-shadow: #6e7849 0 0 10px;
-    background-color: #534978;
-    background-image: linear-gradient(134deg, rgba(168, 248, 160, 0.96), rgba(75, 204, 63, 0.97));
-    -webkit-box-shadow: #6e7849 1px 1px 10px;
-    box-shadow: #6e7849 1px 1px 10px;
-    color: #ffffff;
-    display: inline-block;
-    text-decoration: none;
-    text-shadow: #000000 5px 5px 15px;
-    border: 2px solid rgba(113, 177, 113, 0.61);
-    color: rgb(249, 247, 247);
-    cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0.625rem;
+  padding: 0.625rem 0.9375rem;
+  font-size: 1.25rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  -moz-box-shadow: #6e7849 0px 0px 10px;
+  -webkit-box-shadow: #6e7849 0 0 10px;
+  background-color: #534978;
+  background-image: linear-gradient(134deg, rgba(168, 248, 160, 0.96), rgba(75, 204, 63, 0.97));
+  -webkit-box-shadow: #6e7849 1px 1px 10px;
+          box-shadow: #6e7849 1px 1px 10px;
+  color: #ffffff;
+  display: inline-block;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
+  border: 2px solid rgba(113, 177, 113, 0.61);
+  color: rgb(249, 247, 247);
+  cursor: pointer;
 }
-
 .filter:hover {
-    color: rgb(249, 248, 248);
-    border: 2px dashed rgb(19, 138, 6);
-    background-image: linear-gradient(134deg, rgba(75, 204, 63, 0.97), rgba(168, 248, 160, 0.96));
+  color: rgb(249, 248, 248);
+  border: 2px dashed rgb(19, 138, 6);
+  background-image: linear-gradient(134deg, rgba(75, 204, 63, 0.97), rgba(168, 248, 160, 0.96));
 }
 
 .filter img {
-    width: 1rem;
-    margin-left: 0.3125rem;
-    rotate: -30deg;
+  width: 1rem;
+  margin-left: 0.3125rem;
+  rotate: -30deg;
 }
 
 .tovar {
-    border: none;
-    color: rgb(247, 245, 245);
-    cursor: pointer;
-    background-image: linear-gradient(153deg, rgba(185, 218, 255, 0.98), rgba(115, 175, 253, 0.97));
+  border: none;
+  color: rgb(247, 245, 245);
+  cursor: pointer;
+  background-image: linear-gradient(153deg, rgba(185, 218, 255, 0.98), rgba(115, 175, 253, 0.97));
 }
-
 .tovar:hover {
-    background-image: linear-gradient(153deg, rgba(70, 179, 246, 0.96), rgba(191, 232, 246, 0.95));
-    border: none;
+  background-image: linear-gradient(153deg, rgba(70, 179, 246, 0.96), rgba(191, 232, 246, 0.95));
+  border: none;
 }
 
 .creator {
-    border: none;
-    color: white;
-    text-shadow: 1px 1px 3px #070707;
-    -webkit-box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
-    box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
-    border-radius: 29px 0px 30px 15px;
-    -moz-border-radius: 29px 0px 30px 15px;
-    -webkit-border-radius: 29px 0px 30px 15px;
-    background-color: rgba(32, 87, 184, 0.45);
-    padding: 0.625rem 1.25rem;
-    cursor: pointer;
+  border: none;
+  color: white;
+  text-shadow: 1px 1px 3px #070707;
+  -webkit-box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
+          box-shadow: 1px 1px 7px rgba(249, 248, 248, 0.6274509804);
+  border-radius: 29px 0px 30px 15px;
+  -moz-border-radius: 29px 0px 30px 15px;
+  -webkit-border-radius: 29px 0px 30px 15px;
+  background-color: rgba(32, 87, 184, 0.45);
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
 }
-
 .creator:hover {
-    border: none;
-    -webkit-box-shadow: 0px -7px 7px rgba(58, 58, 58, 0.6274509804);
-    box-shadow: 0px -7px 7px rgba(58, 58, 58, 0.6274509804);
-    background-color: rgba(35, 102, 179, 0.76);
+  border: none;
+  -webkit-box-shadow: 0px -7px 7px rgba(58, 58, 58, 0.6274509804);
+          box-shadow: 0px -7px 7px rgba(58, 58, 58, 0.6274509804);
+  background-color: rgba(35, 102, 179, 0.76);
 }
 
 .tableted {
-    position: relative; /* для липкости шапки */
-    margin-top: 1.25rem;
-    z-index: 50;
-    background-color: rgba(134, 232, 255, 0.41);
-    max-height: 79vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
-    overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
-    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-    -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
-    box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+  position: relative; /* для липкости шапки */
+  margin-top: 1.25rem;
+  z-index: 50;
+  background-color: rgba(134, 232, 255, 0.41);
+  max-height: 79vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+          box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
 }
 
 .sticky-header th {
-    padding: 1.25rem;
+  padding: 1.25rem;
 }
 
 .table {
-    border-spacing: 0 10px; /* Горизонтальные отступы между строками */
-    margin: 0 auto;
-    font-size: 1.125rem;
+  border-spacing: 0 10px; /* Горизонтальные отступы между строками */
+  margin: 0 auto;
+  font-size: 1.125rem;
 }
 
 .tbody a {
-    color: #1b1a1a;
+  color: #1b1a1a;
 }
 
 tbody tr {
-    background-color: rgba(196, 207, 253, 0.65); /* Легкий фон для строк */
-    font-size: 1.25rem;
-    color: #3e3d3d;
+  background-color: rgba(196, 207, 253, 0.65); /* Легкий фон для строк */
+  font-size: 1.25rem;
+  color: #3e3d3d;
 }
 
 th,
 td {
-    width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
-    text-align: center; /* Центрируем текст */
-    vertical-align: middle; /* Выравниваем по вертикали */
-    overflow-wrap: break-word; /* Разрешаем перенос слов */
-    word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
-    white-space: normal; /* Позволяем перенос строк */
-    border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
-    font-size: 1.25rem;
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: rgba(55, 62, 67, 0.85);
+  width: 8%; /* Пример ширины, вы можете изменить на свое усмотрение */
+  text-align: center; /* Центрируем текст */
+  vertical-align: middle; /* Выравниваем по вертикали */
+  overflow-wrap: break-word; /* Разрешаем перенос слов */
+  word-wrap: break-word; /* Разрешаем перенос слов (для совместимости) */
+  white-space: normal; /* Позволяем перенос строк */
+  border-bottom: 1px solid #ddd; /* Добавляем нижнюю границу для ячеек */
+  font-size: 1.25rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(55, 62, 67, 0.85);
 }
 
 .sticky-header th {
-    padding: 0.625rem;
+  padding: 0.625rem;
 }
 
 .sticky-header {
-    position: sticky; /* Делаем шапку фиксированной */
-    top: 0; /* Прилипание к верхней части контейнера */
-    background-color: rgb(120, 154, 239);
-    color: white;
-    z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
-    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.489);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.489);
-    /* Легкая тень для выделения
-    }
+  position: sticky; /* Делаем шапку фиксированной */
+  top: 0; /* Прилипание к верхней части контейнера */
+  background-color: rgb(120, 154, 239);
+  color: white;
+  z-index: 1; /* Устанавливаем высокий индекс, чтобы шапка была поверх остального контента */
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.489);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.489);
+  /* Легкая тень для выделения
+  }
 
 
 
-        padding: 10px; /* Отступы внутри ячеек */
+      padding: 10px; /* Отступы внутри ячеек */
 }
 
 .table tbody tr td {
-    padding: 12px;
-    position: relative;
-    cursor: pointer;
+  padding: 12px;
+  position: relative;
+  cursor: pointer;
 }
 
 tbody tr:hover {
-    -webkit-box-shadow: 1px 7px 5px rgba(74, 126, 237, 0.4), -1px -15px 5px rgba(58, 131, 240, 0.58);
-    box-shadow: 1px 7px 5px rgba(74, 126, 237, 0.4), -1px -15px 5px rgba(58, 131, 240, 0.58);
-    background-color: rgba(74, 126, 237, 0.4);
+  -webkit-box-shadow: 1px 7px 5px rgba(74, 126, 237, 0.4), -1px -15px 5px rgba(58, 131, 240, 0.58);
+          box-shadow: 1px 7px 5px rgba(74, 126, 237, 0.4), -1px -15px 5px rgba(58, 131, 240, 0.58);
+  background-color: rgba(74, 126, 237, 0.4);
 }
 
 .highlight {
-    background-color: rgba(132, 177, 234, 0.58);
-    -webkit-box-shadow: 5px 1px 5px rgba(83, 176, 243, 0.58), -5px -1px 5px rgba(132, 177, 234, 0.48);
-    box-shadow: 5px 1px 5px rgba(83, 176, 243, 0.58), -5px -1px 5px rgba(132, 177, 234, 0.48);
+  background-color: rgba(132, 177, 234, 0.58);
+  -webkit-box-shadow: 5px 1px 5px rgba(83, 176, 243, 0.58), -5px -1px 5px rgba(132, 177, 234, 0.48);
+          box-shadow: 5px 1px 5px rgba(83, 176, 243, 0.58), -5px -1px 5px rgba(132, 177, 234, 0.48);
 }
 
 .out {
-    margin-top: 1.25rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-column-gap: 0.625rem;
-    -moz-column-gap: 0.625rem;
-    column-gap: 0.625rem;
+  margin-top: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
 }
 
 .exit {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 0.375rem;
-    background-color: rgba(239, 242, 244, 0.13);
-    border-radius: 5px;
-    -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.71), -1px -1px 3px rgba(0, 0, 0, 0.56);
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.71), -1px -1px 3px rgba(0, 0, 0, 0.56);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.375rem;
+  background-color: rgba(239, 242, 244, 0.13);
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.71), -1px -1px 3px rgba(0, 0, 0, 0.56);
+          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.71), -1px -1px 3px rgba(0, 0, 0, 0.56);
 }
-
 .exit img {
-    width: 1.875rem;
-    margin-left: 0;
+  width: 1.875rem;
+  margin-left: 0;
 }
 
 .out--button {
-    font-size: 1.125rem;
-    font-weight: 600;
-    cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .admin-img {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
 .admin-img:hover {
-    border: rgba(69, 154, 198, 0.86);
+  border: rgba(69, 154, 198, 0.86);
 }
 
 .admin-img img {
-    width: 1.5rem;
-    margin-left: 0.3125rem;
+  width: 1.5rem;
+  margin-left: 0.3125rem;
 }
 
 .error-message {
-    color: #ff0000;
+  color: #ff0000;
 }
 
 .wr {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.02)), to(rgba(0, 0, 0, 0.02))), url(../css/icon/2.2.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)), url(../css/icon/2.2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 75vh;
-    padding-top: 12.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.02)), to(rgba(0, 0, 0, 0.02))), url(../css/icon/2.2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)), url(../css/icon/2.2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 75vh;
+  padding-top: 12.5rem;
 }
 
 .new {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
 .new h2 {
-    font-family: "Philosopher", sans-serif;
-    font-size: 2.75rem;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    text-shadow: 2px 2px 3px black;
+  font-family: "Philosopher", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 3px black;
 }
 
 .form-block {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    text-shadow: 2px 2px 3px black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 3px black;
 }
 
 input::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-    font-size: 14px;
-    color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
 }
 
 input::-moz-placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-    font-size: 14px;
-    color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
 }
 
 input:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-    font-size: 14px;
-    color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
 }
 
 input::-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-    font-size: 14px;
-    color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
 }
 
 input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-    font-style: italic;
-    font-size: 14px;
-    color: black;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  font-size: 14px;
+  color: black;
 }
 
 .form-control {
-    background-color: #f0f0f0; /* Цвет фона */
-    border: 1px solid #131313; /* Цвет рамки */
-    padding: 10px; /* Отступы */
-    border-radius: 5px; /* Скругление углов */
-    font-size: 16px; /* Размер шрифта */
-    -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
-    box-shadow: 1px 1px 5px rgb(251, 250, 250);
-    cursor: pointer;
+  background-color: #f0f0f0; /* Цвет фона */
+  border: 1px solid #131313; /* Цвет рамки */
+  padding: 10px; /* Отступы */
+  border-radius: 5px; /* Скругление углов */
+  font-size: 16px; /* Размер шрифта */
+  -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
+          box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  cursor: pointer;
 }
 
 .form-control option {
-    color: #0c0b0b; /* Цвет текста для опций */
-    -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
-    box-shadow: 1px 1px 5px rgb(251, 250, 250);
-    font-size: 1.125rem;
-    border-radius: 0.625rem;
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-    padding: 0.625rem;
+  color: #0c0b0b; /* Цвет текста для опций */
+  -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
+          box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  font-size: 1.125rem;
+  border-radius: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: 0.625rem;
 }
 
 .input-field {
-    width: 200px; /* Ширина поля ввода */
-    height: 20px; /* Высота поля ввода */
-    padding: 10px; /* Отступы внутри поля */
-    font-size: 16px; /* Размер шрифта */
-    border: 1px solid #ccc; /* Цвет рамки */
-    border-radius: 5px; /* Скругление углов */
-    background-color: #f0f0f0; /* Цвет фона */
-    font-weight: 700;
+  width: 200px; /* Ширина поля ввода */
+  height: 20px; /* Высота поля ввода */
+  padding: 10px; /* Отступы внутри поля */
+  font-size: 16px; /* Размер шрифта */
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 5px; /* Скругление углов */
+  background-color: #f0f0f0; /* Цвет фона */
+  font-weight: 700;
 }
 
 .d-flex {
-    position: absolute;
-    top: 9.375rem;
-    margin-left: 50%;
-    top: 15.625rem;
-    margin-left: 40%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-    column-gap: 1.25rem;
-    margin-top: 6.25rem;
+  position: absolute;
+  top: 9.375rem;
+  margin-left: 50%;
+  top: 15.625rem;
+  margin-left: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  margin-top: 6.25rem;
 }
-
 .d-flex a:hover {
-    color: white;
+  color: white;
 }
 
 .adaptiv-class {
-    min-height: 8.125rem;
-    position: relative;
+  min-height: 8.125rem;
+  position: relative;
 }
-
 @media (max-width: 87.5625rem) {
-    .adaptiv-class {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        row-gap: 0.625rem;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-}
-
-.adaptiv-class .error-message {
-    position: absolute;
-    top: 70px;
-    padding: 0.625rem;
-    text-align: center;
-    z-index: 10;
-}
-
-.btn-back {
-    background-color: rgba(0, 0, 255, 0.199);
-}
-
-.btn-back:hover {
-    background-color: rgba(234, 231, 231, 0.3176470588);
-    border: none;
-}
-
-.d-flex a {
-    color: white;
-}
-
-.d-flex a:hover {
-    color: rgb(13, 13, 13);
-}
-
-.wrrr {
-    position: relative;
-    background-image: url(./icon/2.2.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 98vh;
-}
-
-.product {
-    margin-top: -3.125rem;
-    text-align: center;
-}
-
-.product h2 {
-    font-size: 3.125rem;
-    color: rgb(248, 246, 246);
-    text-shadow: 2px -2px 5px rgba(28, 96, 174, 0.32), -2px 2px 5px rgba(9, 9, 9, 0.71);
-}
-
-.form__block {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    margin-bottom: 3.125rem;
-}
-
-.form__block--block {
+  .adaptiv-class {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    row-gap: 1.25rem;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 0.625rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
+.adaptiv-class .error-message {
+  position: absolute;
+  top: 70px;
+  padding: 0.625rem;
+  text-align: center;
+  z-index: 10;
+}
+
+.btn-back {
+  background-color: rgba(0, 0, 255, 0.199);
+}
+.btn-back:hover {
+  background-color: rgba(234, 231, 231, 0.3176470588);
+  border: none;
+}
+
+.d-flex a {
+  color: white;
+}
+.d-flex a:hover {
+  color: rgb(13, 13, 13);
+}
+
+.wrrr {
+  position: relative;
+  background-image: url(./icon/2.2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 98vh;
+}
+
+.product {
+  margin-top: -3.125rem;
+  text-align: center;
+}
+.product h2 {
+  font-size: 3.125rem;
+  color: rgb(248, 246, 246);
+  text-shadow: 2px -2px 5px rgba(28, 96, 174, 0.32), -2px 2px 5px rgba(9, 9, 9, 0.71);
+}
+
+.form__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 3.125rem;
+}
+
+.form__block--block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1.25rem;
+}
 .form__block--block input {
-    width: 18.75rem;
-    height: 2.5rem;
-    font-size: 1.25rem;
-    font-weight: 700;
+  width: 18.75rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .form__block label {
-    padding: 0.625rem; /* Отступы внутри поля */
-    font-size: 1.625rem; /* Размер шрифта */
-    border: 1px solid #ccc; /* Цвет рамки */
-    border-radius: 5px; /* Скругление углов */
-    background-color: #f0f0f0; /* Цвет фона */
-    font-weight: 700;
+  padding: 0.625rem; /* Отступы внутри поля */
+  font-size: 1.625rem; /* Размер шрифта */
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 5px; /* Скругление углов */
+  background-color: #f0f0f0; /* Цвет фона */
+  font-weight: 700;
 }
 
 .product__status {
-    font-size: 1.25rem;
-    border: 1px solid #ccc; /* Цвет рамки */
-    border-radius: 10px; /* Скругление углов */
-    padding: 0.625rem; /* Отступы внутри поля */
-    color: rgb(6, 6, 6);
+  font-size: 1.25rem;
+  border: 1px solid #ccc; /* Цвет рамки */
+  border-radius: 10px; /* Скругление углов */
+  padding: 0.625rem; /* Отступы внутри поля */
+  color: rgb(6, 6, 6);
 }
 
 .button__block--status label {
-    color: #0c0b0b; /* Цвет текста для опций */
-    -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
-    box-shadow: 1px 1px 5px rgb(251, 250, 250);
-    font-size: 1.125rem;
-    border-radius: 0.625rem;
-    font-family: "Philosopher", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-    padding: 0.625rem;
+  color: #0c0b0b; /* Цвет текста для опций */
+  -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
+          box-shadow: 1px 1px 5px rgb(251, 250, 250);
+  font-size: 1.125rem;
+  border-radius: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  padding: 0.625rem;
 }
 
 .button__block--button form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    text-align: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .d-flex2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-    column-gap: 1.25rem;
-    margin-top: 6.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  margin-top: 6.25rem;
 }
-
 .d-flex2 a {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-    text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  text-decoration: none;
 }
 
 .d-flex4 {
-    position: absolute;
-    bottom: 3.125rem;
-    left: 34.375rem;
+  position: absolute;
+  bottom: 3.125rem;
+  left: 34.375rem;
 }
 
 .button-danger {
-    margin-top: 6.25rem;
-    height: 3.125rem;
-    font-style: normal;
-    color: #ffffff;
-    background: #c50000;
-    text-shadow: 1px 1px 3px #070707;
-    box-shadow: 0px 0px 6px #e80303;
-    -moz-box-shadow: 0px 0px 6px #454545;
-    -webkit-box-shadow: 0px 0px 6px #454545;
-    border-radius: 90px 15px 19px 15px;
-    -moz-border-radius: 90px 15px 19px 15px;
-    -webkit-border-radius: 90px 15px 19px 15px;
-    padding: 0.3125rem 1.25rem;
-    cursor: pointer;
+  margin-top: 6.25rem;
+  height: 3.125rem;
+  font-style: normal;
+  color: #ffffff;
+  background: #c50000;
+  text-shadow: 1px 1px 3px #070707;
+  box-shadow: 0px 0px 6px #e80303;
+  -moz-box-shadow: 0px 0px 6px #454545;
+  -webkit-box-shadow: 0px 0px 6px #454545;
+  border-radius: 90px 15px 19px 15px;
+  -moz-border-radius: 90px 15px 19px 15px;
+  -webkit-border-radius: 90px 15px 19px 15px;
+  padding: 0.3125rem 1.25rem;
+  cursor: pointer;
 }
-
 .button-danger:hover {
-    background-color: rgba(197, 0, 0, 0.337254902);
-    border: none;
+  background-color: rgba(197, 0, 0, 0.337254902);
+  border: none;
 }
 
 .btn-primary,
 .btn-danger,
 .button-danger {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .save {
-    color: #ffffff;
-    height: 3.125rem;
-    box-shadow: 0px 0px 6px rgba(143, 241, 128, 0.329);
-    -moz-box-shadow: 0px 0px 6px #454545;
-    -webkit-box-shadow: 0px 0px 6px #454545;
-    border-radius: 19px 18px 90px 20px;
-    -moz-border-radius: 19px 18px 90px 20px;
-    -webkit-border-radius: 19px 18px 90px 20px;
-    padding: 0.625rem 1.25rem;
-    -webkit-box-shadow: 0px 0px 6px black;
-    box-shadow: 0px 0px 6px black;
+  color: #ffffff;
+  height: 3.125rem;
+  box-shadow: 0px 0px 6px rgba(143, 241, 128, 0.329);
+  -moz-box-shadow: 0px 0px 6px #454545;
+  -webkit-box-shadow: 0px 0px 6px #454545;
+  border-radius: 19px 18px 90px 20px;
+  -moz-border-radius: 19px 18px 90px 20px;
+  -webkit-border-radius: 19px 18px 90px 20px;
+  padding: 0.625rem 1.25rem;
+  -webkit-box-shadow: 0px 0px 6px black;
+          box-shadow: 0px 0px 6px black;
 }
-
 .save:hover {
-    -webkit-box-shadow: 4px 4px 16px rgba(143, 241, 128, 0.329);
-    box-shadow: 4px 4px 16px rgba(143, 241, 128, 0.329);
+  -webkit-box-shadow: 4px 4px 16px rgba(143, 241, 128, 0.329);
+          box-shadow: 4px 4px 16px rgba(143, 241, 128, 0.329);
 }
 
 .bb {
-    width: 1.875rem;
-    margin-left: 0.625rem;
+  width: 1.875rem;
+  margin-left: 0.625rem;
 }
 
 .save,
 .done {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
 }
 
 .done:hover {
-    -webkit-box-shadow: 4px 4px 16px rgba(197, 0, 0, 0.337254902);
-    box-shadow: 4px 4px 16px rgba(197, 0, 0, 0.337254902);
+  -webkit-box-shadow: 4px 4px 16px rgba(197, 0, 0, 0.337254902);
+          box-shadow: 4px 4px 16px rgba(197, 0, 0, 0.337254902);
 }
 
 .new--wr {
-    position: relative;
-    background-image: url(../css/icon/0.0.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-top: 12.5rem;
-    z-index: 0; /* Помещаем позади содержимого */
+  position: relative;
+  background-image: url(../css/icon/0.0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 12.5rem;
+  z-index: 0; /* Помещаем позади содержимого */
 }
 
 .category-fone {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.523);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.523);
 }
 
 .wrapper.new--wr .new__container {
-    position: relative;
-    z-index: 10; /* Помещаем содержимое поверх фона */
-    width: 43.75rem;
-    margin-top: 12.5rem;
+  position: relative;
+  z-index: 10; /* Помещаем содержимое поверх фона */
+  width: 43.75rem;
+  margin-top: 12.5rem;
 }
 
 .new__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
 .new__container h2 {
-    font-family: "Philosopher", sans-serif;
-    font-size: 3.125rem;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    text-shadow: 2px 2px 6px rgb(18, 17, 17);
+  font-family: "Philosopher", sans-serif;
+  font-size: 3.125rem;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 6px rgb(18, 17, 17);
 }
-
 .new__container label {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    text-shadow: 1px 1px 5px rgba(9, 9, 9, 0.89);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(9, 9, 9, 0.89);
 }
 
 .d-flex3 {
-    margin-top: 3.125rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-column-gap: 1.875rem;
-    -moz-column-gap: 1.875rem;
-    column-gap: 1.875rem;
+  margin-top: 3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.875rem;
+     -moz-column-gap: 1.875rem;
+          column-gap: 1.875rem;
 }
-
 .d-flex3 a {
-    color: rgba(254, 252, 252, 0.73);
+  color: rgba(254, 252, 252, 0.73);
 }
 
 .new--log {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
-    height: 98vh; /* Увеличиваем высоту, чтобы изображение поместилось */
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), url(../css/icon/1.1.jpg);
-    background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url(../css/icon/1.1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-top: 1.25rem;
-    z-index: 0; /* Помещаем позади содержимого */
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%; /* Увеличиваем ширину, чтобы изображение поместилось */
+  height: 98vh; /* Увеличиваем высоту, чтобы изображение поместилось */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.05)), to(rgba(0, 0, 0, 0.05))), url(../css/icon/1.1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url(../css/icon/1.1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 1.25rem;
+  z-index: 0; /* Помещаем позади содержимого */
 }
 
 .log__container {
-    /*position: relative;*/
-    width: 25rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-    z-index: 10; /* Помещаем содержимое поверх фона */
-    background-color: rgba(255, 255, 255, 0.578);
+  /*position: relative;*/
+  width: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  z-index: 10; /* Помещаем содержимое поверх фона */
+  background-color: rgba(255, 255, 255, 0.578);
 }
-
 .log__container h2 {
-    font-family: "Philosopher", sans-serif;
-    font-size: 3.125rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgba(3, 16, 53, 0.79);
-    text-shadow: 1px -2px 1px rgba(158, 184, 250, 0.66), 2px -1px 1px rgba(53, 53, 230, 0.36), 1px -2px 1px rgba(53, 53, 230, 0.36);
+  font-family: "Philosopher", sans-serif;
+  font-size: 3.125rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(3, 16, 53, 0.79);
+  text-shadow: 1px -2px 1px rgba(158, 184, 250, 0.66), 2px -1px 1px rgba(53, 53, 230, 0.36), 1px -2px 1px rgba(53, 53, 230, 0.36);
 }
-
 .log__container p {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.875rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(19, 18, 18);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(19, 18, 18);
 }
-
 .log__container p a {
-    color: rgb(0, 76, 211);
-    cursor: pointer;
-    -webkit-text-decoration: dashed;
-    text-decoration: dashed;
+  color: rgb(0, 76, 211);
+  cursor: pointer;
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
 }
-
 .log__container label {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(19, 18, 18);
-    margin-bottom: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(19, 18, 18);
+  margin-bottom: 0.625rem;
 }
 
 .alert {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    font-style: normal;
-    color: red;
-    font-style: italic;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  color: red;
+  font-style: italic;
 }
 
 fieldset {
-    margin-top: 4.375rem;
-    width: 18.75rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding: 1.25rem;
-    margin-bottom: 1.875rem;
-    border-radius: 15px;
-    background-color: rgba(70, 140, 246, 0.22);
+  margin-top: 4.375rem;
+  width: 18.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.25rem;
+  margin-bottom: 1.875rem;
+  border-radius: 15px;
+  background-color: rgba(70, 140, 246, 0.22);
 }
 
 legend {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgba(7, 24, 66, 0.96);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgba(7, 24, 66, 0.96);
 }
 
 .np {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .np input[type=text],
 .np input[type=password] {
-    height: 30px; /* или любой другой размер */
-    font-size: 16px; /* для увеличения текста */
-    border-radius: 7px;
+  height: 30px; /* или любой другой размер */
+  font-size: 16px; /* для увеличения текста */
+  border-radius: 7px;
 }
 
 .np input[type=submit] {
-    height: 1.875rem;
-    background-color: rgba(19, 69, 174, 0.9);
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    font-style: normal;
-    color: rgb(250, 250, 250);
-    border-radius: 7px;
-    cursor: pointer;
+  height: 1.875rem;
+  background-color: rgba(19, 69, 174, 0.9);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-style: normal;
+  color: rgb(250, 250, 250);
+  border-radius: 7px;
+  cursor: pointer;
 }
-
 .np input[type=submit]:hover {
-    background-color: rgba(3, 24, 158, 0.58);
+  background-color: rgba(3, 24, 158, 0.58);
 }
 
 .logout input[type=submit] {
-    background-color: rgba(255, 255, 255, 0);
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    font-style: normal;
-    padding: 2rem 0.625rem 3.7rem;
-    border: none;
-    color: rgb(243, 239, 239);
-    text-shadow: 1px 1px 1px black, -1px -1px 1px black;
-    cursor: pointer;
-    background-image: url(./icon/logout.png);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 54px;
-    text-align: center;
-
+  background-color: rgba(255, 255, 255, 0);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: normal;
+  padding: 2rem 0.625rem 3.7rem;
+  border: none;
+  color: rgb(243, 239, 239);
+  text-shadow: 1px 1px 1px black, -1px -1px 1px black;
+  cursor: pointer;
+  background-image: url(./icon/logout.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 54px;
+  text-align: center;
 }
-
 .logout input[type=submit]:hover {
-    text-shadow: 1px 1px 1px black,
-    -1px -2px 1px black;
+  text-shadow: 1px 1px 1px black, -1px -2px 1px black;
 }
 
 input.email::-webkit-input-placeholder {
-    text-align: center;
+  text-align: center;
 }
 
 input.email::-moz-placeholder {
-    text-align: center;
+  text-align: center;
 }
 
 input.email:-ms-input-placeholder {
-    text-align: center;
+  text-align: center;
 }
 
 input.email::-ms-input-placeholder {
-    text-align: center;
+  text-align: center;
 }
 
 input.email::placeholder {
-    text-align: center;
+  text-align: center;
 }
 
 #password {
-    text-align: center;
+  text-align: center;
 }
 
 .addus,
 .delus {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .register {
-    position: relative;
-    background-image: url(../css/icon/1.1.jpg); /* Укажите путь к вашему изображению */
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 98vh;
-    background-position: center;
-    z-index: 0; /* Помещаем позади содержимого */
+  position: relative;
+  background-image: url(../css/icon/1.1.jpg); /* Укажите путь к вашему изображению */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 98vh;
+  background-position: center;
+  z-index: 0; /* Помещаем позади содержимого */
 }
-
 .register__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-    z-index: 10; /* Помещаем содержимое поверх фона */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  z-index: 10; /* Помещаем содержимое поверх фона */
 }
-
 .register h2 {
-    font-family: "Philosopher", sans-serif;
-    font-size: 3.125rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px -2px 1px rgba(18, 17, 17, 0.73), 2px -2px 1px rgb(252, 251, 251), 2px -2px 1px rgba(7, 7, 7, 0.68), -1px 1px 1px rgba(18, 17, 17, 0.59);
+  font-family: "Philosopher", sans-serif;
+  font-size: 3.125rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px -2px 1px rgba(18, 17, 17, 0.73), 2px -2px 1px rgb(252, 251, 251), 2px -2px 1px rgba(7, 7, 7, 0.68), -1px 1px 1px rgba(18, 17, 17, 0.59);
 }
-
 .register label {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-    text-shadow: 0px 0px 6px black;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  text-shadow: 0px 0px 6px black;
 }
-
 .register a {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  font-style: normal;
 }
 
 .rowe {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-column-gap: 1.875rem;
-    -moz-column-gap: 1.875rem;
-    column-gap: 1.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1.875rem;
+     -moz-column-gap: 1.875rem;
+          column-gap: 1.875rem;
 }
-
 .rowe input {
-    padding: 0.625rem;
-    border-radius: 5px;
+  padding: 0.625rem;
+  border-radius: 5px;
 }
 
 .register__container fieldset {
-    width: 800px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    row-gap: 1.25rem;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1.25rem;
 }
 
 .registration-cancel {
-    color: #faf7f7;
+  color: #faf7f7;
 }
 
 .addus img {
-    background-color: rgba(0, 128, 0, 0.18);
-    padding: 0.5rem;
-    margin-left: -1rem;
+  background-color: rgba(0, 128, 0, 0.18);
+  padding: 0.5rem;
+  margin-left: -1rem;
 }
-
 .addus .reg {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    font-style: normal;
-    background-color: rgba(0, 128, 0, 0.42);
-    color: white;
-    cursor: pointer;
-    padding: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(0, 128, 0, 0.42);
+  color: white;
+  cursor: pointer;
+  padding: 0.625rem;
 }
-
 .addus .reg:hover {
-    background-color: rgba(0, 128, 0, 0.75);
+  background-color: rgba(0, 128, 0, 0.75);
 }
-
 .addus .reg,
 .addus .res {
-    margin: 0.15rem 1rem;
+  margin: 0.15rem 1rem;
 }
 
 .delus {
-    background-color: rgba(236, 115, 115, 0.379);
-    padding-right: 0.45rem;
-    padding-left: 0.01rem;
+  background-color: rgba(236, 115, 115, 0.379);
+  padding-right: 0.45rem;
+  padding-left: 0.01rem;
 }
-
 .delus .res {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    font-style: normal;
-    background-color: rgba(244, 12, 12, 0.447);
-    color: white;
-    cursor: pointer;
-    padding: 0.625rem;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: normal;
+  background-color: rgba(244, 12, 12, 0.447);
+  color: white;
+  cursor: pointer;
+  padding: 0.625rem;
 }
-
 .delus .res:hover {
-    background-color: rgba(186, 5, 5, 0.68);
+  background-color: rgba(186, 5, 5, 0.68);
 }
 
 #cans {
-    color: rgb(1, 33, 138);
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 3px white;
+  color: rgb(1, 33, 138);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px white;
 }
-
 #cans:hover {
-    text-shadow: 1px 1px 2px rgba(6, 28, 170, 0.55);
+  text-shadow: 1px 1px 2px rgba(6, 28, 170, 0.55);
 }
 
 .stt {
-    position: relative;
-    background-image: url(./icon/3.3.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 98vh;
+  position: relative;
+  background-image: url(./icon/3.3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 98vh;
 }
 
 .statistic__container {
-    position: relative;
+  position: relative;
 }
-
 .statistic__button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    margin-top: -3.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: -3.125rem;
 }
-
 .statistic__button a {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: black;
-    font-style: normal;
-    margin-left: 1.25rem;
-    text-decoration: none;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
+  font-style: normal;
+  margin-left: 1.25rem;
+  text-decoration: none;
 }
-
 .statistic__button a:hover {
-    text-decoration: underline;
-    color: #0e0e0e;
+  text-decoration: underline;
+  color: #0e0e0e;
 }
-
 .statistic__title {
-    text-align: center;
-    margin-top: -3.125rem;
+  text-align: center;
+  margin-top: -3.125rem;
 }
-
 .statistic__title h3 {
-    z-index: 577;
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.875rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(252, 251, 252);
-    text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202), 1px -1px 2px rgb(57, 56, 56);
+  z-index: 577;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(252, 251, 252);
+  text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202), 1px -1px 2px rgb(57, 56, 56);
 }
-
 .statistic__nav {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
 .statistic__exit a:hover {
-    text-shadow: none;
-    color: rgb(90, 89, 89);
+  text-shadow: none;
+  color: rgb(90, 89, 89);
 }
-
 .statistic__table {
-    position: relative; /* для липкости шапки */
-    background-color: rgba(104, 223, 251, 0.21);
-    max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
-    overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
-    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-    -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
-    box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+  position: relative; /* для липкости шапки */
+  background-color: rgba(104, 223, 251, 0.21);
+  max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+          box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
 }
 
 .statistic__title--span {
-    color: rgb(131, 131, 247);
+  color: rgb(131, 131, 247);
 }
 
 .logger-user {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.625rem;
-    background-color: rgba(255, 255, 255, 0.11);
-    padding: 0.1875rem;
-    border-radius: 2px;
-    -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0.5rem;
+  right: 0.625rem;
+  background-color: rgba(255, 255, 255, 0.11);
+  padding: 0.1875rem;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 }
 
 tfoot {
-    position: sticky;
-    bottom: 0;
-    background-color: rgba(172, 193, 246, 0.98);
+  position: sticky;
+  bottom: 0;
+  background-color: rgba(172, 193, 246, 0.98);
 }
 
 .statistic__nav p,
 .user__nav p,
 .statistic__exit p,
 .user__exit p {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .statistic__nav img,
 .user__nav img,
 .statistic__exit img,
 .user__exit img {
-    width: 1.875rem;
-    margin-left: 0.625rem;
-    border-radius: 50%;
-    padding: 0.1875rem;
+  width: 1.875rem;
+  margin-left: 0.625rem;
+  border-radius: 50%;
+  padding: 0.1875rem;
 }
 
 .nav--active {
-    color: blue;
-    text-decoration: underline;
+  color: blue;
+  text-decoration: underline;
 }
 
 .use {
-    background-image: url(../css/icon/0.1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    padding-top: 3.125rem;
+  background-image: url(../css/icon/0.1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-top: 3.125rem;
 }
 
 .user__container {
-    position: relative;
+  position: relative;
 }
-
 .user__title {
-    text-align: center;
-    margin-top: -3.125rem;
+  text-align: center;
+  margin-top: -3.125rem;
 }
-
 .user__title h3 {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.875rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(252, 251, 252);
-    text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202), 1px -1px 2px rgb(57, 56, 56);
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(252, 251, 252);
+  text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202), 1px -1px 2px rgb(57, 56, 56);
 }
-
 .user__table {
-    position: relative; /* для липкости шапки */
-    z-index: 50;
-    background-color: none;
-    max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
-    overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
-    overflow-x: hidden; /* Убирает горизонтальную прокрутку */
-    -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
-    box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+  position: relative; /* для липкости шапки */
+  z-index: 50;
+  background-color: none;
+  max-height: 76vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
+  overflow-x: hidden; /* Убирает горизонтальную прокрутку */
+  -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
+          box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
 }
-
 .user__button {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    margin-top: -2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: -2.5rem;
 }
-
 .user__button a {
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: black;
-    font-style: normal;
-    margin-left: 1.25rem;
-    text-decoration: none;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
+  font-style: normal;
+  margin-left: 1.25rem;
+  text-decoration: none;
 }
-
 .user__button a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-
 .user__nav {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
 .user__exit {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-
 .user__exit a:hover {
-    text-shadow: none;
+  text-shadow: none;
 }
-
 .user__table button {
-    background-color: rgba(12, 126, 255, 0.93);
-    color: white;
-    cursor: pointer;
-    padding: 0.3125rem;
-    text-transform: uppercase;
-    border-radius: 2px;
+  background-color: rgba(12, 126, 255, 0.93);
+  color: white;
+  cursor: pointer;
+  padding: 0.3125rem;
+  text-transform: uppercase;
+  border-radius: 2px;
 }
-
 .user__table button:hover {
-    background-color: #f7f3f3;
-    color: rgba(239, 8, 8, 0.85);
-    border-radius: 2px;
+  background-color: #f7f3f3;
+  color: rgba(239, 8, 8, 0.85);
+  border-radius: 2px;
 }
 
 .user__edit {
-    position: relative;
-    background-image: url(./icon/3.3.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 98vh;
+  position: relative;
+  background-image: url(./icon/3.3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 98vh;
 }
 
 .fone--ton {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(9, 9, 9, 0.03); /* Полупрозрачный черный цвет для притемнения */
-    z-index: 0; /* Этот блок будет находиться под контентом */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(9, 9, 9, 0.03); /* Полупрозрачный черный цвет для притемнения */
+  z-index: 0; /* Этот блок будет находиться под контентом */
 }
 
 .edit--title {
-    text-align: center;
-    margin-top: -3.125rem;
+  text-align: center;
+  margin-top: -3.125rem;
 }
-
 .edit--title h3 {
-    z-index: 577;
-    font-family: "Philosopher", sans-serif;
-    font-size: 1.875rem;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(252, 251, 252);
-    text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202), 1px -1px 2px rgb(57, 56, 56);
+  z-index: 577;
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-style: normal;
+  color: rgb(252, 251, 252);
+  text-shadow: 1px 1px 1px rgb(18, 17, 17), 1px -1px 1px rgb(185, 202, 202), 1px -1px 2px rgb(57, 56, 56);
 }
 
 .edit__container {
-    position: relative;
-    z-index: 1; /* Контент будет отображаться поверх фона и подложки */
+  position: relative;
+  z-index: 1; /* Контент будет отображаться поверх фона и подложки */
 }
 
 .edit--table {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 .edit--exit {
-    position: absolute;
-    top: 3.25rem;
-    right: 1.25rem;
-    width: 3.125rem;
-    padding: 0.625rem;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: 900;
-    -webkit-box-shadow: 1px 2px 16px rgba(56, 165, 204, 0.83);
-    box-shadow: 2px 2px 16px rgba(136, 160, 241, 0.62);
-    cursor: pointer;
+  position: absolute;
+  top: 3.25rem;
+  right: 1.25rem;
+  width: 3.125rem;
+  padding: 0.625rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 900;
+  -webkit-box-shadow: 1px 2px 16px rgba(56, 165, 204, 0.83);
+  box-shadow: 2px 2px 16px rgba(136, 160, 241, 0.62);
+  cursor: pointer;
 }
-
 .edit--exit:hover {
-    -webkit-box-shadow: 1px 2px 10px rgba(125, 164, 239, 0.86);
-    box-shadow: 0px 0px 10px rgba(91, 124, 225, 0.8);
+  -webkit-box-shadow: 1px 2px 10px rgba(125, 164, 239, 0.86);
+  box-shadow: 0px 0px 10px rgba(91, 124, 225, 0.8);
 }
-
 .edit--exit a {
-    color: rgba(2, 1, 1, 0.84);
-    text-decoration: none;
+  color: rgba(2, 1, 1, 0.84);
+  text-decoration: none;
 }
 
 .edit--button {
-    background-color: rgba(127, 227, 251, 0.36);
-    color: black;
-    padding: 0.3125rem;
-    cursor: pointer;
-    border-radius: 4px;
-    width: 150px;
-    height: 40px;
+  background-color: rgba(127, 227, 251, 0.36);
+  color: black;
+  padding: 0.3125rem;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 150px;
+  height: 40px;
 }

@@ -1,7 +1,6 @@
 package storagebox.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import storagebox.entities.Article;
@@ -17,10 +16,12 @@ import java.util.List;
 public class ArticleServiceImpl implements ArticleService {
 
     private final ArticleRepository articleRepository;
+    private final S3Service s3Service;
 
     @Autowired
-    public ArticleServiceImpl(ArticleRepository articleRepository) {
+    public ArticleServiceImpl(ArticleRepository articleRepository, S3Service s3Service) {
         this.articleRepository = articleRepository;
+        this.s3Service = s3Service;
     }
 
     public List<Article> findAll() {
@@ -57,6 +58,15 @@ public class ArticleServiceImpl implements ArticleService {
                 || articleFromView.getSoldQuantity() < 0) {
             throw new WrongValueException("Wrong value in field");
         }
+
+        ArticleStatus originalStatus = articleFromDB.getStatus();
+
+        if (articleFromDB.getUrl() != null && !articleFromDB.getUrl().equals(articleFromView.getUrl())) {
+            s3Service.deleteFromS3(articleFromDB.getUrl());
+            articleFromDB.setUrl(articleFromView.getUrl());
+        } else {
+            articleFromDB.setUrl(articleFromView.getUrl());
+        }
         articleFromDB.setName(articleFromView.getName());
         articleFromDB.setCategory(articleFromView.getCategory());
         articleFromDB.setPurchase(articleFromView.getPurchase());
@@ -67,14 +77,21 @@ public class ArticleServiceImpl implements ArticleService {
         articleFromDB.setProfit(articleFromView.getSellingPrize() - articleFromView.getSpentMoney()
                 - articleFromView.getPurchase() * articleFromView.getSoldQuantity());
         articleFromDB.setRemainder(articleFromView.getQuantity() - articleFromView.getSoldQuantity());
-        if (articleFromView.getQuantity() - articleFromView.getSoldQuantity() == 0) {
-            articleFromDB.setStatus(ArticleStatus.OUT_OF_STOCK);
-        } else if (articleFromView.getSoldQuantity() > 0) {
-            articleFromDB.setStatus(ArticleStatus.IN_STOCK);
-        } else {
+
+
+        if (!articleFromView.getStatus().equals(originalStatus)) {
             articleFromDB.setStatus(articleFromView.getStatus());
+        } else {
+            if (articleFromView.getQuantity() - articleFromView.getSoldQuantity() == 0) {
+                articleFromDB.setStatus(ArticleStatus.OUT_OF_STOCK);
+            } else if (articleFromView.getSoldQuantity() > 0) {
+                articleFromDB.setStatus(ArticleStatus.IN_STOCK);
+            } else {
+                articleFromDB.setStatus(articleFromView.getStatus());
+            }
+
+            articleRepository.save(articleFromDB);
         }
-        articleRepository.save(articleFromDB);
     }
 
 
@@ -82,6 +99,7 @@ public class ArticleServiceImpl implements ArticleService {
         Article articleForDelete = articleRepository.findById(id)
                 .orElseThrow(() -> new ArticleNotFoundException("Товар не знайдено"));
         articleRepository.delete(articleForDelete);
+        s3Service.deleteFromS3(articleForDelete.getUrl());
     }
 }
 

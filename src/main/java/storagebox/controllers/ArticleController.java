@@ -1,5 +1,7 @@
 package storagebox.controllers;
 
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.SdkClientException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -7,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import storagebox.dto.UserDTO;
 import storagebox.entities.Article;
 import storagebox.entities.ArticleStatus;
@@ -18,7 +22,9 @@ import storagebox.exceptions.WrongValueException;
 import storagebox.services.ArticleService;
 import storagebox.services.CategoryService;
 import storagebox.services.ExchangeRateService;
+import storagebox.services.impl.S3Service;
 
+import java.io.IOException;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
@@ -32,13 +38,17 @@ public class ArticleController {
     private final ArticleService articleService;
     private final CategoryService categoryService;
     private final ExchangeRateService exchangeRateService;
+    private final S3Service s3Service;
+
 
     @Autowired
     public ArticleController(
-            ArticleService articleService, CategoryService categoryService, ExchangeRateService exchangeRateService) {
+            ArticleService articleService, CategoryService categoryService
+            , ExchangeRateService exchangeRateService, S3Service s3Service) {
         this.articleService = articleService;
         this.categoryService = categoryService;
         this.exchangeRateService = exchangeRateService;
+        this.s3Service = s3Service;
     }
 
 
@@ -116,22 +126,66 @@ public class ArticleController {
 
     @PostMapping
     public String saveArticle(@Valid @ModelAttribute("article") Article article,
-                              BindingResult bindingResult, Model model) {
+                              BindingResult bindingResult,
+                              @RequestParam("file") MultipartFile multipartFile,
+                              Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("article", article);
             return "new-article";
         }
+
+        String imageURL = null;
+        if (!multipartFile.isEmpty()) {
+            imageURL = validFileAndGetImageURL(multipartFile, model);
+            if (imageURL == null) return "new-article";
+        }
+        if (imageURL != null) {
+            article.setUrl(imageURL);
+        }
+
         try {
             Category category = categoryService.findById(article.getCategory().getId());
             article.setCategory(category);
         } catch (CategoryNotFoundException e) {
             bindingResult.rejectValue("category", "error.category", e.getMessage());
+            s3Service.deleteFromS3(imageURL);
             return "new-article";
         }
 
         articleService.save(article);
         return "redirect:/articles";
     }
+
+    private String validFileAndGetImageURL(MultipartFile multipartFile, Model model) {
+        String imageURL = null;
+        if (multipartFile != null && !multipartFile.isEmpty()) {
+            String contentType = multipartFile.getContentType();
+            List<String> allowedTypes = List.of("image/jpeg", "image/png", "image/gif");
+            if (!allowedTypes.contains(contentType)) {
+                model.addAttribute("error", "Непідтримуваний тип файлу. Дозволені лише JPEG, PNG і GIF");
+                return null;
+            } else if (multipartFile.getSize() > 20_971_000L) {
+                model.addAttribute("error", "Файл має бути не більше 20 MB");
+                return null;
+            }
+
+            try {
+                imageURL = s3Service.uploadToS3(multipartFile, contentType);
+                return imageURL;
+            } catch (AmazonServiceException e) {
+                model.addAttribute("error", "AWS Service Exception");
+                e.printStackTrace();
+            } catch (SdkClientException e) {
+                model.addAttribute("error", "SDK Client Exception");
+                e.printStackTrace();
+            } catch (IOException e) {
+                model.addAttribute("error", "Error Uploading file");
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
+
 
     @GetMapping("/{id}")
     public String getArticle(@PathVariable int id, Model model) {
@@ -147,37 +201,58 @@ public class ArticleController {
 
 
     @PutMapping("/{id}")
-    public String editArticle(@PathVariable int id, @Valid @ModelAttribute("article") Article article,
-                              BindingResult bindingResult, Model model) {
+    public String editArticle(@PathVariable int id,
+                              @Valid @ModelAttribute("article") Article article,
+                              BindingResult bindingResult,
+                              @RequestParam("file") MultipartFile multipartFile,
+                              Model model) {
 
-        if (bindingResult.hasErrors() && !
-                bindingResult.getFieldError("category").getField().equals("category")) {
+        if (bindingResult.hasErrors()) {
             model.addAttribute("article", article);
             return "edit-article";
         }
+
+        String imageURL = validFileAndGetImageURL(multipartFile, model);
+
+        if (imageURL == null) {
+            model.addAttribute("article", article);
+            return "edit-article";
+        } else if (!imageURL.isEmpty()) {
+            article.setUrl(imageURL);
+        }
+
+        String urlFromDB = "";
         try {
             Category category = categoryService.findById(article.getCategory().getId());
             article.setCategory(category);
+            urlFromDB = articleService.findById(article.getId()).getUrl();
             articleService.update(id, article);
         } catch (CategoryNotFoundException e) {
             e.printStackTrace();
+            article.setUrl(urlFromDB);
             model.addAttribute("article", article);
-            model.addAttribute("error-message", "Категорію не знайдено");
+            model.addAttribute("errorCategory", "Категорію не знайдено");
+            s3Service.deleteFromS3(imageURL);
             return "edit-article";
         } catch (ArticleNotFoundException e) {
             e.printStackTrace();
+            article.setUrl(urlFromDB);
             model.addAttribute("article", article);
-            model.addAttribute("error-message", "Товар не знайдено");
+            model.addAttribute("errorArticle", "Товар не знайдено");
+            s3Service.deleteFromS3(imageURL);
             return "edit-article";
         } catch (WrongValueException e) {
             e.printStackTrace();
+            article.setUrl(urlFromDB);
             model.addAttribute("article", article);
-            model.addAttribute("error-message", "Значення не може бути більше за куплене");
+            model.addAttribute("errorValue", "Значення не може бути більше за куплене");
+            s3Service.deleteFromS3(imageURL);
             return "edit-article";
         }
 
         return "redirect:/articles";
     }
+
 
     @DeleteMapping("/{id}")
     public String deleteArticle(@PathVariable int id) {
@@ -189,5 +264,29 @@ public class ArticleController {
         }
         return "redirect:/articles";
     }
+
+
+    @DeleteMapping("/{id}/delete-photo")
+    public String deletePhoto(@PathVariable int id
+            , RedirectAttributes redirectAttributes) {
+
+        try {
+            Article article = articleService.findById(id);
+
+            String photoUrl = article.getUrl();
+            if (photoUrl != null && !photoUrl.isEmpty()) {
+                s3Service.deleteFromS3(photoUrl);
+            }
+
+            article.setUrl("");
+
+            articleService.save(article);
+        } catch (ArticleNotFoundException e) {
+            e.printStackTrace();
+        }
+        redirectAttributes.addFlashAttribute("message", "Фото видалено успішно!");
+        return "redirect:/articles/" + id;
+    }
+
 }
 

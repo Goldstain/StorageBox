@@ -32,4 +32,29 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.sticky-header th')[columnIndex].classList.remove('highlight');
         });
     });
+
+
+
+
+    const productLinks = document.querySelectorAll('.article-name');
+    const popup = document.createElement('div');
+    popup.classList.add('product-popup');
+    document.body.appendChild(popup);
+
+    productLinks.forEach(link => {
+        link.addEventListener('mouseenter', function (e) {
+            const photoUrl = link.getAttribute('data-photo-url');
+            if (photoUrl) {
+                popup.innerHTML = `<img src="${photoUrl}" alt="Фото товару">`;
+                const rect = link.getBoundingClientRect();
+                popup.style.left = `${rect.left}px`;
+                popup.style.top = `${rect.bottom + window.scrollY}px`;
+                popup.style.display = 'block';
+            }
+        });
+
+        link.addEventListener('mouseleave', function () {
+            popup.style.display = 'none';
+        });
+    });
 });

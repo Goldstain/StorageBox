@@ -1,10 +1,12 @@
 package storagebox.entities;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -46,12 +48,12 @@ public class Article {
 
     @Column(name = "quantity")
     @Min(value = 1, message = "Кількість не може бути менше 1")
-    @Max(value = 1000, message = "Скільки, скільки?! А якщо серйозно")
+    @Max(value = 10000, message = "Невірна кількість")
     private int quantity;
 
     @Column(name = "sold_quantity")
     @Min(value = 0, message = "Кількість проданого не може бути менше 1")
-    @Max(value = 1000, message = "Давай вірну кількість, курвисько!")
+    @Max(value = 10000, message = "Невірна кількість")
     private int soldQuantity;
 
     @Column(name = "remainder")
@@ -62,6 +64,9 @@ public class Article {
 
     @Enumerated(EnumType.STRING)
     private ArticleStatus status;
+
+    @Column(name = "url")
+    private String url;
 
 
     public Article() {
@@ -81,8 +86,8 @@ public class Article {
     }
 
     public Article(int id, Category category, String name, double purchase,
-                   double sellingPrize, double spentMoney, double profit,
-                   int quantity, int soldQuantity, LocalDate createdDate, ArticleStatus status) {
+                   double sellingPrize, double spentMoney, double profit, int quantity
+            , int soldQuantity, LocalDate createdDate, ArticleStatus status, String url) {
         this.id = id;
         this.category = category;
         this.name = name;
@@ -94,6 +99,7 @@ public class Article {
         this.soldQuantity = soldQuantity;
         this.createdDate = createdDate;
         this.status = status;
+        this.url = url;
     }
 
 
@@ -199,6 +205,14 @@ public class Article {
         this.status = status;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -214,6 +228,7 @@ public class Article {
                 ", remainder=" + remainder +
                 ", createdDate=" + createdDate +
                 ", status=" + status +
+                ", url='" + url + '\'' +
                 '}';
     }
 
@@ -223,21 +238,16 @@ public class Article {
         if (o == null || getClass() != o.getClass()) return false;
         Article article = (Article) o;
         return id == article.id && Double.compare(purchase, article.purchase) == 0
-                && Double.compare(sellingPrize, article.sellingPrize) == 0
-                && Double.compare(spentMoney, article.spentMoney) == 0
-                && Double.compare(profit, article.profit) == 0
-                && quantity == article.quantity
-                && soldQuantity == article.soldQuantity
-                && remainder == article.remainder
-                && Objects.equals(category, article.category)
-                && Objects.equals(name, article.name)
-                && Objects.equals(createdDate, article.createdDate)
-                && status == article.status;
+                && Double.compare(sellingPrize, article.sellingPrize) == 0 && Double.compare(spentMoney, article.spentMoney) == 0
+                && Double.compare(profit, article.profit) == 0 && quantity == article.quantity && soldQuantity == article.soldQuantity
+                && remainder == article.remainder && Objects.equals(category, article.category) && Objects.equals(name, article.name)
+                && Objects.equals(createdDate, article.createdDate) && status == article.status && Objects.equals(url, article.url);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, category, name, purchase, sellingPrize, spentMoney
-                , profit, quantity, soldQuantity, remainder, createdDate, status);
+        return Objects.hash(id, category, name, purchase, sellingPrize, spentMoney, profit, quantity, soldQuantity
+                , remainder, createdDate, status, url);
     }
+
 }

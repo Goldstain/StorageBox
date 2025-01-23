@@ -112,7 +112,10 @@
                     <td th:text="${article.id}"></td>
                     <td th:text="${article.category.name}"></td>
                     <td>
-                        <a th:href="@{/articles/{id}(id=${article.id})}" th:text="${article.name}"></a>
+                        <a th:href="@{/articles/{id}(id=${article.id})}"
+                           th:text="${article.name}"
+                           class="article-name"
+                           th:data-photo-url="${article.url == null or #strings.isEmpty(article.url) ? '/css/icon/default.jpg' : article.url}"></a>
                     </td>
                     <td th:text="${article.purchase}"></td>
                     <td th:text="${article.sellingPrize}"></td>

@@ -23,7 +23,8 @@
         <div class="wrapper__container">
             <div class="new">
                 <h2>Додати новий товар</h2>
-                <form class="form-block" th:action="@{/articles}" method="post" th:object="${article}">
+                <form class="form-block" th:action="@{/articles}" method="post" th:object="${article}"
+                      enctype="multipart/form-data">
                     <div class="form-group adaptiv-class">
                         <label for="category">Категорія</label>
                         <select id="category" class="form-control" th:field="*{category}">
@@ -56,30 +57,38 @@
                         </div>
                     </div>
 
+
                     <input type="hidden" th:field="*{status}" id="status" value="ON_THE_WAY">
+
+
+                    <div class="adaptiv-class">
+                            <input type="file" name="file" id="file-upload" accept="image/jpeg,image/png,image/gif" placeholder="Фото">
+                            <div th:if="${error}" class="error-message">
+                                <p th:text="${error}"></p>
+                            </div>
+                    </div>
+
 
                     <div class="d-flex ">
                         <button type="submit" class="btn creator">Створити</button>
                         <a href="/articles" class="btn  refresh rf">Назад
                             <img class="bb" th:src="@{/css/icon/refresh.svg}">
-<!--                                 src="src/main/resources/static/css/icon/refresh.svg">-->
+                            <!--                                 src="src/main/resources/static/css/icon/refresh.svg">-->
                         </a>
                     </div>
                 </form>
+
+
             </div>
 
 
         </div>
     </div>
-    <div class="creted">
-        <p>Created by :
-<!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
-             <img class="sh" th:src="@{/css/icon/SH.jpeg}">
-            <span>Studio</span>
-        </p>
-    </div>
+
 </div>
 
+<script src="./src\main/resources/static/js/script.js" defer></script>
+<script th:src="@{/js/script.js}" defer></script>
 
 </body>
 

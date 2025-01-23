@@ -16,9 +16,9 @@ public class S3Config {
     @Value("${aws.region}")
     private Regions region;
     @Value("${aws.access-key}")
-    String accessKey;
+    private String accessKey;
     @Value("${aws.secret-key}")
-    String secretKey;
+    private String secretKey;
 
     @Bean
     public AmazonS3 s3Client() {

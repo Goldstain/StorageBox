@@ -4,10 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
-
 import org.mockito.junit.jupiter.MockitoExtension;
 import storagebox.entities.Article;
 import storagebox.entities.ArticleStatus;
@@ -20,6 +16,9 @@ import storagebox.services.impl.ArticleServiceImpl;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class ArticleServiceTests {
@@ -96,12 +95,12 @@ public class ArticleServiceTests {
     public void shouldCountDataOfArticleFromDBCorrectly() throws ArticleNotFoundException, WrongValueException {
         Article articleFromDB = new Article(1, new Category(1, "Tools"), "Tool"
                 , 500.0, 2000.0, 50.0, 950, 3, 2
-                , LocalDate.now(), ArticleStatus.IN_STOCK);
+                , LocalDate.now(), ArticleStatus.IN_STOCK, "http:/url");
         when(articleRepository.findById(anyInt())).thenReturn(Optional.of(articleFromDB));
 
         Article articleFromView = new Article(1, new Category(1, "Tools"), "Tool"
                 , 500.0, 3000.0, 100.0, 950, 3, 3
-                , LocalDate.now(), ArticleStatus.IN_STOCK);
+                , LocalDate.now(), ArticleStatus.IN_STOCK, "http:/url");
 
         articleService.update(1, articleFromView);
 

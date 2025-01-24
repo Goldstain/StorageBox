@@ -154,7 +154,8 @@ $maxWidth: 1620; // Ширина полотна (макета)
 .currency--sp {
 	display: inline-block;
 	white-space: nowrap; /* Предотвращаем перенос строки */
-	animation: scroll-left 19s linear infinite; /* Анимация бегущей строки */
+	padding-right: 15%;
+	animation: scroll-left 25s linear infinite; /* Анимация бегущей строки */
 }
 
 

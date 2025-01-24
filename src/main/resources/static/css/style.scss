@@ -154,11 +154,9 @@ $maxWidth: 1620; // Ширина полотна (макета)
 .currency--sp {
 	display: inline-block;
 	white-space: nowrap; /* Предотвращаем перенос строки */
-	padding-right: 15%;
-	animation: scroll-left 25s linear infinite; /* Анимация бегущей строки */
+	// padding-right: 115%;
+	animation: scroll-left 15s linear infinite; /* Анимация бегущей строки */
 }
-
-
 
 /* Определение анимации */
 @keyframes scroll-left {
@@ -169,6 +167,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 		transform: translateX(-100%); /* Конец на левой стороне */
 	}
 }
+
 .currency legend {
 	color: #0e8fe4; /* Зміна кольору тексту в legend */
 }
@@ -419,7 +418,7 @@ tbody tr:hover {
 
 .out {
 	// position: absolute;
-	margin-top: toRem(20);
+	margin-top: toRem(50);
 	display: flex;
 	align-items: center;
 	column-gap: toRem(10);
@@ -449,6 +448,7 @@ tbody tr:hover {
 
 .admin-img {
 	display: flex;
+	// margin-top: toRem(50);
 
 	&:hover {
 		border: rgba(69, 154, 198, 0.86);
@@ -610,9 +610,62 @@ input::placeholder {
 	height: 98vh;
 }
 
+.select__block {
+	display: flex;
+	align-items: center;
+	column-gap: toRem(70);
+	// border: 1px solid black;
+}
+
+.image__box {
+	// border: 1px solid black;
+}
+
+.image__box--photo {
+	padding: toRem(10);
+	box-shadow: 0px 0px 26px black;
+	width: toRem(470);
+	height: toRem(470);
+	overflow: hidden; /* Скрыть все, что выходит за пределы контейнера */
+	position: relative; /* Для правильного позиционирования элементов */
+}
+
+.image__box--photo img {
+	width: 100%; /* Растягиваем изображение по ширине контейнера */
+	height: 100%; /* Растягиваем изображение по высоте контейнера */
+	object-fit: cover; /* Обрезаем и заполняем контейнер изображением */
+}
+
+.image__box--buttons {
+	margin-top: toRem(20);
+}
+
+.button__delete--photo {
+	position: absolute;
+	margin-top: toRem(-20);
+	left: toRem(220);
+}
+
+.button__delete--photo button {
+	padding: toRem(6);
+	background-color: rgba(255, 0, 0, 0.454);
+	color: white;
+	font-weight: 900;
+	border: none;
+	cursor: pointer;
+	&:hover{
+		box-shadow: 0px 0px 6px black;
+	}
+}
+
 .product {
 	margin-top: toRem(-50);
 	text-align: center;
+	& form {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
 
 	& h2 {
 		font-size: toRem(50);
@@ -624,46 +677,49 @@ input::placeholder {
 }
 
 .form__block {
+	width: toRem(800);
+	padding: toRem(20) 0;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
 	margin-bottom: toRem(50);
+	// box-shadow: 0px 0px 26px black;
+}
+
+.form__block--columns {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .form__block--block {
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	row-gap: toRem(20);
 
 	& input {
-		width: toRem(300);
-		height: toRem(40);
+		width: toRem(100);
+		height: toRem(30);
 		font-size: toRem(20);
 		font-weight: 700;
+		// box-shadow: inset 0px 0px 6px black;
 	}
 }
 
 .form__block label {
-	padding: toRem(10); /* Отступы внутри поля */
-	font-size: toRem(26); /* Размер шрифта */
-	border: 1px solid #ccc; /* Цвет рамки */
+	width: toRem(150);
+	padding: toRem(6); /* Отступы внутри поля */
+	font-size: toRem(16); /* Размер шрифта */
+	// border: 1px solid #ccc; /* Цвет рамки */
 	border-radius: 5px; /* Скругление углов */
-	background-color: #f0f0f0; /* Цвет фона */
-	font-weight: 700;
-}
-
-.product__status {
-	font-size: toRem(20);
-	border: 1px solid #ccc; /* Цвет рамки */
-	border-radius: 10px; /* Скругление углов */
-	// background-color: (77, 129, 225, 0.61); /* Цвет фона */
-	padding: toRem(10); /* Отступы внутри поля */
-	color: rgb(6, 6, 6);
+	box-shadow: 0px 0px 6px black;
+	font-weight: 900;
 }
 
 .button__block--status label {
 	color: #0c0b0b; /* Цвет текста для опций */
-	box-shadow: 1px 1px 5px rgb(251, 250, 250);
+	// box-shadow: 1px 1px 5px rgb(251, 250, 250);
 	// background-color: rgb(251, 163, 163);
 	font-size: toRem(18);
 	border-radius: toRem(10);
@@ -674,6 +730,7 @@ input::placeholder {
 }
 
 .button__block--button form {
+	margin-left: toRem(800);
 	display: flex;
 	text-align: center;
 	flex-direction: row;
@@ -683,7 +740,7 @@ input::placeholder {
 .d-flex2 {
 	display: flex;
 	column-gap: toRem(20);
-	margin-top: toRem(100);
+	margin-top: 0;
 
 	& a {
 		color: white;
@@ -695,11 +752,11 @@ input::placeholder {
 .d-flex4 {
 	position: absolute;
 	bottom: toRem(50);
-	left: toRem(550);
+	left: toRem(750);
 }
 
 .button-danger {
-	margin-top: toRem(100);
+
 	height: toRem(50);
 	font-style: normal;
 	color: #ffffff;
@@ -973,12 +1030,11 @@ legend {
 	background-size: 54px;
 	text-align: center;
 
-
 	&:hover {
 		//box-shadow: 0px 0px 1px red;
-		 text-shadow:
-		 	1px 1px 1px black,
-		 	-1px -2px 1px black;
+		text-shadow:
+			1px 1px 1px black,
+			-1px -2px 1px black;
 	}
 }
 
@@ -1444,7 +1500,7 @@ input[type="file"]::file-selector-button {
 	background-color: rgba(238, 240, 241, 0.42);
 	color: #000000;
 	border: 1px solid #ccc;
-	border-radius:4px;
+	border-radius: 4px;
 	padding: 10px;
 	cursor: pointer;
 }

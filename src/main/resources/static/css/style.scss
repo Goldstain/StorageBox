@@ -613,8 +613,8 @@ input::placeholder {
 .select__block {
 	display: flex;
 	align-items: center;
-	column-gap: toRem(70);
-	// border: 1px solid black;
+	column-gap: toRem(20);
+	margin-bottom: toRem(50);
 }
 
 .image__box {
@@ -642,7 +642,7 @@ input::placeholder {
 
 .button__delete--photo {
 	position: absolute;
-	margin-top: toRem(-20);
+	margin-top: 0;
 	left: toRem(220);
 }
 
@@ -653,7 +653,7 @@ input::placeholder {
 	font-weight: 900;
 	border: none;
 	cursor: pointer;
-	&:hover{
+	&:hover {
 		box-shadow: 0px 0px 6px black;
 	}
 }
@@ -688,20 +688,21 @@ input::placeholder {
 
 .form__block--columns {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	flex-direction: column;
+	row-gap: toRem(20);
 }
 
 .form__block--block {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	row-gap: toRem(20);
+	flex-direction: row;
 
 	& input {
 		width: toRem(100);
-		height: toRem(30);
+		height: toRem(20);
 		font-size: toRem(20);
+		margin: 0 toRem(20);
 		font-weight: 700;
 		// box-shadow: inset 0px 0px 6px black;
 	}
@@ -756,7 +757,6 @@ input::placeholder {
 }
 
 .button-danger {
-
 	height: toRem(50);
 	font-style: normal;
 	color: #ffffff;

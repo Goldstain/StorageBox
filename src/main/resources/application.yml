@@ -32,7 +32,3 @@ nbu:
 #  jackson:
 #    serialization:
 #      write-dates-as-timestamps=false
-
-#    url: jdbc:postgresql://localhost:5432/storagebox
-#    username: postgres
-#    password: postgres

@@ -154,7 +154,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 .currency--sp {
 	display: inline-block;
 	white-space: nowrap; /* Предотвращаем перенос строки */
-	// padding-right: 115%;
+	padding-left: 12px;
 	animation: scroll-left 15s linear infinite; /* Анимация бегущей строки */
 }
 
@@ -326,7 +326,7 @@ $maxWidth: 1620; // Ширина полотна (макета)
 	margin-top: toRem(20);
 	z-index: 50;
 	background-color: rgba(134, 232, 255, 0.41);
-	max-height: 79vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+	max-height: 75vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
 	overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
 	overflow-x: hidden; /* Убирает горизонтальную прокрутку */
 	box-shadow:
@@ -699,7 +699,7 @@ input::placeholder {
 	flex-direction: row;
 
 	& input {
-		width: toRem(100);
+		width: 10.25rem;
 		height: toRem(20);
 		font-size: toRem(20);
 		margin: 0 toRem(20);
@@ -711,7 +711,7 @@ input::placeholder {
 .form__block label {
 	width: toRem(150);
 	padding: toRem(6); /* Отступы внутри поля */
-	font-size: toRem(16); /* Размер шрифта */
+	font-size: 1.15rem; /* Размер шрифта */
 	// border: 1px solid #ccc; /* Цвет рамки */
 	border-radius: 5px; /* Скругление углов */
 	box-shadow: 0px 0px 6px black;

@@ -138,6 +138,7 @@
 .currency--sp {
   display: inline-block;
   white-space: nowrap; /* Предотвращаем перенос строки */
+  padding-left: 12px;
   -webkit-animation: scroll-left 15s linear infinite;
           animation: scroll-left 15s linear infinite; /* Анимация бегущей строки */
 }
@@ -309,7 +310,7 @@
   margin-top: 1.25rem;
   z-index: 50;
   background-color: rgba(134, 232, 255, 0.41);
-  max-height: 79vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
+  max-height: 75vh; /* Ограничиваем максимальную высоту таблицы (вы можете изменить на ваше усмотрение) */
   overflow: auto; /* Позволяет прокручивать таблицу по вертикали */
   overflow-x: hidden; /* Убирает горизонтальную прокрутку */
   -webkit-box-shadow: 9px 9px 16px rgb(234, 235, 237), -9px -9px 16px rgb(255, 255, 255);
@@ -534,7 +535,7 @@ input::placeholder {
 .form-control {
   background-color: #f0f0f0; /* Цвет фона */
   border: 1px solid #131313; /* Цвет рамки */
-  padding: 10px; /* Отступы */
+  padding: 15px; /* Отступы */
   border-radius: 5px; /* Скругление углов */
   font-size: 16px; /* Размер шрифта */
   -webkit-box-shadow: 1px 1px 5px rgb(251, 250, 250);
@@ -749,7 +750,7 @@ input::placeholder {
   flex-direction: row;
 }
 .form__block--block input {
-  width: 6.25rem;
+  width: 10.25rem;
   height: 1.25rem;
   font-size: 1.25rem;
   margin: 0 1.25rem;
@@ -759,7 +760,7 @@ input::placeholder {
 .form__block label {
   width: 9.375rem;
   padding: 0.375rem; /* Отступы внутри поля */
-  font-size: 1rem; /* Размер шрифта */
+  font-size: 1.15rem; /* Размер шрифта */
   border-radius: 5px; /* Скругление углов */
   -webkit-box-shadow: 0px 0px 6px black;
           box-shadow: 0px 0px 6px black;

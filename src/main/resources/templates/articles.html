@@ -41,7 +41,6 @@
                 <form method="POST" th:action="@{/logout}">
                     <div class="exit"><input class="out--button" type="submit" value="Вихід" role="button"/>
                         <img th:src="@{/css/icon/exit.png}">
-                        <!--        <img src="src/main/resources/static/css/icon/exit.png">-->
                     </div>
                 </form>
 
@@ -49,7 +48,6 @@
                     <a href="/admin/statistics" class="btn  admin-img" role="button"
                        sec:authorize="hasRole('ROLE_ADMIN')">Адмін панель
                         <img th:src="@{/css/icon/admin2.svg}">
-                        <!--                    <img src="src/main/resources/static/css/icon/admin2.svg">-->
                     </a>
                 </div>
             </div>
@@ -80,7 +78,6 @@
                        placeholder="Введіть назву">
                 <button type="submit" class="btn filter">Пошук
                     <img th:src="@{/css/icon/search3.svg}">
-                    <!--                    <img src="src/main/resources/static/css/icon/search3.svg">-->
                 </button>
             </form>
 
@@ -135,12 +132,6 @@
 
     </div>
 
-    <div class="creted">
-        <p>Created by :
-            <!--            <img class="sh" src="src/main/resources/static/css/icon/SH.jpeg">-->
-            <img class="sh" th:src="@{/css/icon/SH.jpeg}">
-            <span>Studio</span></p>
-    </div>
 </div>
 
 <script src="./src\main/resources/static/js/script.js" defer></script>

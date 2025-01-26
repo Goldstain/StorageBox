@@ -74,10 +74,15 @@ public class ArticleServiceImpl implements ArticleService {
         articleFromDB.setSpentMoney(articleFromView.getSpentMoney());
         articleFromDB.setQuantity(articleFromView.getQuantity());
         articleFromDB.setSoldQuantity(articleFromView.getSoldQuantity());
+
         articleFromDB.setProfit(articleFromView.getSellingPrize() - articleFromView.getSpentMoney()
                 - articleFromView.getPurchase() * articleFromView.getSoldQuantity());
-        articleFromDB.setRemainder(articleFromView.getQuantity() - articleFromView.getSoldQuantity());
 
+        if (articleFromView.getStatus().equals(ArticleStatus.ON_THE_WAY)) {
+            articleFromDB.setRemainder(0);
+        } else {
+            articleFromDB.setRemainder(articleFromView.getQuantity() - articleFromView.getSoldQuantity());
+        }
 
         if (!articleFromView.getStatus().equals(originalStatus)) {
             articleFromDB.setStatus(articleFromView.getStatus());

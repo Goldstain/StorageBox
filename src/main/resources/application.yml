@@ -12,7 +12,10 @@ spring:
   web:
     resources:
       static-locations: classpath:/static/
-
+  data:
+    redis:
+      host: localhost     # test redis (need another docker container)
+      port: 6379
 
 
 server:
@@ -27,10 +30,5 @@ nbu:
 
 
 
-#  redis:
-#    host: localhost
-#    port: 6379
-#
-#  jackson:
-#    serialization:
-#      write-dates-as-timestamps=false
+
+

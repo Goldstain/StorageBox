@@ -104,7 +104,9 @@ public class ArticleServiceImpl implements ArticleService {
         Article articleForDelete = articleRepository.findById(id)
                 .orElseThrow(() -> new ArticleNotFoundException("Товар не знайдено"));
         articleRepository.delete(articleForDelete);
-        s3Service.deleteFromS3(articleForDelete.getUrl());
+        if (articleForDelete.getUrl() != null) {
+            s3Service.deleteFromS3(articleForDelete.getUrl());
+        }
     }
 }
 
